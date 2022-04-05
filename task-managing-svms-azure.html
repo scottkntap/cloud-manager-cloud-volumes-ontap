@@ -1395,11 +1395,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:41:55 +0000">03/02/2022</time>
+    <time datetime="2022-04-05 14:11:19 +0000">04/05/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -1718,6 +1726,17 @@
 <div class="content">
 <pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node node1 -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default -probe-port &lt;port-number-for-azure-health-probe3&gt;</code></pre>
 </div>
+</div>
+</li>
+<li>
+<p>Assign one or more aggregates to the storage VM.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This step is required because the new storage VM needs access to at least one aggregate before you can create volumes on the storage VM.</p>
 </div>
 </li>
 </ol>
