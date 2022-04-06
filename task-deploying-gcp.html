@@ -1736,9 +1736,50 @@ If a newer Release Candidate, General Availability, or patch release is availabl
 <div class="paragraph">
 <p>Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:</p>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in task-deploying-gcp.adoc - include::_include/create_volume.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access control (for NFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Permissions and Users / Groups (for CIFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user&#8217;s domain using the format domain\username.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot Policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Advanced options (for NFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an NFS version for the volume: either NFSv3 or NFSv4.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initiator group and IQN (for iSCSI only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.<br>
+<br>
+Initiator groups are tables of iSCSI host node names and control which initiators have access to which LUNs.<br>
+<br>
+iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).<br>
+<br>
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task-connect-lun.html">use the IQN to connect to the LUN from your hosts</a>.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>The following image shows the Volume page filled out for the CIFS protocol:</p>
 </div>
@@ -2039,9 +2080,50 @@ If a newer Release Candidate, General Availability, or patch release is availabl
 <div class="paragraph">
 <p>Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:</p>
 </div>
-<div class="paragraph">
-<p>Unresolved directive in task-deploying-gcp.adoc - include::_include/create_volume.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access control (for NFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Permissions and Users / Groups (for CIFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user&#8217;s domain using the format domain\username.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot Policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Advanced options (for NFS only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an NFS version for the volume: either NFSv3 or NFSv4.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initiator group and IQN (for iSCSI only)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.<br>
+<br>
+Initiator groups are tables of iSCSI host node names and control which initiators have access to which LUNs.<br>
+<br>
+iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).<br>
+<br>
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task-connect-lun.html">use the IQN to connect to the LUN from your hosts</a>.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>The following image shows the Volume page filled out for the CIFS protocol:</p>
 </div>
