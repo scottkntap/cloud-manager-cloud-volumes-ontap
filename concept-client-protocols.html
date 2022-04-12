@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Setting up the AWS KMS | NetApp Documentation</title>
+  <title>Client protocols | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Setting up the AWS KMS | NetApp Documentation" />
+  <meta property="og:title" content="Client protocols | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html" />
-	<meta property="og:description" content="If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to set up the AWS Key Management Service." />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" />
+	<meta property="og:description" content="Cloud Volumes ONTAP supports the iSCSI, NFS, SMB, and S3 client protocols." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to set up the AWS Key Management Service.">
-  <meta name="keywords" content=" encryption, kms, key management service, cmk, customer master key, master key, key, permissions"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP supports the iSCSI, NFS, SMB, and S3 client protocols.">
+  <meta name="keywords" content=" client protocols, client version, smb version, nfs version, protocol versions, s3, smb, nfs, iscsi, cifs"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Setting up the AWS KMS](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-setting-up-kms.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Client protocols](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-client-protocols.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -462,15 +462,6 @@
   
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-setting-up-kms.pdf" >
-    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
 
 
 
@@ -971,6 +962,15 @@
             Storage
           </a>
           
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/pages/concept-client-protocols.pdf" >
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
 
 
 
@@ -1150,7 +1150,7 @@
         Set up an AWS transit gateway
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
         Security group rules for AWS
-      </a></li></ul></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
         Set up the AWS KMS
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html">
         Launch a system in AWS
@@ -1298,7 +1298,7 @@
       <ul><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Storage</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
+      <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
         Client protocols
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         Disks and aggregates
@@ -1392,146 +1392,78 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Setting up the AWS KMS</h1>
+  <h1 class="n-doc__component-detail-heading">Client protocols</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:41:55 +0000">03/02/2022</time>
+    <time datetime="2022-04-12 15:54:05 +0000">04/12/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to set up the AWS Key Management Service (KMS).</p>
+<p>Cloud Volumes ONTAP supports the iSCSI, NFS, SMB, and S3 client protocols.</p>
 </div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Ensure that an active Customer Master Key (CMK) exists.</p>
-<div class="paragraph">
-<p>The CMK can be an AWS-managed CMK or a customer-managed CMK. It can be in the same AWS account as Cloud Manager and Cloud Volumes ONTAP or in a different AWS account.</p>
 </div>
-<div class="paragraph">
-<p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys" target="_blank" rel="noopener">AWS Documentation: Customer Master Keys (CMKs)</a></p>
 </div>
-</li>
-<li>
-<p>Modify the key policy for each CMK by adding the IAM role that provides permissions to Cloud Manager as a <em>key user</em>.</p>
+<div class="sect1">
+<h2 id="iscsi">iSCSI</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Adding the IAM role as a key user gives Cloud Manager permissions to use the CMK with Cloud Volumes ONTAP.</p>
+<p>iSCSI is a block protocol that can run on standard Ethernet networks. Most client operating systems offer a software initiator that runs over a standard Ethernet port.</p>
 </div>
-<div class="paragraph">
-<p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html" target="_blank" rel="noopener">AWS Documentation: Editing Keys</a></p>
 </div>
-</li>
-<li>
-<p>If the CMK is in a different AWS account, complete the following steps:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Go to the KMS console from the account where the CMK resides.</p>
-</li>
-<li>
-<p>Select the key.</p>
-</li>
-<li>
-<p>In the <strong>General configuration</strong> pane, copy the ARN of the key.</p>
-<div class="paragraph">
-<p>You&#8217;ll need to provide the ARN to Cloud Manager when you create the Cloud Volumes ONTAP system.</p>
 </div>
-</li>
-<li>
-<p>In the <strong>Other AWS accounts</strong> pane, add the AWS account that provides Cloud Manager with permissions.</p>
+<div class="sect1">
+<h2 id="nfs">NFS</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>In most cases, this is the account where Cloud Manager resides. If Cloud Manager wasn&#8217;t installed in AWS, it would be the account for which you provided AWS access keys to Cloud Manager.</p>
+<p>NFS is the traditional file access protocol for UNIX and LINUX systems. Clients can access files in ONTAP volumes using the NFSv3, NFSv4, and NFSv4.1 protocols. You can control file access using UNIX-style permissions, NTFS-style permissions, or a mix of both.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_cmk_add_accounts.gif" alt="This screenshot shows the &quot;Add other AWS accounts&quot; button from the AWS KMS console."></span></p>
+<p>Clients can access the same files using both NFS and SMB protocols.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="smb">SMB</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SMB is the traditional file access protocol for Windows systems. Clients can access files in ONTAP volumes using the SMB 2.0, SMB 2.1, SMB 3.0, and SMB 3.1.1 protocols. Just like with NFS, a mix of permission styles are supported.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="s3">S3</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Volumes ONTAP supports S3 as an option for scale-out storage in Microsoft Azure. S3 protocol support enables you to configure S3 client access to objects contained in a bucket in an SVM.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_cmk_add_accounts_dialog.gif" alt="This screenshot shows the &quot;Other AWS accounts&quot; dialog box from the AWS KMS console."></span></p>
-</div>
-</li>
-<li>
-<p>Now switch to the AWS account that provides Cloud Manager with permissions and open the IAM console.</p>
-</li>
-<li>
-<p>Create an IAM policy that includes the permissions listed below.</p>
-</li>
-<li>
-<p>Attach the policy to the IAM role or IAM user that provides permissions to Cloud Manager.</p>
-<div class="paragraph">
-<p>The following policy provides the permissions that Cloud Manager needs to use the CMK from the external AWS account. Be sure to modify the region and account ID in the "Resource" sections.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowUseOfTheKey",
-            "Effect": "Allow",
-            "Action": [
-                "kms:Encrypt",
-                "kms:Decrypt",
-                "kms:ReEncrypt*",
-                "kms:GenerateDataKey*",
-                "kms:DescribeKey"
-            ],
-            "Resource": [
-                "arn:aws:kms:us-east-1:externalaccountid:key/externalkeyid"
-            ]
-        },
-        {
-            "Sid": "AllowAttachmentOfPersistentResources",
-            "Effect": "Allow",
-            "Action": [
-                "kms:CreateGrant",
-                "kms:ListGrants",
-                "kms:RevokeGrant"
-            ],
-            "Resource": [
-                "arn:aws:kms:us-east-1:externalaccountid:key/externalaccountid"
-            ],
-            "Condition": {
-                "Bool": {
-                    "kms:GrantIsForAWSResource": true
-                }
-            }
-        }
-    ]
-}</code></pre>
-</div>
+<p>At this time, the S3 protocol is not supported with Cloud Volumes ONTAP in AWS or in Google Cloud.</p>
 </div>
 <div class="paragraph">
-<p>For additional details about this process, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying.html#key-policy-modifying-external-accounts" target="_blank" rel="noopener">AWS Documentation: Allowing External AWS Accounts to Access a CMK</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/ontap/object-storage-management/index.html" target="_blank" rel="noopener">Learn how to configure and manage S3 object storage services in ONTAP</a>.</p>
 </div>
-</li>
-</ol>
 </div>
-</li>
-<li>
-<p>If you are using a customer-managed CMK, modify the key policy for the CMK by adding the Cloud Volumes ONTAP IAM role as a <em>key user</em>.</p>
-<div class="paragraph">
-<p>This step is required if you enabled data tiering on Cloud Volumes ONTAP and want to encrypt the data stored in the S3 bucket.</p>
-</div>
-<div class="paragraph">
-<p>You&#8217;ll need to perform this step <em>after</em> you deploy Cloud Volumes ONTAP because the IAM role is created when you create a working environment. (Of course, you do have the option to use an existing Cloud Volumes ONTAP IAM role, so it&#8217;s possible to perform this step before.)</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html" target="_blank" rel="noopener">AWS Documentation: Editing Keys</a></p>
-</div>
-</li>
-</ol>
 </div>
 
     </article>
