@@ -1399,7 +1399,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-12 17:10:49 +0000">04/12/2022</time>
+    <time datetime="2022-04-21 13:58:49 +0000">04/21/2022</time>
     
   
 
@@ -1590,6 +1590,9 @@
 <dt class="hdlist1">DNS Primary and Secondary IP Address</dt>
 <dd>
 <p>The IP addresses of the DNS servers that provide name resolution for the CIFS server. The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.</p>
+<div class="paragraph">
+<p>If you&#8217;re configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.</p>
+</div>
 </dd>
 <dt class="hdlist1">Active Directory Domain to join</dt>
 <dd>
@@ -1609,11 +1612,15 @@
 <div class="ulist">
 <ul>
 <li>
-<p>To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter <strong>OU=Computers,OU=corp</strong> in this field.</p>
+<p>To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter <strong>OU=Computers,OU=corp</strong> in this field.</p>
 </li>
 <li>
-<p>To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, you should enter <strong>OU=AADDC Computers</strong> or <strong>OU=AADDC Users</strong> in this field.<br>
+<p>To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter <strong>OU=AADDC Computers</strong> or <strong>OU=AADDC Users</strong> in this field.<br>
 <a href="https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou" target="_blank" rel="noopener">Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain</a></p>
+</li>
+<li>
+<p>To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter <strong>OU=Computers,OU=Cloud</strong> in this field.<br>
+<a href="https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units" target="_blank" rel="noopener">Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD</a></p>
 </li>
 </ul>
 </div>

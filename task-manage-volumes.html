@@ -1399,7 +1399,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-06 13:56:08 +0000">04/06/2022</time>
+    <time datetime="2022-04-21 13:58:49 +0000">04/21/2022</time>
     
   
 
@@ -1667,7 +1667,9 @@ Cloud Manager moves the volume to an existing aggregate that uses the selected d
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS Primary and Secondary IP Address</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The IP addresses of the DNS servers that provide name resolution for the CIFS server.<br>
 <br>
-The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.</p></td>
+The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.<br>
+<br>
+If you&#8217;re configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory Domain to join</p></td>
@@ -1683,8 +1685,24 @@ The listed DNS servers must contain the service location records (SRV) needed to
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Organizational Unit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.<br>
-If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter <strong>OU=Computers,OU=corp</strong> in this field.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter <strong>OU=Computers,OU=corp</strong> in this field.</p>
+</li>
+<li>
+<p>To configure Azure AD Domain Services as the AD server for Cloud Volumes ONTAP, enter <strong>OU=AADDC Computers</strong> or <strong>OU=AADDC Users</strong> in this field.<br>
+<a href="https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou" target="_blank" rel="noopener">Azure Documentation: Create an Organizational Unit (OU) in an Azure AD Domain Services managed domain</a></p>
+</li>
+<li>
+<p>To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter <strong>OU=Computers,OU=Cloud</strong> in this field.<br>
+<a href="https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units" target="_blank" rel="noopener">Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD</a></p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS Domain</p></td>

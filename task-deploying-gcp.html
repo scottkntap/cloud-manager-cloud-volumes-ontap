@@ -1399,7 +1399,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-12 17:10:49 +0000">04/12/2022</time>
+    <time datetime="2022-04-21 13:58:49 +0000">04/21/2022</time>
     
   
 
@@ -1811,7 +1811,9 @@ When you create an iSCSI volume, Cloud Manager automatically creates a LUN for y
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS Primary and Secondary IP Address</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The IP addresses of the DNS servers that provide name resolution for the CIFS server.<br>
-The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.</p></td>
+The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.<br>
+<br>
+If you&#8217;re configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory Domain to join</p></td>
@@ -1827,7 +1829,11 @@ The listed DNS servers must contain the service location records (SRV) needed to
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Organizational Unit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.<br>
+<br>
+To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter <strong>OU=Computers,OU=Cloud</strong> in this field.<br>
+<br>
+<a href="https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units" target="_blank" rel="noopener">Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS Domain</p></td>
@@ -2158,7 +2164,9 @@ When you create an iSCSI volume, Cloud Manager automatically creates a LUN for y
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS Primary and Secondary IP Address</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The IP addresses of the DNS servers that provide name resolution for the CIFS server.<br>
-The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.</p></td>
+The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.<br>
+<br>
+If you&#8217;re configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory Domain to join</p></td>
@@ -2174,7 +2182,11 @@ The listed DNS servers must contain the service location records (SRV) needed to
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Organizational Unit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.<br>
+<br>
+To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, enter <strong>OU=Computers,OU=Cloud</strong> in this field.<br>
+<br>
+<a href="https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units" target="_blank" rel="noopener">Google Cloud Documentation: Organizational Units in Google Managed Microsoft AD</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS Domain</p></td>
