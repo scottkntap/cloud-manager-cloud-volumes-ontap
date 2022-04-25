@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Connecting to Cloud Volumes ONTAP | NetApp Documentation</title>
+  <title>Use System Manager or the CLI | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Connecting to Cloud Volumes ONTAP | NetApp Documentation" />
+  <meta property="og:title" content="Use System Manager or the CLI | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" />
 	<meta property="og:description" content="If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager or the command line interface." />
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Connecting to Cloud Volumes ONTAP](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-connecting-to-otc.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Use System Manager or the CLI](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-connecting-to-otc.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1392,18 +1392,26 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Connecting to Cloud Volumes ONTAP</h1>
+  <h1 class="n-doc__component-detail-heading">Use System Manager or the CLI</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:41:55 +0000">03/02/2022</time>
+    <time datetime="2022-04-25 19:34:22 +0000">04/25/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -1442,16 +1450,16 @@ When deployed in multiple AWS Availability Zones, Cloud Volumes ONTAP HA configu
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From the Canvas page, double-click the Cloud Volumes ONTAP system that you want to manage with System Manager.</p>
+<p>From the Canvas, select the Cloud Volumes ONTAP working environment.</p>
 </li>
 <li>
-<p>Click the menu icon, and then click <strong>Advanced &gt; System Manager</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Launch</strong>.</p>
+<p>On the right pane, click the information icon and copy the cluster management IP.</p>
 <div class="paragraph">
-<p>System Manager loads in a new browser tab.</p>
+<p><span class="image"><img src="./media/screenshot-cvo-info.png" alt="A screenshot of the information icon that appears on the Canvas for a Cloud Volumes ONTAP working environment."></span></p>
 </div>
+</li>
+<li>
+<p>Open a web browser on the machine that has a network connection to Cloud Volumes ONTAP and enter the IP address.</p>
 </li>
 <li>
 <p>At the login screen, enter <strong>admin</strong> in the User Name field, enter the password that you specified when you created the working environment, and then click <strong>Sign In</strong>.</p>

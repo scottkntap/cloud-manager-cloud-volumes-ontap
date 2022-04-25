@@ -1399,7 +1399,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-06 13:56:08 +0000">04/06/2022</time>
+    <time datetime="2022-04-25 17:59:51 +0000">04/25/2022</time>
     
   
 
@@ -1646,7 +1646,22 @@ Even though Cloud Backup uses an implementation of SnapMirror to create backup f
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p><a href="task-connecting-to-otc.html">Log in to System Manager</a> from the destination system.</p>
+<p>Log in to System Manager from the destination system.</p>
+<div class="paragraph">
+<p>You can log in to System Manager by pointing your web browser to the IP address of the cluster management LIF. You can find the IP address in the Cloud Volumes ONTAP working environment.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The computer from which you are accessing Cloud Manager must have a network connection to Cloud Volumes ONTAP. For example, you might need to log in to Cloud Manager from a jump host that&#8217;s in your cloud provider network.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Click <strong>Protection &gt; Relationships</strong>.</p>
@@ -1682,9 +1697,6 @@ Even though Cloud Backup uses an implementation of SnapMirror to create backup f
 <p>If the aggregate is offline, use System Manager to bring the aggregate online:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
-<li>
-<p><a href="task-connecting-to-otc.html">Log in to System Manager</a>.</p>
-</li>
 <li>
 <p>Click <strong>Storage &gt; Aggregates &amp; Disks &gt; Aggregates</strong>.</p>
 </li>
