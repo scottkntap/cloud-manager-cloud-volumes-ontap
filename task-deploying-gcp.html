@@ -643,8 +643,6 @@
 
 
 
-
-
           
         </li>
       </ul>
@@ -1211,8 +1209,6 @@
         Connect a LUN to a host
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-accelerate-data-access.html">
         Accelerate data access with FlexCache
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-kubernetes.html">
-        Use ONTAP as persistent storage
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Aggregate administration</div>
       </a>
@@ -1399,7 +1395,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-21 13:58:49 +0000">04/21/2022</time>
+    <time datetime="2022-05-02 15:03:18 +0000">05/02/2022</time>
     
   
 
@@ -1558,7 +1554,7 @@ You can enter your NSS account on the <strong>Charging Methods and NSS Account</
 <p>If you&#8217;re prompted, <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html" target="_blank" rel="noopener">create a Connector</a>.</p>
 </li>
 <li>
-<p><strong>Details &amp; Credentials</strong>: Select a project, specify a cluster name, optionally select a Service Account, optionally add labels, and then specify credentials.</p>
+<p><strong>Details &amp; Credentials</strong>: Select a project, specify a cluster name, optionally select a service account, optionally add labels, and then specify credentials.</p>
 <div class="paragraph">
 <p>The following table describes fields for which you might need guidance:</p>
 </div>
@@ -1638,10 +1634,48 @@ Your browser does not support the video tag.
 <p><strong>Services</strong>: Select the services that you want to use on this system. In order to select Cloud Backup, or to use Tiering, you must have specified the Service Account in step 3.</p>
 </li>
 <li>
-<p><strong>Location &amp; Connectivity</strong>: Select a location, choose a firewall policy, and select the checkbox to confirm network connectivity to Google Cloud storage for data tiering.</p>
+<p><strong>Location &amp; Connectivity</strong>: Select a location, choose a firewall policy, and confirm network connectivity to Google Cloud storage for data tiering.</p>
 <div class="paragraph">
-<p>If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">Google Cloud Documentation: Configuring Private Google Access</a>.</p>
+<p>The following table describes fields for which you might need guidance:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connectivity verification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">Google Cloud Documentation: Configuring Private Google Access</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generated firewall policy</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If you let Cloud Manager generate the firewall policy for you, you need to choose how you&#8217;ll allow traffic:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you choose <strong>Selected VPC only</strong>, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.</p>
+</li>
+<li>
+<p>If you choose <strong>All VPCs</strong>, the source filter for inbound traffic is the 0.0.0.0/0 IP range.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use existing firewall policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you use an existing firewall policy, ensure that it includes the required rules. <a href="reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap">Learn about firewall rules for Cloud Volumes ONTAP</a>.</p></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p><strong>Charging Methods and NSS Account</strong>: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.</p>

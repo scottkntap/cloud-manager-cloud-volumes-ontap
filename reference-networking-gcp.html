@@ -643,8 +643,6 @@
 
 
 
-
-
           
         </li>
       </ul>
@@ -1211,8 +1209,6 @@
         Connect a LUN to a host
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-accelerate-data-access.html">
         Accelerate data access with FlexCache
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-kubernetes.html">
-        Use ONTAP as persistent storage
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Aggregate administration</div>
       </a>
@@ -1399,7 +1395,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-14 17:14:26 +0000">04/14/2022</time>
+    <time datetime="2022-05-02 15:03:18 +0000">05/02/2022</time>
     
   
 
@@ -1740,10 +1736,23 @@ https://*.blob.core.windows.net</p></td>
 <div class="sect2">
 <h3 id="inbound-rules">Inbound rules</h3>
 <div class="paragraph">
-<p>The source for inbound rules in the predefined firewall is 0.0.0.0/0.</p>
+<p>For HA pairs, the source filter for inbound traffic in the predefined firewall policy is 0.0.0.0/0.</p>
 </div>
 <div class="paragraph">
-<p>To create your own firewall, ensure that you add all networks that need to communicate with Cloud Volumes ONTAP, but also ensure to add both address ranges to allow the internal Google Load Balancer to function correctly. These addresses are 130.211.0.0/22 and 35.191.0.0/16. For more information, refer to <a href="https://cloud.google.com/load-balancing/docs/tcp#firewall_rules" target="_blank" rel="noopener">Google Cloud documentation: Load Balancer Firewall Rules</a>.</p>
+<p>For single node systems, you can choose the source filter for the predefined firewall policy during deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Selected VPC only</strong>: the source filter for inbound traffic is the subnet range of the VPC for the Cloud Volumes ONTAP system and the subnet range of the VPC where the Connector resides. This is the recommended option.</p>
+</li>
+<li>
+<p><strong>All VPCs</strong>: the source filter for inbound traffic is the 0.0.0.0/0 IP range.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you use your own firewall policy, ensure that you add all networks that need to communicate with Cloud Volumes ONTAP, but also ensure to add both address ranges to allow the internal Google Load Balancer to function correctly. These addresses are 130.211.0.0/22 and 35.191.0.0/16. For more information, refer to <a href="https://cloud.google.com/load-balancing/docs/tcp#firewall_rules" target="_blank" rel="noopener">Google Cloud documentation: Load Balancer Firewall Rules</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2217,28 +2226,6 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 </div>
 <div class="paragraph">
 <p>Communication from the HA nodes to the HA mediator takes place over port 3260 (iSCSI).</p>
-</div>
-<div class="sect2">
-<h3 id="using-your-own-firewall-rules-with-vpcs-1-3">Using your own firewall rules with VPCs 1-3</h3>
-<div class="paragraph">
-<p>When you create an HA pair, Cloud Manager gives you the option to use predefined firewall rules or to use existing rules for each VPC. If you use your own firewall rules for VPCs 1-3 and you&#8217;re deploying the HA pair across multiple Google Cloud zones, then you must set up a <em>target tag</em> for the firewall rule. If you don&#8217;t set up target tags, then you&#8217;ll experience an error during deployment.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>When you create the firewall rules in Google Cloud, go to the <strong>Targets</strong> field, select <strong>Specified target tags</strong>, and enter the tag.</p>
-<div class="paragraph">
-<p>The value can be any text string that you&#8217;d like.</p>
-</div>
-</li>
-<li>
-<p>When you create the HA pair in Cloud Manager, select the existing firewall rules on the <strong>Connectivity</strong> page.</p>
-<div class="paragraph">
-<p>After the firewall rules are attached to Cloud Volumes ONTAP, the target tag is automatically added to the Cloud Volumes ONTAP nodes as <em>network tags</em>.</p>
-</div>
-</li>
-</ol>
-</div>
 </div>
 </div>
 </div>
