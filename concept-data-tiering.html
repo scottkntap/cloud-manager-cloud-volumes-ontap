@@ -1395,11 +1395,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:41:55 +0000">03/02/2022</time>
+    <time datetime="2022-04-21 18:57:57 +0000">04/21/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -1472,7 +1480,7 @@ Cloud Manager creates a single S3 bucket for each working environment and names 
 </dd>
 <dt class="hdlist1">Storage classes</dt>
 <dd>
-<p>The default storage class for tiered data in AWS is <em>Standard</em>. If you don&#8217;t plan to access the inactive data, you can reduce your storage costs by changing the storage class to one of the following: <em>Intelligent Tiering</em>, <em>One-Zone Infrequent Access</em>, or <em>Standard-Infrequent Access</em>. When you change the storage class, inactive data starts in the Standard storage class and transitions to the storage class that you selected, if the data is not accessed after 30 days.</p>
+<p>The default storage class for tiered data in AWS is <em>Standard</em>. If you don&#8217;t plan to access the inactive data, you can reduce your storage costs by changing the storage class to one of the following: <em>Intelligent Tiering</em>, <em>One-Zone Infrequent Access</em>, <em>Standard-Infrequent Access</em>, or <em>S3 Glacier Instant Retrieval</em>. When you change the storage class, inactive data starts in the Standard storage class and transitions to the storage class that you selected, if the data is not accessed after 30 days.</p>
 <div class="paragraph">
 <p>The access costs are higher if you do access the data, so take that into consideration before you change the storage class. <a href="https://aws.amazon.com/s3/storage-classes" target="_blank" rel="noopener">Learn more about Amazon S3 storage classes</a>.</p>
 </div>
