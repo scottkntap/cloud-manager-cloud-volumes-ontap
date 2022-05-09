@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP supports data encryption and provides protection against viruses and ransomware.">
-  <meta name="keywords" content=" security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, aws, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority, netapp volume encryption, nve, volume encryption, key management server, ransomware, fpolicy, snapshots"><!-- Icons -->
+  <meta name="keywords" content=" security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority, netapp volume encryption, nve, volume encryption, key management server, ransomware, fpolicy, snapshots"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Security](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-security.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-security.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/concept-security.html">
+  
+  <div class="custom-dropdown-select unselected" title="All cloud providers">
+    <label>Cloud provider</label>
+    <span>All cloud providers</span>
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-security.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/concept-security.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-security.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Security](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-security.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-security.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1397,11 +1429,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:41:55 +0000">03/02/2022</time>
+    <time datetime="2022-05-05 17:45:27 +0000">05/05/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -1437,7 +1477,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>You can use NetApp encryption solutions with native encryption from AWS, Azure, or GCP, which encrypt data at the hypervisor level. Doing so would provide double encryption, which might be desired for very sensitive data. When the encrypted data is accessed, it’s unencrypted twice—once at the hypervisor-level (using keys from the cloud provider) and then again using NetApp encryption solutions (using keys from an external key manager).</p>
+<p>You can use NetApp encryption solutions with native encryption from your cloud provider, which encrypts data at the hypervisor level. Doing so would provide double encryption, which might be desired for very sensitive data. When the encrypted data is accessed, it’s unencrypted twice—once at the hypervisor-level (using keys from the cloud provider) and then again using NetApp encryption solutions (using keys from an external key manager).</p>
 </div>
 <div class="sect2">
 <h3 id="netapp-encryption-solutions-nve-and-nae">NetApp encryption solutions (NVE and NAE)</h3>
@@ -1455,7 +1495,20 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Both NVE and NAE are supported with an external key manager. If you use NVE, you have the option to use Azure Key Vault (AKV) or the Google Cloud Key Management Service to protect ONTAP encryption keys.</p>
+<p>Both NVE and NAE are supported with an external key manager.</p>
+</div>
+<div class="paragraph">
+<p>If you use NVE, you have the option to use your cloud provider&#8217;s key vault to protect ONTAP encryption keys:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Azure Key Vault (AKV)</p>
+</li>
+<li>
+<p>Google Cloud Key Management Service</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>New aggregates have NetApp Aggregate Encryption (NAE) enabled by default after you set up an external key manager. New volumes that aren&#8217;t part of an NAE aggregate will have NetApp Volume Encryption (NVE) enabled by default (for example, if you have existing aggregates that were created before setting up an external key manager).</p>

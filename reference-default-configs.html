@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Default configuration for Cloud Volumes ONTAP](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-default-configs.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html">
+  
+  <div class="custom-dropdown-select unselected" title="All cloud providers">
+    <label>Cloud provider</label>
+    <span>All cloud providers</span>
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/reference-default-configs.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/reference-default-configs.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/reference-default-configs.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Default configuration for Cloud Volumes ONTAP](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-default-configs.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1397,11 +1429,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:41:55 +0000">03/02/2022</time>
+    <time datetime="2022-05-05 15:46:53 +0000">05/05/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -1415,13 +1455,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="defaults">Defaults</h2>
+<h2 id="default-setup">Default setup</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
-<li>
-<p>Cloud Volumes ONTAP is available as a single-node system and as an HA pair in AWS, Azure, and GCP.</p>
-</li>
 <li>
 <p>Cloud Manager creates one data-serving storage VM when it deploys Cloud Volumes ONTAP. Some configurations support additional storage VMs. <a href="task-managing-svms.html">Learn more about managing storage VMs</a>.</p>
 <div class="paragraph">
@@ -1473,10 +1510,19 @@
 <p>An intercluster LIF</p>
 </li>
 <li>
-<p>An SVM management LIF on HA systems in Azure and in GCP, on single node systems in AWS, and optionally on HA systems in multiple AWS Availability Zones</p>
+<p>An SVM management LIF on HA systems in Azure</p>
 </li>
 <li>
-<p>A node management LIF (in GCP, this LIF is combined with the intercluster LIF)</p>
+<p>An SVM management LIF on HA systems in Google Cloud</p>
+</li>
+<li>
+<p>An SVM management LIF on single node systems in AWS</p>
+</li>
+<li>
+<p>A node management LIF</p>
+<div class="paragraph">
+<p>In Google Cloud, this LIF is combined with the intercluster LIF.</p>
+</div>
 </li>
 <li>
 <p>An iSCSI data LIF</p>
@@ -1490,7 +1536,7 @@
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-LIF failover is disabled by default for Cloud Volumes ONTAP due to EC2 requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
+LIF failover is disabled by default for Cloud Volumes ONTAP due to cloud provider requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
 </td>
 </tr>
 </table>
@@ -1599,6 +1645,9 @@ UNIX for NFS volumes</p></td>
 <li>
 <p>For HA pairs, one EBS volume for the Mediator instance, which is approximately 8 GiB</p>
 </li>
+<li>
+<p>When you enable data encryption in AWS using the Key Management Service (KMS), the boot and root disks for Cloud Volumes ONTAP are encrypted, as well. This includes the boot disk for the mediator instance in an HA pair. The disks are encrypted using the CMK that you select when you create the working environment.</p>
+</li>
 </ul>
 </div>
 <div class="admonitionblock tip">
@@ -1643,6 +1692,9 @@ In AWS, NVRAM is on the boot disk.
 <li>
 <p>One Azure snapshot for each boot disk and root disk</p>
 </li>
+<li>
+<p>Boot and root disks are encrypted by default.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1665,6 +1717,9 @@ In AWS, NVRAM is on the boot disk.
 <li>
 <p>One Azure snapshot for each boot disk and root disk</p>
 </li>
+<li>
+<p>Boot and root disks are encrypted by default.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1686,6 +1741,9 @@ In AWS, NVRAM is on the boot disk.
 </li>
 <li>
 <p>Snapshots for boot and root data</p>
+</li>
+<li>
+<p>Boot and root disks are encrypted by default.</p>
 </li>
 </ul>
 </div>
@@ -1711,6 +1769,9 @@ In AWS, NVRAM is on the boot disk.
 </li>
 <li>
 <p>Snapshots for boot and root data</p>
+</li>
+<li>
+<p>Boot and root disks are encrypted by default.</p>
 </li>
 </ul>
 </div>
@@ -1738,15 +1799,6 @@ In AWS, NVRAM is on the boot disk.
 <p>Data volumes also reside in aggr1.</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="encryption">Encryption</h3>
-<div class="paragraph">
-<p>Boot and root disks are always encrypted in Azure and Google Cloud Platform because encryption is enabled by default in those cloud providers.</p>
-</div>
-<div class="paragraph">
-<p>When you enable data encryption in AWS using the Key Management Service (KMS), the boot and root disks for Cloud Volumes ONTAP are encrypted, as well. This includes the boot disk for the mediator instance in an HA pair. The disks are encrypted using the CMK that you select when you create the working environment.</p>
 </div>
 </div>
 </div>

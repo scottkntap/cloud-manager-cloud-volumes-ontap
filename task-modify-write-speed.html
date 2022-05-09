@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Modify system write speed](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-modify-write-speed.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-modify-write-speed.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/task-modify-write-speed.html">
+  
+  <div class="custom-dropdown-select unselected" title="All cloud providers">
+    <label>Cloud provider</label>
+    <span>All cloud providers</span>
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-modify-write-speed.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/task-modify-write-speed.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-modify-write-speed.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Modify system write speed](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-modify-write-speed.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-modify-write-speed.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1397,7 +1429,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-06 13:56:08 +0000">04/06/2022</time>
+    <time datetime="2022-04-15 20:10:15 +0000">04/15/2022</time>
     
   
 
@@ -1419,7 +1451,7 @@
 <p>Cloud Manager enables you to choose a normal or high write speed for Cloud Volumes ONTAP. The default write speed is normal. You can change to high write speed if fast write performance is required for your workload.</p>
 </div>
 <div class="paragraph">
-<p>High write speed is supported with all types of single node systems. It&#8217;s also supported with HA pairs in AWS and Azure when using a specific instance or VM type. High write speed is not supported with HA pairs in GCP. <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/" target="_blank" rel="noopener">Go to the Cloud Volumes ONTAP Release Notes for more details</a>.</p>
+<p>High write speed is supported with all types of single node systems and some HA pair configurations. View supported configurations in the <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/" target="_blank" rel="noopener">Cloud Volumes ONTAP Release Notes</a></p>
 </div>
 <div class="paragraph">
 <p>Before you change the write speed, you should <a href="concept-write-speed.html">understand the differences between the normal and high settings</a>.</p>

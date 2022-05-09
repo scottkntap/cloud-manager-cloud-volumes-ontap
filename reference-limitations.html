@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Known limitations](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-limitations.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html">
+  
+  <div class="custom-dropdown-select unselected" title="All cloud providers">
+    <label>Cloud provider</label>
+    <span>All cloud providers</span>
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/reference-limitations.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/reference-limitations.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/reference-limitations.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Known limitations](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-limitations.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1397,7 +1429,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-06 13:56:08 +0000">04/06/2022</time>
+    <time datetime="2022-04-19 19:14:46 +0000">04/19/2022</time>
     
   
 
@@ -1434,10 +1466,13 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="cloud-manager-doesnt-support-ontap-s3">Cloud Manager doesn&#8217;t support ONTAP S3</h2>
+<h2 id="cloud-manager-doesnt-support-s3-with-cloud-volumes-ontap">Cloud Manager doesn&#8217;t support S3 with Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While Cloud Volumes ONTAP in Azure supports objects using S3, Cloud Manager doesn&#8217;t provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the <a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html" target="_blank" rel="noopener">S3 Configuration Power Guide</a>.</p>
+<p>While Cloud Volumes ONTAP supports S3 as an option for scale-out storage in some cloud providers, Cloud Manager doesn&#8217;t provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the <a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html" target="_blank" rel="noopener">S3 Configuration Power Guide</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-client-protocols.html">Learn more about Cloud Volumes ONTAP support for S3 and other client protocols</a>.</p>
 </div>
 </div>
 </div>

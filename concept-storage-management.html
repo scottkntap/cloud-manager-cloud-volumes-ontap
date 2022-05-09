@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Storage management](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-storage-management.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html">
+  
+  <div class="custom-dropdown-select unselected" title="All cloud providers">
+    <label>Cloud provider</label>
+    <span>All cloud providers</span>
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-storage-management.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/concept-storage-management.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-storage-management.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Storage management](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-storage-management.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1397,7 +1429,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-26 18:43:07 +0000">03/26/2022</time>
+    <time datetime="2022-04-15 20:10:15 +0000">04/15/2022</time>
     
   
 
@@ -1545,18 +1577,18 @@ The Account Admin can modify free space thresholds from the <strong>Settings</st
 <div class="ulist">
 <ul>
 <li>
-<p>If an aggregate with 5 or fewer EBS disks reaches the capacity threshold, Cloud Manager automatically purchases new disks for that aggregate so volumes can continue to grow.</p>
+<p>If an aggregate reaches the capacity threshold and it has room for more disks, Cloud Manager automatically purchases new disks for that aggregate so volumes can continue to grow.</p>
 <div class="paragraph">
 <p>Cloud Manager checks the free space ratio every 15 minutes to determine if it needs to purchase additional disks.</p>
 </div>
 </li>
 <li>
-<p>If an aggregate with 12 Azure disks reaches the capacity threshold, Cloud Manager automatically moves a volume from that aggregate to an aggregate with available capacity or to a new aggregate.</p>
+<p>If an aggregate reaches the capacity threshold and it can&#8217;t support any additional disks, Cloud Manager automatically moves a volume from that aggregate to an aggregate with available capacity or to a new aggregate.</p>
 <div class="paragraph">
 <p>If Cloud Manager creates a new aggregate for the volume, it chooses a disk size that accommodates the size of that volume.</p>
 </div>
 <div class="paragraph">
-<p>Note that free space is now available on the original aggregate. Existing volumes or new volumes can use that space. The space can&#8217;t be returned to AWS, Azure, or GCP in this scenario.</p>
+<p>Note that free space is now available on the original aggregate. Existing volumes or new volumes can use that space. The space can&#8217;t be returned to the cloud provder in this scenario.</p>
 </div>
 </li>
 <li>

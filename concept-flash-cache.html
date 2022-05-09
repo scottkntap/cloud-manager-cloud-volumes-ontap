@@ -9,15 +9,15 @@
   <meta property="og:title" content="Flash Cache | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html" />
-	<meta property="og:description" content="Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance." />
+	<meta property="og:description" content="Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.">
-  <meta name="keywords" content=" cloud volumes ontap, aws, ec2, flash cache, read-intensive, read, random, databases, email, file services, c5d.4xlarge, c5d.9xlarge, r5d.2xlarge, compression, performance, azure, nvme, standard, l8s, vm type, virtual machine, m5d.8xlarge, m5d.12xlarge, c5d.18xlarge"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.">
+  <meta name="keywords" content=" cloud volumes ontap, flash cache, read-intensive, read, random, databases, email, file services, compression, performance, nvme"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Flash Cache](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-flash-cache.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html">
+  
+  <div class="custom-dropdown-select unselected" title="All cloud providers">
+    <label>Cloud provider</label>
+    <span>All cloud providers</span>
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-flash-cache.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/concept-flash-cache.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-flash-cache.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Flash Cache](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-flash-cache.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1397,11 +1429,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:41:55 +0000">03/02/2022</time>
+    <time datetime="2022-05-05 15:46:53 +0000">05/05/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -1410,7 +1450,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as <em>Flash Cache</em> for better performance.</p>
+<p>Some Cloud Volumes ONTAP configurations include local NVMe storage, which Cloud Volumes ONTAP uses as <em>Flash Cache</em> for better performance.</p>
 </div>
 </div>
 </div>
@@ -1423,40 +1463,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="supported-instances-in-aws">Supported instances in AWS</h2>
+<h2 id="supported-configurations">Supported configurations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Select one of the following EC2 instance types with a new or existing Cloud Volumes ONTAP Premium or BYOL system:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>c5d.4xlarge</p>
-</li>
-<li>
-<p>c5d.9xlarge</p>
-</li>
-<li>
-<p>c5d.18xlarge</p>
-</li>
-<li>
-<p>m5d.8xlarge</p>
-</li>
-<li>
-<p>m5d.12xlarge</p>
-</li>
-<li>
-<p>r5d.2xlarge</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="supported-vm-type-in-azure">Supported VM type in Azure</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Select the Standard_L8s_v2 VM type with a single node Cloud Volumes ONTAP BYOL system in Azure.</p>
+<p>Flash Cache is supported with specific Cloud Volumes ONTAP configurations. View supported configurations in the <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html" target="_blank" rel="noopener">Cloud Volumes ONTAP Release Notes</a></p>
 </div>
 </div>
 </div>

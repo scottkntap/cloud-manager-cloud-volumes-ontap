@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand your storage costs.">
-  <meta name="keywords" content=" storage, capacity, volumes, aggregates, raw capacity, usable capacity, aws, azure"><!-- Icons -->
+  <meta name="keywords" content=" storage, capacity, volumes, aggregates, raw capacity, usable capacity"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,39 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Disks and aggregates](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-storage.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html">
+  
+  <div class="custom-dropdown-select unselected" title="All cloud providers">
+    <label>Cloud provider</label>
+    <span>All cloud providers</span>
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-storage.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/concept-storage.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-storage.html">
+      <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Disks and aggregates](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-storage.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1397,7 +1429,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-07 17:39:32 +0000">04/07/2022</time>
+    <time datetime="2022-05-05 15:46:53 +0000">05/05/2022</time>
     
   
 
@@ -1573,10 +1605,10 @@ Tiering data to object storage is not recommended when using Throughput Optimize
 </div>
 </div>
 <div class="sect1">
-<h2 id="gcp-storage">GCP storage</h2>
+<h2 id="google-cloud-storage">Google Cloud storage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In GCP, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 64 TiB.</p>
+<p>In Google Cloud, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 64 TiB.</p>
 </div>
 <div class="paragraph">
 <p>The disk type can be either <em>Zonal SSD persistent disks</em>, <em>Zonal Balanced persistent disks</em>, or <em>Zonal standard persistent disks</em>. You can pair persistent disks with a Google Storage bucket to <a href="concept-data-tiering.html">tier inactive data to low-cost object storage</a>.</p>
@@ -1587,10 +1619,10 @@ Tiering data to object storage is not recommended when using Throughput Optimize
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://cloud.google.com/compute/docs/disks/" target="_blank" rel="noopener">Google Cloud Platform documentation: Storage Options</a></p>
+<p><a href="https://cloud.google.com/compute/docs/disks/" target="_blank" rel="noopener">Google Cloud documentation: Storage Options</a></p>
 </li>
 <li>
-<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html" target="_blank" rel="noopener">Review storage limits for Cloud Volumes ONTAP in GCP</a></p>
+<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html" target="_blank" rel="noopener">Review storage limits for Cloud Volumes ONTAP in Google Cloud</a></p>
 </li>
 </ul>
 </div>
