@@ -1384,7 +1384,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-05 17:17:53 +0000">05/05/2022</time>
+    <time datetime="2022-05-11 22:22:50 +0000">05/11/2022</time>
     
   
 
@@ -1438,38 +1438,48 @@ You don&#8217;t need to install a feature license to enable data tiering (Fabric
 <dt class="hdlist1">Performance tier</dt>
 <dd>
 <p>The performance tier can be General Purpose SSDs (gp3 or gp2) or Provisioned IOPS SSDs (io1).</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).</p>
 </div>
 </dd>
 <dt class="hdlist1">Capacity tier</dt>
 <dd>
-<p>A Cloud Volumes ONTAP system tiers inactive data to a single S3 bucket using the <em>Standard</em> storage class. Standard is ideal for frequently accessed data stored across multiple Availability Zones.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Cloud Manager creates a single S3 bucket for each working environment and names it fabric-pool-<em>cluster unique identifier</em>. A different S3 bucket is not created for each volume.
-</td>
-</tr>
-</table>
+<p>A Cloud Volumes ONTAP system tiers inactive data to a single S3 bucket.</p>
+<div class="paragraph">
+<p>Cloud Manager creates a single S3 bucket for each working environment and names it fabric-pool-<em>cluster unique identifier</em>. A different S3 bucket is not created for each volume.</p>
+</div>
+<div class="paragraph">
+<p>When Cloud Manager creates the S3 bucket, it uses the following default settings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Storage class: Standard</p>
+</li>
+<li>
+<p>Default encryption: Disabled</p>
+</li>
+<li>
+<p>Block public access: Block all public access</p>
+</li>
+<li>
+<p>Object ownership: ACLs enabled</p>
+</li>
+<li>
+<p>Bucket versioning: Disabled</p>
+</li>
+<li>
+<p>Object lock: Disabled</p>
+</li>
+</ul>
 </div>
 </dd>
 <dt class="hdlist1">Storage classes</dt>
 <dd>
-<p>The default storage class for tiered data in AWS is <em>Standard</em>. If you don&#8217;t plan to access the inactive data, you can reduce your storage costs by changing the storage class to one of the following: <em>Intelligent Tiering</em>, <em>One-Zone Infrequent Access</em>, <em>Standard-Infrequent Access</em>, or <em>S3 Glacier Instant Retrieval</em>. When you change the storage class, inactive data starts in the Standard storage class and transitions to the storage class that you selected, if the data is not accessed after 30 days.</p>
+<p>The default storage class for tiered data in AWS is <em>Standard</em>. Standard is ideal for frequently accessed data stored across multiple Availability Zones.</p>
+<div class="paragraph">
+<p>If you don&#8217;t plan to access the inactive data, you can reduce your storage costs by changing the storage class to one of the following: <em>Intelligent Tiering</em>, <em>One-Zone Infrequent Access</em>, <em>Standard-Infrequent Access</em>, or <em>S3 Glacier Instant Retrieval</em>. When you change the storage class, inactive data starts in the Standard storage class and transitions to the storage class that you selected, if the data is not accessed after 30 days.</p>
+</div>
 <div class="paragraph">
 <p>The access costs are higher if you do access the data, so take that into consideration before you change the storage class. <a href="https://aws.amazon.com/s3/storage-classes" target="_blank" rel="noopener">Learn more about Amazon S3 storage classes</a>.</p>
 </div>

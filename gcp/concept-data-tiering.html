@@ -1373,7 +1373,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-05 17:17:53 +0000">05/05/2022</time>
+    <time datetime="2022-05-11 22:22:50 +0000">05/11/2022</time>
     
   
 
@@ -1430,18 +1430,34 @@ You don&#8217;t need to install a feature license to enable data tiering (Fabric
 </dd>
 <dt class="hdlist1">Capacity tier</dt>
 <dd>
-<p>A Cloud Volumes ONTAP system tiers inactive data to a single Google Cloud Storage bucket using the <em>Regional</em> storage class.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Cloud Manager creates a single bucket for each working environment and names it fabric-pool-<em>cluster unique identifier</em>. A different bucket is not created for each volume.
-</td>
-</tr>
-</table>
+<p>A Cloud Volumes ONTAP system tiers inactive data to a single Google Cloud Storage bucket.</p>
+<div class="paragraph">
+<p>Cloud Manager creates a bucket for each working environment and names it fabric-pool-<em>cluster unique identifier</em>. A different bucket is not created for each volume.</p>
+</div>
+<div class="paragraph">
+<p>When Cloud Manager creates the bucket, it uses the following default settings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Location type: Region</p>
+</li>
+<li>
+<p>Storage class: Standard</p>
+</li>
+<li>
+<p>Public access: Subject to object ACLs</p>
+</li>
+<li>
+<p>Access control: Fine-grained</p>
+</li>
+<li>
+<p>Protection: None</p>
+</li>
+<li>
+<p>Data encryption: Google-managed key</p>
+</li>
+</ul>
 </div>
 </dd>
 <dt class="hdlist1">Storage classes</dt>

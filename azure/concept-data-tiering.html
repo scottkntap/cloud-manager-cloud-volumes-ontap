@@ -1375,7 +1375,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-05 17:17:53 +0000">05/05/2022</time>
+    <time datetime="2022-05-11 22:22:50 +0000">05/11/2022</time>
     
   
 
@@ -1432,23 +1432,48 @@ You don&#8217;t need to install a feature license to enable data tiering (Fabric
 </dd>
 <dt class="hdlist1">Capacity tier</dt>
 <dd>
-<p>A Cloud Volumes ONTAP system tiers inactive data to a single Blob container using the Azure <em>hot</em> storage tier. The hot tier is ideal for frequently accessed data.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Cloud Manager creates a new storage account with a single container for each Cloud Volumes ONTAP working environment. The name of the storage account is random. A different container is not created for each volume.
-</td>
-</tr>
-</table>
+<p>A Cloud Volumes ONTAP system tiers inactive data to a single Blob container.</p>
+<div class="paragraph">
+<p>Cloud Manager creates a new storage account with a container for each Cloud Volumes ONTAP working environment. The name of the storage account is random. A different container is not created for each volume.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Manager creates the storage account with the following settings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Access tier: Hot</p>
+</li>
+<li>
+<p>Performance: Standard</p>
+</li>
+<li>
+<p>Redundancy: Locally-redundant storage (LRS)</p>
+</li>
+<li>
+<p>Account: StorageV2 (general purpose v2)</p>
+</li>
+<li>
+<p>Require secure transfer for REST API operations: Enabled</p>
+</li>
+<li>
+<p>Storage account key access: Enabled</p>
+</li>
+<li>
+<p>Minimum TLS version: Version 1.2</p>
+</li>
+<li>
+<p>Infrastructure encryption: Disabled</p>
+</li>
+</ul>
 </div>
 </dd>
 <dt class="hdlist1">Storage access tiers</dt>
 <dd>
-<p>The default storage access tier for tiered data in Azure is the <em>hot</em> tier. If you don&#8217;t plan to access the inactive data, you can reduce your storage costs by changing to the <em>cool</em> storage tier. When you change the storage tier, inactive data starts in the hot storage tier and transitions to the cool storage tier, if the data is not accessed after 30 days.</p>
+<p>The default storage access tier for tiered data in Azure is the <em>hot</em> tier. The hot tier is ideal for frequently accessed data.</p>
+<div class="paragraph">
+<p>If you don&#8217;t plan to access the inactive data, you can reduce your storage costs by changing to the <em>cool</em> storage tier. When you change the storage tier, inactive data starts in the hot storage tier and transitions to the cool storage tier, if the data is not accessed after 30 days.</p>
+</div>
 <div class="paragraph">
 <p>The access costs are higher if you do access the data, so take that into consideration before you change the storage tier. <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers" target="_blank" rel="noopener">Learn more about Azure Blob storage access tiers</a>.</p>
 </div>
