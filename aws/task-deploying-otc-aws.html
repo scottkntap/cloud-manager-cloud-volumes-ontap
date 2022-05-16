@@ -503,6 +503,8 @@
 
 
 
+
+
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
   <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-deploying-otc-aws.pdf" >
     <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
@@ -552,6 +554,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -576,6 +580,8 @@
             Get started in Google Cloud
           </a>
           
+
+
 
 
 
@@ -993,6 +999,8 @@
           </a>
           
 
+
+
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -1062,8 +1070,6 @@
     
 
   
-
-
 
 
 
@@ -1189,8 +1195,10 @@
         Security group rules for AWS
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-setting-up-kms.html">
         Set up the AWS KMS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-set-up-licensing-aws.html">
+        Set up licensing
       </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-deploying-otc-aws.html">
-        Launch a system in AWS
+        Launch Cloud Volumes ONTAP in AWS
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-getting-started-aws-c2s.html">
         Get started in AWS C2S
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
@@ -1284,7 +1292,9 @@
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Concepts</div>
       </a>
-      <ul><li class="subfolders "><a href="#">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-licensing.html">
+        Licensing
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Storage</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-client-protocols.html">
@@ -1308,18 +1318,16 @@
         HA pairs in AWS
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-degraded-ha-pair.html">
         Actions during storage takeover
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-licensing.html">
-        Licensing
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-license-management.html">
-        Management of node-based BYOL
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-security.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-security.html">
         Security
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-performance.html">
         Performance
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-license-management.html">
+        Management of node-based BYOL
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-active-iq.html">
         AutoSupport and Active IQ Digital Advisor
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/reference-default-configs.html">
-        Default configuration
+        Default configurations
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
@@ -1384,7 +1392,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-12 17:10:49 +0000">04/12/2022</time>
+    <time datetime="2022-05-16 15:57:11 +0000">05/16/2022</time>
     
   
 
@@ -1437,69 +1445,16 @@
 </div>
 </li>
 <li>
+<p>An understanding of what&#8217;s required to set up licensing for Cloud Volumes ONTAP.</p>
+<div class="paragraph">
+<p><a href="task-set-up-licensing-aws.html">Learn how to set up licensing</a>.</p>
+</div>
+</li>
+<li>
 <p>DNS and Active Directory for CIFS configurations.</p>
 <div class="paragraph">
 <p>For details, see <a href="reference-networking-aws.html">Networking requirements for Cloud Volumes ONTAP in AWS</a>.</p>
 </div>
-</li>
-<li>
-<p>An understanding of what&#8217;s required to choose a specific licensing option in the Add Working Environment wizard. <a href="concept-licensing.html">Learn more about Cloud Volumes ONTAP licensing</a>.</p>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Licensing option</th>
-<th class="tableblock halign-left valign-top">Requirement</th>
-<th class="tableblock halign-left valign-top">How to meet the requirement</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Freemium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Marketplace subscription or NetApp Support Site (NSS) account is required.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You&#8217;ll have the option to subscribe to your cloud provider&#8217;s marketplace from the <strong>Details &amp; Credentials</strong> page.<br>
-<br>
-You can enter your NSS account on the <strong>Charging Methods and NSS Account</strong> page.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Professional or Essential package</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Marketplace subscription or capacity-based license (BYOL) is required.<br>
-<br>
-A Marketplace subscription is recommended for capacity-based charging in the event that your account doesn&#8217;t have a valid capacity-based license, or in the event that your provisioned capacity exceeds the licensed capacity.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">You&#8217;ll have the option to subscribe to your cloud provider&#8217;s marketplace from the <strong>Details &amp; Credentials</strong> page.<br>
-<br>
-If you want to use a capacity-based license (BYOL) that you purchased from NetApp, you must first add it to the <strong>Digital Wallet</strong>. <a href="task-manage-capacity-licenses.html">Learn how to add capacity-based BYOL licenses</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Keystone Flex Subscription</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your account must be authorized and the subscription must be enabled for use with Cloud Volumes ONTAP.</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><a href="mailto:ng-keystone-success@netapp.com">Contact NetApp</a> to authorize your Cloud Manager user account with one or more Keystone Flex Subscriptions.</p>
-</li>
-<li>
-<p>After NetApp authorizes your account, <a href="task-manage-keystone.html#link-a-subscription">link your subscriptions for use with Cloud Volumes ONTAP</a>.</p>
-</li>
-<li>
-<p>Select the Keystone Flex Subscription charging method when you create a Cloud Volumes ONTAP HA pair.</p>
-</li>
-</ol>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Per node licensing</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Marketplace subscription is required or you need to bring your own license (BYOL). This option is available for customers with existing subscriptions or existing licenses. It&#8217;s not available for new customers.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want to use a node-based license (BYOL) that you purchased from NetApp, you must first add it to the <strong>Digital Wallet</strong>. <a href="task-manage-node-licenses.html#obtain-a-system-license-file">Learn how to add node-based BYOL licenses</a>.<br>
-<br>
-You can enter your NSS account on the <strong>Charging Methods and NSS Account</strong> page.</p></td>
-</tr>
-</tbody>
-</table>
 </li>
 </ul>
 </div>
@@ -1651,10 +1606,10 @@ You can&#8217;t change the AWS data encryption method after you create a Cloud V
 <div class="ulist">
 <ul>
 <li>
-<p><a href="concept-licensing.html">Learn about these charging methods</a>.</p>
+<p><a href="concept-licensing.html">Learn about licensing options for Cloud Volumes ONTAP</a>.</p>
 </li>
 <li>
-<p><a href="task-deploying-otc-aws.html#licensing">Learn what&#8217;s required in the wizard for the licensing method that you want to use.</a></p>
+<p><a href="task-set-up-licensing-aws.html">Learn how to set up licensing</a>.</p>
 </li>
 </ul>
 </div>
@@ -2066,10 +2021,10 @@ You can&#8217;t change the AWS data encryption method after you create a Cloud V
 <div class="ulist">
 <ul>
 <li>
-<p><a href="concept-licensing.html">Learn about these charging methods</a>.</p>
+<p><a href="concept-licensing.html">Learn about licensing options for Cloud Volumes ONTAP</a>.</p>
 </li>
 <li>
-<p><a href="task-deploying-otc-aws.html#licensing">Learn what&#8217;s required in the wizard for the licensing method that you want to use</a>.</p>
+<p><a href="task-set-up-licensing-aws.html">Learn how to set up licensing</a>.</p>
 </li>
 </ul>
 </div>
