@@ -1441,7 +1441,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-02 15:03:18 +0000">05/02/2022</time>
+    <time datetime="2022-05-19 11:04:02 +0000">05/19/2022</time>
     
   
 
@@ -2172,46 +2172,47 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Intercluster communications (Cloud Volumes ONTAP HA only)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DHCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">68</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP client for first-time setup</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DHCPS</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DHCPS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">67</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DHCP server</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF and data LIF (NFS, CIFS)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NDMP</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NDMP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">18600–18699</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Destination servers</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NDMP copy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMTP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mail server</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SMTP alerts, can be used for AutoSupport</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">SNMP</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">161</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
@@ -2238,9 +2239,9 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Monitor server</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Monitoring by SNMP traps</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">SnapMirror</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">11104</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Intercluster LIF</p></td>
@@ -2253,7 +2254,14 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Intercluster LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP intercluster LIFs</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SnapMirror data transfer</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Syslog</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">514</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Syslog server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Syslog forward messages</p></td>
 </tr>
 </tbody>
 </table>
