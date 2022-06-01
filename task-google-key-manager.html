@@ -776,19 +776,6 @@
 
 
 
-
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-google-key-manager.pdf" >
-    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
-
-
-
           
         </li>
       </ul>
@@ -1296,13 +1283,9 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
         Manage keys with Azure Key Vault
       </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
-        Manage keys with Google Cloud Key Manager Service
+        Manage keys with Google Cloud KMS
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         Improve ransomware protection
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
-        Enable Azure Key Vault
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
-        Enable Google Cloud Key Manager Service
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> System administration</div>
       </a>
@@ -1466,7 +1449,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 15:55:17 +0000">06/01/2022</time>
+    <time datetime="2022-06-01 16:31:34 +0000">06/01/2022</time>
     
   
 
@@ -1601,9 +1584,17 @@
 <h2 id="troubleshoot">Troubleshoot</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you need to troubleshoot, you can tail the raw REST API logs in the final two steps above:<br>
-. <code>set d</code><br>
-. <code>systemshell -node <em>node</em> -command tail -f /mroot/etc/log/mlog/kmip2_client.log</code></p>
+<p>If you need to troubleshoot, you can tail the raw REST API logs in the final two steps above:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>set d</code></p>
+</li>
+<li>
+<p><code>systemshell -node <em>node</em> -command tail -f /mroot/etc/log/mlog/kmip2_client.log</code></p>
+</li>
+</ol>
 </div>
 </div>
 </div>
