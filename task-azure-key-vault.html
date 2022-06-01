@@ -182,13 +182,13 @@
   <ul class="custom-dropdown-menu">
     
     
-    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-azure-key-vault.html">
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
     </li>
     
     
     
-    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/task-azure-key-vault.html">
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
     </li>
     
@@ -760,6 +760,19 @@
           
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-azure-key-vault.pdf" >
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
 
 
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
@@ -1280,6 +1293,10 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">
         Encrypt volumes with NetApp encryption
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
+        Manage keys with Azure Key Vault
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
+        Manage keys with Google Cloud Key Manager Service
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         Improve ransomware protection
       </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
@@ -1449,7 +1466,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-02 21:29:54 +0000">05/02/2022</time>
+    <time datetime="2022-06-01 15:55:17 +0000">06/01/2022</time>
     
   
 
@@ -1459,6 +1476,14 @@
           alt="netapp-ahibbard"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1473,7 +1498,7 @@
 <p>You can use <a href="https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts" target="_blank" rel="noopener">Azure Key Vault (AKV)</a> to protect your ONTAP encryption keys in an Azure-deployed application.</p>
 </div>
 <div class="paragraph">
-<p>AKV and Cloud KMS can be used to protect <a href="configure-netapp-volume-encryption-concept.html">NetApp Volume Encryption (NVE) keys</a> only for data SVMs.</p>
+<p>AKV can be used to protect <a href="https://docs.netapp.com/us-en/ontap/configure-netapp-volume-encryption-concept.html" target="_blank" rel="noopener">NetApp Volume Encryption (NVE) keys</a> only for data SVMs.</p>
 </div>
 <div class="paragraph">
 <p>Key management with AKV can be enabled with the CLI or the ONTAP REST API.</p>
@@ -1488,10 +1513,7 @@
 <p>Cloud Volumes ONTAP must be running version 9.10.1 or later</p>
 </li>
 <li>
-<p>The Cloud Volumes ONTAP cluster&#8217;s nodes must support NVE</p>
-</li>
-<li>
-<p>Volume Encryption (VE) license installed</p>
+<p>Volume Encryption (VE) license installed (NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support.)</p>
 </li>
 <li>
 <p>Multi-tenant Encryption Key Management (MTEKM) license installed</p>
@@ -1508,12 +1530,6 @@
 <div class="title">Limitations</div>
 <ul>
 <li>
-<p>AKV is not available for NSE and NAE keys</p>
-</li>
-<li>
-<p>AKV is not available for MetroCluster configurations.</p>
-</li>
-<li>
 <p>AKV can only be configured on a data SVM</p>
 </li>
 </ul>
@@ -1523,8 +1539,170 @@
 <div class="sect1">
 <h2 id="configuration-process">Configuration process</h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<div class="title">ONTAP configuration</div>
+<div class="paragraph">
+<p>The outlined steps capture how to register your Cloud Volumes ONTAP configuration with Azure and how to create an Azure Key Vault and keys. If you have already completed these steps, ensure you have the correct configuration settings, particularly in <a href="#create-akv">Create an Azure Key Vault</a>, and then proceed to <a href="#ontap">Cloud Volumes ONTAP configuration</a>.<br>
+* <a href="#azure-app">Azure Application Registration</a><br>
+* <a href="#secret">Create Azure client secret</a><br>
+* <a href="#create-akv">Create an Azure Key Vault</a><br>
+* <a href="#key">Create encryption key</a><br>
+* <a href="#AAD">Create an Azure Active Directory Endpoint (HA only)</a><br>
+* <a href="#ontap">Cloud Volumes ONTAP configuration</a></p>
+</div>
+<div id="azure-app" class="olist arabic">
+<div class="title">Azure Application Registration</div>
+<ol class="arabic">
+<li>
+<p>You must first register your application in the Azure subscription that you want the Cloud Volumes ONTAP to use for access the Azure Key Vault. Within the Azure portal, select <strong>App registrations</strong>.</p>
+</li>
+<li>
+<p>Select <strong>New registration</strong>.</p>
+</li>
+<li>
+<p>Provide a name for your application and select a supported application type. The default single tenant suffices for Azure Key Vault usage. Select <strong>Register</strong>.</p>
+</li>
+<li>
+<p>In the Azure Overview window, select the application you have registered. Copy the <strong>application (client) ID</strong> and the <strong>directory (tenant) ID</strong> to a secure location. They will be required later in the registration process.</p>
+</li>
+</ol>
+</div>
+<div id="secret" class="olist arabic">
+<div class="title">Create Azure client secret</div>
+<ol class="arabic">
+<li>
+<p>In the Azure portal for your Cloud Volumes ONTAP application, select the <strong>Ceritificates &amp; secrets</strong> pane.</p>
+</li>
+<li>
+<p>Select <strong>New client secret</strong> Enter a meaningful name for your client secret. NetApp recommends a 24-month expiration period, however your specific cloud governance policies may require a different setting.</p>
+</li>
+<li>
+<p>Select <strong>Add</strong> to save the client secret.	Immediately copy the <strong>Value</strong> of the secret and store it somewhere secure for future configuration. The secret value will not be displayed after you navigate away from the page.</p>
+</li>
+</ol>
+</div>
+<div id="create-akv" class="olist arabic">
+<div class="title">Create an Azure Key Vault</div>
+<ol class="arabic">
+<li>
+<p>If you have an existing Azure Key Vault, you can connect it to your Cloud Volumes ONTAP configuration, however you must adapt the access policies to the settings in this process.</p>
+</li>
+<li>
+<p>In the Azure portal, navigate to the <strong>Key Vaults</strong> section.</p>
+</li>
+<li>
+<p>Select <strong>Create</strong>. Enter the required information including resource group, region and pricing tier and make selections for the days to retain deleted vaults and whether or not purge protection is enabled. For the purposes of this configuration, defaults are sufficient, however your specific cloud governance policies may require different settings.</p>
+</li>
+<li>
+<p>Select <strong>Next</strong> to choose an access policy.</p>
+</li>
+<li>
+<p>Select <strong>Azure Disk Encryption</strong> for the volume encryption option and <strong>Vault access policy</strong> for the permission model.</p>
+</li>
+<li>
+<p>Select <strong>Add Access Policy</strong>.</p>
+</li>
+<li>
+<p>Select the caret adjacent to the <strong>Configure from template (optional)</strong> field. Then, select <strong>Key, Secret, &amp; Certification Management.</strong></p>
+</li>
+<li>
+<p>Choose each of the drop-down permissions menus (key, secret, certificate) and then <strong>Select all </strong> at the top of the menu list to select all the permissions available. You should have:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Key permissions</strong>: 19 selected</p>
+</li>
+<li>
+<p><strong>Secret permissions</strong>: 8 selected</p>
+</li>
+<li>
+<p><strong>Certificate permissions</strong>: 16 selected</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select <strong>Add</strong> to create the access policy.</p>
+</li>
+<li>
+<p>Select <strong>Next</strong> to advance to <strong>Networking</strong> options.</p>
+</li>
+<li>
+<p>Choose the appropriate network access method or select <strong>All networks</strong> and <strong>Review + Create</strong> to create the key vault. (Network access method may be prescribed by a governance policy or your corporate cloud security team.)</p>
+</li>
+<li>
+<p>Record the Key Vault URI: In the key vault you created, navigate to the Overview menu and copy the <strong>Vault URI</strong> from the right-hand column. You will need this for a later step.</p>
+</li>
+</ol>
+</div>
+<div id="key" class="olist arabic">
+<div class="title">Create encryption key</div>
+<ol class="arabic">
+<li>
+<p>In the menu for the Key Vault you have created for Cloud Volumes ONTAP, navigate to the <strong>Keys</strong> option.</p>
+</li>
+<li>
+<p>Select <strong>Generate/import</strong> to create a new key.</p>
+</li>
+<li>
+<p>Leave the default option set to <strong>Generate</strong>.</p>
+</li>
+<li>
+<p>Provide the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Encryption key name</p>
+</li>
+<li>
+<p>Key type: RSA</p>
+</li>
+<li>
+<p>RSA key size: 2048</p>
+</li>
+<li>
+<p>Enabled:  Yes</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select <strong>Create</strong> to create the encryption key.</p>
+</li>
+<li>
+<p>Return to the <strong>Keys</strong> menu and select the key you just created.</p>
+</li>
+<li>
+<p>Select the key ID under <strong>Current version</strong> to view the key properties.</p>
+</li>
+<li>
+<p>Locate the <strong>Key Identifier</strong> field. Copy the URI up to but not including the hexadecimal string.</p>
+</li>
+</ol>
+</div>
+<div id="AAD" class="olist arabic">
+<div class="title">Create an Azure Active Directory Endpoint (HA only)</div>
+<ol class="arabic">
+<li>
+<p>This process is only required if you are configuring Azure Key Vault for an HA Cloud Volumes ONTAP Working Environment.</p>
+</li>
+<li>
+<p>In the Azure portal navigate to <strong>Virtual Networks</strong>.</p>
+</li>
+<li>
+<p>Select the Virtual Network where you deployed the Cloud Volumes ONTAP working environment and select the <strong>Subnets</strong> menu on the left side of the page.</p>
+</li>
+<li>
+<p>Select the subnet name for you Cloud Volumes ONTAP deployment from the list.</p>
+</li>
+<li>
+<p>Navigate to the <strong>Service Endpoints</strong> heading. In the dropdown menu, select <strong>Microsoft.AzureActiveDirectory</strong> from the list.</p>
+</li>
+<li>
+<p>Select <strong>Save</strong> to capture your settings.</p>
+</li>
+</ol>
+</div>
+<div id="ontap" class="olist arabic">
+<div class="title">Cloud Volumes ONTAP configuration</div>
 <ol class="arabic">
 <li>
 <p>Connect to the cluster management LIF with your preferred SSH client.</p>
@@ -1588,9 +1766,15 @@ The <code>kms_wrapped_key_status</code> will report <code>UNKNOWN</code> at init
 </li>
 <li>
 <p>OPTIONAL: Create a test volume to verify the functionality of AKV.<br>
-<code>vol create -vserver <em>SVM_name</em> -volume <em>volume_name</em> -aggregate <em>aggr</em> -size <em>size</em> -state online -policy default</code><br>
-If configured correctly, ONTAP will automatically create the volume and enable volume encryption.</p>
+<code>vol create -vserver <em>SVM_name</em> -volume <em>volume_name</em> -aggregate <em>aggr</em> -size <em>size</em> -state online -policy default</code></p>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If configured correctly, Cloud Volumes ONTAP will automatically create the volume and enable volume encryption.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Confirm the volume was created and encrypted correctly. If it is, the <code>-is-encrypted</code> parameter will display as <code>true</code>.<br>
 <code>vol show -vserver <em>SVM_name</em> -fields is-encrypted</code></p>

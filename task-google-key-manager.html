@@ -182,7 +182,7 @@
   <ul class="custom-dropdown-menu">
     
     
-    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-google-key-manager.html">
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
     </li>
     
@@ -194,7 +194,7 @@
     
     
     
-    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-google-key-manager.html">
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
     </li>
     
@@ -762,6 +762,19 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/pages/task-google-key-manager.pdf" >
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
 
 
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
@@ -1280,6 +1293,10 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">
         Encrypt volumes with NetApp encryption
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
+        Manage keys with Azure Key Vault
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
+        Manage keys with Google Cloud Key Manager Service
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         Improve ransomware protection
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
@@ -1449,7 +1466,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-02 21:29:54 +0000">05/02/2022</time>
+    <time datetime="2022-06-01 15:55:17 +0000">06/01/2022</time>
     
   
 
@@ -1459,6 +1476,14 @@
           alt="netapp-ahibbard"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1473,7 +1498,7 @@
 <p>You can use <a href="https://cloud.google.com/kms/docs" target="_blank" rel="noopener">Google Cloud Platform&#8217;s Key Management Service (Cloud KMS)</a> to protect your ONTAP encryption keys in a Google Cloud Platform-deployed application.</p>
 </div>
 <div class="paragraph">
-<p>Key management Cloud KMS can be enabled with the CLI or the ONTAP REST API. To configure Cloud KMS for Cloud Volumes ONTAP, you must first</p>
+<p>Key management with Cloud KMS can be enabled with the CLI or the ONTAP REST API.</p>
 </div>
 <div class="paragraph">
 <p>When using Cloud KMS, be aware that by default a data SVMs LIF is used to communicate with the cloud key management endpoint. A node management network is used to communicate with the cloud provider&#8217;s authentication services (oauth2.googleapis.com). If the cluster network is not configured correctly, the cluster will not properly utilize the key management service.</p>
@@ -1482,7 +1507,7 @@
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>The Cloud Volumes ONTAP cluster&#8217;s nodes must support NVE</p>
+<p>Cloud Volumes ONTAP must be running version 9.10.1 or later</p>
 </li>
 <li>
 <p>Volume Encryption (VE) license installed</p>
@@ -1493,54 +1518,46 @@
 <li>
 <p>You must be a cluster or SVM administrator</p>
 </li>
+<li>
+<p>An active Google Cloud Platform subscription</p>
+</li>
 </ul>
 </div>
 <div class="ulist">
 <div class="title">Limitations</div>
 <ul>
 <li>
-<p>Cloud Volumes ONTAP must be running version 9.10.1 or later</p>
-</li>
-<li>
-<p>Cloud KMS is not available for NSE and NAE.</p>
-</li>
-<li>
-<p>Cloud KMS is not available for MetroCluster configurations.</p>
-</li>
-<li>
 <p>Cloud KMS can only be configured on a data SVM</p>
-</li>
-<li>
-<p>An active Google Cloud Platform subscription</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration">Configuration</h2>
+<div class="sectionbody">
 <div class="olist arabic">
-<div class="title">Enable</div>
+<div class="title">Google Cloud</div>
 <ol class="arabic">
 <li>
-<p>In your Google Cloud environment:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Create a symmetric GCP key ring and key:</p>
+<p>In your Google Cloud environment, <a href="https://cloud.google.com/kms/docs/creating-keys" target="_blank" rel="noopener">create a symmetric GCP key ring and key</a>.</p>
 </li>
 <li>
-<p>Create a custom role for your Cloud Volumes ONTAP service account:<br>
-<code>gcloud iam roles create kmsCustomRole<br>
-    --project=<em>project_id</em><br>
-    --title=<em>kms_custom_role_name</em><br>
-    --description=<em>custom_role_description</em><br>
-    --permissions=cloudkms.cryptoKeyVersions.get,cloudkms.cryptoKeyVersions.list,cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get<br>
-    --stage=GA</code> //does it have to be GA?</p>
+<p>Create a custom role for your Cloud Volumes ONTAP service account.</p>
+<div class="listingblock">
+<div class="content">
+<pre>gcloud iam roles create kmsCustomRole
+    --project=&lt;project_id&gt;
+    --title=&lt;kms_custom_role_name&gt;
+    --description=&lt;custom_role_description&gt;
+    --permissions=cloudkms.cryptoKeyVersions.get,cloudkms.cryptoKeyVersions.list,cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get
+    --stage=GA</pre>
+</div>
+</div>
 </li>
 <li>
 <p>Assign the custom role to the Cloud KMS key and Cloud Volumes ONTAP service account:<br>
-<code>gcloud kms keys add-iam-policy-binding ${<em>key_name</em>}<br>
-    --keyring ${<em>key_ring_name</em>}<br>
-    --location ${<em>key_location</em>}<br>
-    --member serviceAccount:${<em>service_account_Name</em>}<br>
-    --role projects/<em>&lt;customer_project_id&gt;</em>/roles/kmsCustomRole</code></p>
+<code>gcloud kms keys add-iam-policy-binding <em>key_name</em> --keyring <em>key_ring_name</em> --location <em>key_location</em> --member serviceAccount:_service_account_Name_ --role projects/<em>customer_project_id</em>/roles/kmsCustomRole</code></p>
 </li>
 <li>
 <p>Download service account JSON key:<br>
@@ -1548,18 +1565,19 @@
 </li>
 </ol>
 </div>
-</li>
+<div class="olist arabic">
+<div class="title">Cloud Volumes ONTAP</div>
+<ol class="arabic">
 <li>
-<p>Switch to your Cloud Volumes ONTAP environment:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<p>Connect to the cluster management LIF with your preferred SSH client.</p>
+</li>
 <li>
 <p>Switch to the advanced privilege level:<br>
 <code>set -privilege advanced</code></p>
 </li>
 <li>
 <p>Create a DNS for the data SVM.<br>
-<code>dns create -domains c.<em><a href="#project">[project]</a></em>.internal -name-servers <em>server_address</em> -vserver <em>SVM_name</em></code></p>
+<code>dns create -domains c.<em>&lt;project&gt;</em>.internal -name-servers <em>server_address</em> -vserver <em>SVM_name</em></code></p>
 </li>
 <li>
 <p>Create CMEK entry:<br>
@@ -1573,10 +1591,7 @@
 <code>security key-manager external gcp check -vserver <em>svm_name</em></code></p>
 </li>
 <li>
-<p>OPTIONAL: Create a volume to test encryption <code>vol create <em>volume_name</em>&gt; -aggregate <em>aggregate</em> -vserver <em>vserver_name</em> -size 10G</code></p>
-</li>
-</ol>
-</div>
+<p>OPTIONAL: Create a volume to test encryption <code>vol create <em>volume_name</em> -aggregate <em>aggregate</em> -vserver <em>vserver_name</em> -size 10G</code></p>
 </li>
 </ol>
 </div>
