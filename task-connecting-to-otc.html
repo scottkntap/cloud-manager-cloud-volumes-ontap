@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Use System Manager or the CLI | NetApp Documentation</title>
+  <title>Administer Cloud Volumes ONTAP from the CLI | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Use System Manager or the CLI | NetApp Documentation" />
+  <meta property="og:title" content="Administer Cloud Volumes ONTAP from the CLI | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" />
-	<meta property="og:description" content="If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager or the command line interface." />
+	<meta property="og:description" content="The Cloud Volumes ONTAP CLI enables you to run all administrative commands and is a good choice for advanced tasks or if you are more comfortable using the C..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager or the command line interface.">
-  <meta name="keywords" content=" system manager, connecting, cli, command, command line, connect, shell, interface"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="The Cloud Volumes ONTAP CLI enables you to run all administrative commands and is a good choice for advanced tasks or if you are more comfortable using the C...">
+  <meta name="keywords" content=" connecting, cli, command, command line, connect, shell, interface"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -201,7 +201,7 @@
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Use System Manager or the CLI](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-connecting-to-otc.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Administer Cloud Volumes ONTAP from the CLI](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-connecting-to-otc.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -309,35 +309,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-cloud-volumes-ontap/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -392,8 +384,6 @@
         
         <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/fullsite-sidebar/Cloud_Volumes_ONTAP_documentation.pdf" >
           <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
-
-
 
 
 
@@ -481,6 +471,8 @@
             Set up your networking
           </a>
           
+
+
 
 
 
@@ -734,6 +726,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -843,11 +837,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Administration_in_AWS.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/AWS_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Administration in AWS
+            AWS administration
           </a>
           
 
@@ -874,11 +868,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Administration_in_Azure.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Azure_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Administration in Azure
+            Azure administration
           </a>
           
 
@@ -905,11 +899,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Administration_in_Google_Cloud.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Google_Cloud_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Administration in Google Cloud
+            Google Cloud administration
           </a>
           
 
@@ -921,6 +915,8 @@
     
 
   
+
+
 
 
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
@@ -1015,6 +1011,8 @@
             Storage
           </a>
           
+
+
 
 
 
@@ -1157,10 +1155,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
-        All Cloud Manager documentation
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/index.html">
         Cloud Volumes ONTAP docs
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Release notes</div>
@@ -1190,6 +1188,8 @@
         Networking requirements
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html">
         Set up an AWS transit gateway
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploy-aws-shared-vpc.html">
+        Deploy an HA pair in a shared subnet
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
         Security group rules for AWS
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
@@ -1275,6 +1275,8 @@
         Create storage VMs in AWS
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html">
         Create storage VMs in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html">
+        Create storage VMs in Google Cloud
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Security and data encryption</div>
       </a>
@@ -1311,7 +1313,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html">
         Delete a system
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Administration in AWS</div>
+        <div class="na-navbar-padding"> AWS administration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html">
         Change the EC2 instance type
@@ -1320,7 +1322,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html">
         Monitor AWS costs
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Administration in Azure</div>
+        <div class="na-navbar-padding"> Azure administration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-azure-vm.html">
         Change the Azure VM type
@@ -1329,12 +1331,14 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
         Use an Azure Private Link
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Administration in Google Cloud</div>
+        <div class="na-navbar-padding"> Google Cloud administration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html">
         Change the machine type
-      </a></li></ul></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
-        Administration from System Manager or CLI
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">
+        Administration from System Manager
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
+        Administration from the CLI
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> System health and events</div>
       </a>
@@ -1354,6 +1358,8 @@
         Client protocols
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         Disks and aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">
+        Elastic Volumes in AWS
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html">
         Data tiering
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html">
@@ -1442,14 +1448,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Use System Manager or the CLI</h1>
+  <h1 class="n-doc__component-detail-heading">Administer Cloud Volumes ONTAP from the CLI</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-05-05 17:17:53 +0000">05/05/2022</time>
+    <time datetime="2022-05-20 22:01:40 +0000">05/20/2022</time>
     
   
 
@@ -1467,65 +1473,7 @@
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager or the command line interface.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="connecting-to-system-manager">Connecting to System Manager</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You might need to perform some Cloud Volumes ONTAP tasks from System Manager, which is a browser-based management tool that runs on the Cloud Volumes ONTAP system. For example, you need to use System Manager if you want to create LUNs.</p>
-</div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>The computer from which you are accessing Cloud Manager must have a network connection to Cloud Volumes ONTAP. For example, you might need to log in to Cloud Manager from a jump host that&#8217;s in your cloud provider network.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-When deployed in multiple AWS Availability Zones, Cloud Volumes ONTAP HA configurations use a floating IP address for the cluster management interface, which means external routing is not available. You must connect from a host that is part of the same routing domain.
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>From the Canvas, select the Cloud Volumes ONTAP working environment.</p>
-</li>
-<li>
-<p>On the right pane, click the information icon and copy the cluster management IP.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-cvo-info.png" alt="A screenshot of the information icon that appears on the Canvas for a Cloud Volumes ONTAP working environment."></span></p>
-</div>
-</li>
-<li>
-<p>Open a web browser on the machine that has a network connection to Cloud Volumes ONTAP and enter the IP address.</p>
-</li>
-<li>
-<p>At the login screen, enter <strong>admin</strong> in the User Name field, enter the password that you specified when you created the working environment, and then click <strong>Sign In</strong>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<div class="title">Result</div>
-<p>The System Manager console loads. You can now use it to manage Cloud Volumes ONTAP.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="connecting-to-the-cloud-volumes-ontap-cli">Connecting to the Cloud Volumes ONTAP CLI</h2>
-<div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph lead">
 <p>The Cloud Volumes ONTAP CLI enables you to run all administrative commands and is a good choice for advanced tasks or if you are more comfortable using the CLI. You can connect to the CLI using Secure Shell (SSH).</p>
 </div>
 <div class="paragraph">
@@ -1585,8 +1533,6 @@ COT2::&gt;</pre>
 </div>
 </li>
 </ol>
-</div>
-</div>
 </div>
 
     </article>
@@ -1734,4 +1680,5 @@ COT2::&gt;</pre>
     </script>
     <script src='/us-en/cloud-manager-cloud-volumes-ontap/js/www-ntap.js'></script>
     <script src='/us-en/cloud-manager-cloud-volumes-ontap/js/tabbed-blocks.js'></script>
+    <script src='/us-en/cloud-manager-cloud-volumes-ontap/js/sidebar.js'></script>
   </body></html>

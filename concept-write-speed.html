@@ -309,35 +309,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">English</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">English</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-cloud-volumes-ontap/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-write-speed.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -392,8 +384,6 @@
         
         <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/fullsite-sidebar/Cloud_Volumes_ONTAP_documentation.pdf" >
           <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
-
-
 
 
 
@@ -481,6 +471,8 @@
             Set up your networking
           </a>
           
+
+
 
 
 
@@ -734,6 +726,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -843,11 +837,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Administration_in_AWS.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/AWS_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Administration in AWS
+            AWS administration
           </a>
           
 
@@ -874,11 +868,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Administration_in_Azure.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Azure_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Administration in Azure
+            Azure administration
           </a>
           
 
@@ -905,11 +899,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Administration_in_Google_Cloud.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Google_Cloud_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" width="16" height="16"/>
-            Administration in Google Cloud
+            Google Cloud administration
           </a>
           
 
@@ -921,6 +915,8 @@
     
 
   
+
+
 
 
 
@@ -1006,6 +1002,8 @@
             Storage
           </a>
           
+
+
 
 
 
@@ -1157,10 +1155,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
-        All Cloud Manager documentation
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/index.html">
         Cloud Volumes ONTAP docs
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Release notes</div>
@@ -1190,6 +1188,8 @@
         Networking requirements
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html">
         Set up an AWS transit gateway
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploy-aws-shared-vpc.html">
+        Deploy an HA pair in a shared subnet
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
         Security group rules for AWS
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
@@ -1275,6 +1275,8 @@
         Create storage VMs in AWS
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html">
         Create storage VMs in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html">
+        Create storage VMs in Google Cloud
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Security and data encryption</div>
       </a>
@@ -1311,7 +1313,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html">
         Delete a system
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Administration in AWS</div>
+        <div class="na-navbar-padding"> AWS administration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html">
         Change the EC2 instance type
@@ -1320,7 +1322,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html">
         Monitor AWS costs
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Administration in Azure</div>
+        <div class="na-navbar-padding"> Azure administration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-azure-vm.html">
         Change the Azure VM type
@@ -1329,12 +1331,14 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
         Use an Azure Private Link
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Administration in Google Cloud</div>
+        <div class="na-navbar-padding"> Google Cloud administration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html">
         Change the machine type
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
-        Administration from System Manager or CLI
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">
+        Administration from System Manager
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
+        Administration from the CLI
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> System health and events</div>
       </a>
@@ -1354,6 +1358,8 @@
         Client protocols
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         Disks and aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">
+        Elastic Volumes in AWS
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html">
         Data tiering
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html">
@@ -1764,4 +1770,5 @@
     </script>
     <script src='/us-en/cloud-manager-cloud-volumes-ontap/js/www-ntap.js'></script>
     <script src='/us-en/cloud-manager-cloud-volumes-ontap/js/tabbed-blocks.js'></script>
+    <script src='/us-en/cloud-manager-cloud-volumes-ontap/js/sidebar.js'></script>
   </body></html>
