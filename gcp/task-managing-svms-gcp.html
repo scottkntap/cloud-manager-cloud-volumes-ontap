@@ -1389,7 +1389,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 12:35:55 +0000">06/07/2022</time>
+    <time datetime="2022-06-07 21:27:37 +0000">06/07/2022</time>
     
   
 
@@ -1429,12 +1429,12 @@
 <h2 id="create-a-storage-vm">Create a storage VM</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can create multiple storage VMs on a single node system or on an HA pair. Note that you must use the Cloud Manager API to create a storage VM on an HA pair, while you can use the CLI or System Manager to create a storage VM on a single node system.</p>
+<p>If supported by your license, you can create multiple storage VMs on a single node system or on an HA pair. Note that you must use the Cloud Manager API to create a storage VM on an HA pair, while you can use the CLI or System Manager to create a storage VM on a single node system.</p>
 </div>
 <div class="sect2">
 <h3 id="single-node-system">Single node system</h3>
 <div class="paragraph">
-<p>These steps create a new storage VM on a single node system using the CLI. One private IP address is required to create a NAS LIF and another optional private IP address is needed if you want to create a management LIF.</p>
+<p>These steps create a new storage VM on a single node system using the CLI. One private IP address is required to create a data LIF and another optional private IP address is needed if you want to create a management LIF.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -1503,7 +1503,7 @@
 <p>Assign one or more aggregates to the storage VM.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver svm_2 -aggregates aggr1,aggr2</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">vserver add-aggregates -vserver &lt;svm-name&gt; -aggregates &lt;aggr1,aggr2&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1560,7 +1560,7 @@
 <h2 id="manage-storage-vms-on-ha-pairs">Manage storage VMs on HA pairs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Cloud Manager API also supports renaming and deleting storage VMs.</p>
+<p>The Cloud Manager API also supports renaming and deleting storage VMs on HA pairs.</p>
 </div>
 <div class="sect2">
 <h3 id="rename-a-storage-vm">Rename a storage VM</h3>
