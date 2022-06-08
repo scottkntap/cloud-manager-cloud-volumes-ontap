@@ -1455,7 +1455,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-05 16:20:56 +0000">05/05/2022</time>
+    <time datetime="2022-06-08 18:43:00 +0000">06/08/2022</time>
     
   
 
@@ -1670,25 +1670,21 @@ Tiering data to object storage is not recommended when using Throughput Optimize
 <p>The subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">Google Cloud Documentation: Configuring Private Google Access</a>.</p>
 </li>
 <li>
-<p>You need a service account that meets the following requirements:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>It must have the predefined Storage Admin role.</p>
-</li>
-<li>
-<p>The Connector service account must be a <em>Service Account User</em> of this tiering service account.</p>
+<p>A service account must be attached to Cloud Volumes ONTAP.</p>
 <div class="paragraph">
-<p><a href="task-creating-gcp-service-account.html">Learn how to set up a service account</a>.</p>
+<p><a href="task-creating-gcp-service-account.html">Learn how to set up this service account</a>.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;re prompted to select this service account when you create a Cloud Volumes ONTAP working environment.</p>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t select a service account during deployment, you&#8217;ll need to shut down Cloud Volumes ONTAP, go to the Google Cloud console, and then attach the service account to the Cloud Volumes ONTAP instances. You can then enable data tiering as described in the next section.</p>
 </div>
 </li>
 <li>
 <p>To encrypt the bucket with customer-managed encryption keys, enable the Google Cloud storage bucket to use the key.</p>
 <div class="paragraph">
 <p><a href="task-setting-up-gcp-encryption.html">Learn how to use customer-managed encryption keys with Cloud Volumes ONTAP</a>.</p>
-</div>
-</li>
-</ul>
 </div>
 </li>
 </ul>
@@ -1713,17 +1709,11 @@ Tiering data to object storage is not recommended when using Throughput Optimize
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_enable_capacity_tiering.gif" alt="A screenshot of the Enable capacity tiering option that is available from the working environment menu if an issue was encountered when Cloud Manager tried to enable data tiering."></span></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-You&#8217;ll only see this option if data tiering couldn&#8217;t be enabled when Cloud Manager created the system.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>You&#8217;ll only see this option if data tiering couldn&#8217;t be enabled when Cloud Manager created the system.</p>
+</div>
+<div class="paragraph">
+<p>In Google Cloud, a service account must be attached to Cloud Volumes ONTAP before this option will appear. <a href="#requirements">Ensure that you&#8217;ve met all requirements</a>.</p>
 </div>
 </li>
 <li>
