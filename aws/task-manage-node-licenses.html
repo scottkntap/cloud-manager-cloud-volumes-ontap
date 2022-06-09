@@ -1400,7 +1400,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-26 15:34:14 +0000">03/26/2022</time>
+    <time datetime="2022-06-09 13:15:17 +0000">06/09/2022</time>
     
   
 
@@ -1772,6 +1772,34 @@
 <div class="title">Result</div>
 <p>Cloud Manager starts the conversion process. Cloud Volumes ONTAP automatically restarts as part of this process. When it&#8217;s back up, the licensing information will reflect the new license.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="change-between-paygo-and-byol">Change between PAYGO and BYOL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Converting a system from PAYGO by-node licensing to BYOL by-node licensing (and vice versa) isn&#8217;t supported. If you want to switch between a pay-as-you-go subscription and a BYOL subscription, then you need to deploy a new system and replicate data from the existing system to the new system.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Create a new Cloud Volumes ONTAP working environment.</p>
+</li>
+<li>
+<p>Set up a one-time data replication between the systems for each volume that you need to replicate.</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html" target="_blank" rel="noopener">Learn how to replicate data between systems</a></p>
+</div>
+</li>
+<li>
+<p>Terminate the Cloud Volumes ONTAP system that you no longer need by deleting the original working environment.</p>
+<div class="paragraph">
+<p><a href="task-deleting-working-env.html">Learn how to delete a Cloud Volumes ONTAP working environment</a>.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
