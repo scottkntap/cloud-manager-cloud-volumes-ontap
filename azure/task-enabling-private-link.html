@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Using an Azure Private Link with Cloud Volumes ONTAP | NetApp Documentation</title>
+  <title>Use an Azure Private Link or service endpoints | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Using an Azure Private Link with Cloud Volumes ONTAP | NetApp Documentation" />
+  <meta property="og:title" content="Use an Azure Private Link or service endpoints | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" />
-	<meta property="og:description" content="By default, Cloud Manager enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures co..." />
+	<meta property="og:description" content="By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources. If needed, you can disable Azure Pri..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="By default, Cloud Manager enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures co...">
-  <meta name="keywords" content=" azure private link, private link connection, private link to storage"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources. If needed, you can disable Azure Pri...">
+  <meta name="keywords" content=" azure private link, private link connection, private link to storage, service endpoints, enable service endpoint, disable private link"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -206,7 +206,7 @@
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Using an Azure Private Link with Cloud Volumes ONTAP](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-enabling-private-link.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Use an Azure Private Link or service endpoints](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-enabling-private-link.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1274,7 +1274,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-overriding-cifs-locks.html">
         Override CIFS locks
       </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-enabling-private-link.html">
-        Use an Azure Private Link
+        Use an Azure Private Link or service endpoints
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-administer-advanced-view.html">
         Administration from System Manager
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-connecting-to-otc.html">
@@ -1382,14 +1382,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Using an Azure Private Link with Cloud Volumes ONTAP</h1>
+  <h1 class="n-doc__component-detail-heading">Use an Azure Private Link or service endpoints</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 13:11:25 +0000">06/07/2022</time>
+    <time datetime="2022-06-13 22:31:26 +0000">06/13/2022</time>
     
   
 
@@ -1410,26 +1410,72 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>By default, Cloud Manager enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure and provides performance benefits. <a href="https://docs.microsoft.com/en-us/azure/private-link/private-link-overview" target="_blank" rel="noopener">Learn more</a>.</p>
-</div>
-<div class="paragraph">
-<p>In most cases, there’s nothing that you need to do&#8212;&#8203;Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You can also disable the Private Link connection, if desired.</p>
+<p>By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources. If needed, you can disable Azure Private Links and use service endpoints instead.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="connector-location-in-azure">Connector location in Azure</h2>
+<h2 id="overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the <a href="https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies" target="_blank" rel="noopener">Azure region pair</a> for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts.</p>
+<p>Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP nodes and the following Azure resources:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Connections between Cloud Volumes ONTAP and its associated storage accounts</p>
+</li>
+<li>
+<p>Connections between Cloud Volumes ONTAP and Azure Blob storage for backups and data tiering</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An Azure Private Link secures connections between endpoints in Azure and provides performance benefits.</p>
+</div>
+<div class="paragraph">
+<p>If required, you can configure Cloud Volumes ONTAP to use service endpoints instead of an Azure Private Link.</p>
+</div>
+<div class="paragraph">
+<p>With either configuration, Cloud Manager always limits network access for connections between Cloud Volumes ONTAP and storage accounts. Network access is limited to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="how-private-link-connections-work-with-cloud-volumes-ontap">How Private Link connections work with Cloud Volumes ONTAP</h2>
+<h2 id="disable-azure-private-links-and-use-service-endpoints-instead">Disable Azure Private Links and use service endpoints instead</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When Cloud Manager deploys Cloud Volumes ONTAP in Azure, it creates a private endpoint in the resource group. The private endpoint is associated with the storage account for Cloud Volumes ONTAP. As a result, access to Cloud Volumes ONTAP storage travels through the Microsoft backbone network.</p>
+<p>If required by your business, you can change a setting in Cloud Manager so that it configures Cloud Volumes ONTAP to use service endpoints instead of an Azure Private Link. Changing this setting applies to new Cloud Volumes ONTAP systems that you create.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In the upper right of the Cloud Manager console, click the Settings icon, and select <strong>Connector Settings</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Azure</strong>, click <strong>Use Azure Private Link</strong>.</p>
+</li>
+<li>
+<p>Deselect <strong>Private Link connection between Cloud Volumes ONTAP and storage accounts</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="work-with-azure-private-links">Work with Azure Private Links</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In most cases, there’s nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. ​Cloud Manager manages Azure Private Links for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.</p>
+</div>
+<div class="sect2">
+<h3 id="how-private-link-connections-work-with-cloud-volumes-ontap-storage-accounts">How Private Link connections work with Cloud Volumes ONTAP storage accounts</h3>
+<div class="paragraph">
+<p>When Cloud Manager deploys Cloud Volumes ONTAP in Azure, it creates a private endpoint in the resource group. The private endpoint is associated with storage accounts for Cloud Volumes ONTAP. As a result, access to Cloud Volumes ONTAP storage travels through the Microsoft backbone network.</p>
 </div>
 <div class="paragraph">
 <p>Client access goes through the private link when clients are within the same VNet as Cloud Volumes ONTAP, within peered VNets, or in your on-premises network when using a private VPN or ExpressRoute connection to the VNet.</p>
@@ -1441,10 +1487,14 @@
 <p><span class="image"><img src="./media/diagram_azure_private_link.png" alt="A conceptual image that shows data access going to Cloud Volumes ONTAP and through a private endpoint and private link to the storage account."></span></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="connector-location-in-azure">Connector location in Azure</h3>
+<div class="paragraph">
+<p>The Connector should be deployed in the same Azure region as the Cloud Volumes ONTAP systems that it manages, or in the <a href="https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies" target="_blank" rel="noopener">Azure region pair</a> for the Cloud Volumes ONTAP systems. This requirement ensures that an Azure Private Link connection is used between Cloud Volumes ONTAP and its associated storage accounts.</p>
 </div>
-<div class="sect1">
-<h2 id="provide-cloud-manager-with-details-about-your-azure-private-dns">Provide Cloud Manager with details about your Azure Private DNS</h2>
-<div class="sectionbody">
+</div>
+<div class="sect2">
+<h3 id="provide-cloud-manager-with-details-about-your-azure-private-dns">Provide Cloud Manager with details about your Azure Private DNS</h3>
 <div class="paragraph">
 <p>If you use <a href="https://docs.microsoft.com/en-us/azure/dns/private-dns-overview" target="_blank" rel="noopener">Azure Private DNS</a>, then you need to modify a configuration file on each Connector. Otherwise, Cloud Manager can&#8217;t enable the Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts.</p>
 </div>
@@ -1484,10 +1534,8 @@
 </ol>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="enable-rollback-on-failures">Enable rollback on failures</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="enable-rollback-on-failures">Enable rollback on failures</h3>
 <div class="paragraph">
 <p>If Cloud Manager fails to create an Azure Private Link as part of specific actions, it completes the action without the Azure Private Link connection. This can happen when creating a new working environment (single node or HA pair), or when the following actions occur on an HA pair: creating a new aggregate, adding disks to an existing aggregate, or creating a new storage account when going above 32 TiB.</p>
 </div>
@@ -1513,33 +1561,6 @@
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="disable-azure-private-link-connections">Disable Azure Private Link connections</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If required for your Azure configuration, you can disable the Azure Private Link connection between Cloud Volumes ONTAP and storage accounts.</p>
-</div>
-<div class="paragraph">
-<p>If you disable the Azure Private Link connection, Cloud Manager uses a service endpoint instead. Even with the service endpoint, Cloud Manager limits storage account access to the VNet where Cloud Volumes ONTAP is deployed and the VNet where the Connector is deployed.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>In the upper right of the Cloud Manager console, click the Settings icon, and select <strong>Connector Settings</strong>.</p>
-</li>
-<li>
-<p>Under <strong>Azure</strong>, click <strong>Use Azure Private Link</strong>.</p>
-</li>
-<li>
-<p>Deselect <strong>Private Link connection between Cloud Volumes ONTAP and storage accounts</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Save</strong>.</p>
-</li>
-</ol>
 </div>
 </div>
 </div>
