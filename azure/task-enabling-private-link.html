@@ -9,14 +9,14 @@
   <meta property="og:title" content="Use an Azure Private Link or service endpoints | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" />
-	<meta property="og:description" content="By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources. If needed, you can disable Azure Pri..." />
+	<meta property="og:description" content="Cloud Volumes ONTAP uses an Azure Private Link for connections to its associated storage accounts. If needed, you can disable Azure Private Links and use ser..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources. If needed, you can disable Azure Pri...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP uses an Azure Private Link for connections to its associated storage accounts. If needed, you can disable Azure Private Links and use ser...">
   <meta name="keywords" content=" azure private link, private link connection, private link to storage, service endpoints, enable service endpoint, disable private link"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1389,7 +1389,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-13 22:31:26 +0000">06/13/2022</time>
+    <time datetime="2022-06-15 15:20:06 +0000">06/15/2022</time>
     
   
 
@@ -1410,7 +1410,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure resources. If needed, you can disable Azure Private Links and use service endpoints instead.</p>
+<p>Cloud Volumes ONTAP uses an Azure Private Link for connections to its associated storage accounts. If needed, you can disable Azure Private Links and use service endpoints instead.</p>
 </div>
 </div>
 </div>
@@ -1418,20 +1418,7 @@
 <h2 id="overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP nodes and the following Azure resources:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Connections between Cloud Volumes ONTAP and its associated storage accounts</p>
-</li>
-<li>
-<p>Connections between Cloud Volumes ONTAP and Azure Blob storage for backups and data tiering</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>An Azure Private Link secures connections between endpoints in Azure and provides performance benefits.</p>
+<p>By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and its associated storage accounts. An Azure Private Link secures connections between endpoints in Azure and provides performance benefits.</p>
 </div>
 <div class="paragraph">
 <p>If required, you can configure Cloud Volumes ONTAP to use service endpoints instead of an Azure Private Link.</p>
@@ -1473,7 +1460,7 @@
 <p>In most cases, there’s nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. ​Cloud Manager manages Azure Private Links for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.</p>
 </div>
 <div class="sect2">
-<h3 id="how-private-link-connections-work-with-cloud-volumes-ontap-storage-accounts">How Private Link connections work with Cloud Volumes ONTAP storage accounts</h3>
+<h3 id="how-private-link-connections-work">How Private Link connections work</h3>
 <div class="paragraph">
 <p>When Cloud Manager deploys Cloud Volumes ONTAP in Azure, it creates a private endpoint in the resource group. The private endpoint is associated with storage accounts for Cloud Volumes ONTAP. As a result, access to Cloud Volumes ONTAP storage travels through the Microsoft backbone network.</p>
 </div>

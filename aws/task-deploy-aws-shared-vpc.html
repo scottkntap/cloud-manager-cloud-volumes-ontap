@@ -1400,7 +1400,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-07 21:27:00 +0000">06/07/2022</time>
+    <time datetime="2022-06-15 15:20:38 +0000">06/15/2022</time>
     
   
 
@@ -1461,7 +1461,22 @@
 <p>Select <strong>Another AWS account</strong> and enter the ID of the VPC owner account.</p>
 </li>
 <li>
-<p>Create a policy using the Cloud Manager IAM policy, which is available from the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager Policies page</a>.</p>
+<p>Attach a policy to the IAM role that includes the “sts:AssumeRole” permission.</p>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": "arn:aws:iam::account-id:role/Test*"
+  }
+}</code></pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
@@ -1492,7 +1507,7 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"haParams": {
-     “assumeRoleArn”: “arn:aws:iam::642991768967:role/mediator_role_assume_fromdev”
+     "assumeRoleArn": "arn:aws:iam::642991768967:role/mediator_role_assume_fromdev"
 }</code></pre>
 </div>
 </div>
