@@ -700,6 +700,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -1237,6 +1239,8 @@
         Create aggregates
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-manage-aggregates.html">
         Manage existing aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-manage-capacity-settings.html">
+        Manage capacity settings
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Storage VM administration</div>
       </a>
@@ -1400,7 +1404,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-02 14:22:35 +0000">06/02/2022</time>
+    <time datetime="2022-06-17 20:35:27 +0000">06/17/2022</time>
     
   
 
@@ -1550,7 +1554,10 @@ This behavior does not apply to aggregates that support the Amazon EBS Elastic V
 <h2 id="capacity-management">Capacity management</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Account Admin can choose whether Cloud Manager notifies you of storage capacity decisions or whether Cloud Manager automatically manages capacity requirements for you. It might help for you to understand how these modes work.</p>
+<p>The Account Admin can choose whether Cloud Manager notifies you of storage capacity decisions or whether Cloud Manager automatically manages capacity requirements for you.</p>
+</div>
+<div class="paragraph">
+<p>This behavior is determined by the <em>Capacity Management Mode</em> on a Connector. The Capacity Management Mode affects all Cloud Volumes ONTAP systems managed by that Connector. If you have another Connector, it can be configured differently.</p>
 </div>
 <div class="sect2">
 <h3 id="automatic-capacity-management">Automatic capacity management</h3>
@@ -1596,6 +1603,12 @@ This behavior does not apply to aggregates that support the Amazon EBS Elastic V
 <h3 id="manual-capacity-management">Manual capacity management</h3>
 <div class="paragraph">
 <p>If the Account Admin set the Capacity Management Mode to manual, Cloud Manager displays Action Required messages when capacity decisions must be made. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="learn-more">Learn more</h3>
+<div class="paragraph">
+<p><a href="task-manage-capacity-settings.html">Learn how to modify the capacity management mode</a>.</p>
 </div>
 </div>
 </div>
