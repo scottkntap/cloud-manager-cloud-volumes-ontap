@@ -1404,7 +1404,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-15 15:20:38 +0000">06/15/2022</time>
+    <time datetime="2022-06-20 12:32:58 +0000">06/20/2022</time>
     
   
 
@@ -1431,7 +1431,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The VPC owner account, which owns the networking (the VPC, subnets, and route tables)</p>
+<p>The VPC owner account, which owns the networking (the VPC, subnets, route tables, and security groups)</p>
 </li>
 <li>
 <p>The participant account, where the EC2 instances are deployed in shared subnets (this includes the two HA nodes and the mediator)</p>
@@ -1508,6 +1508,9 @@
 </li>
 <li>
 <p>Use the API to create a new Cloud Volumes ONTAP working environment and pass the "assumeRoleArn" field in the "haParams" object.</p>
+<div class="paragraph">
+<p>For example:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"haParams": {
