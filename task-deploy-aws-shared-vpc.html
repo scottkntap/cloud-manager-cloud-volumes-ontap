@@ -1459,7 +1459,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-21 14:14:55 +0000">06/21/2022</time>
+    <time datetime="2022-06-22 13:37:43 +0000">06/22/2022</time>
     
   
 
@@ -1543,9 +1543,22 @@
 </div>
 </li>
 <li>
-<p>Use the API to create a new Cloud Volumes ONTAP working environment and pass the "assumeRoleArn" field in the "haParams" object.</p>
+<p>Use the Cloud Manager API to create a new Cloud Volumes ONTAP working environment.</p>
 <div class="paragraph">
-<p>The "assumeRoleArn" field should include the ARN of the IAM role that you created in the VPC owner account (see the previous step).</p>
+<p>Note that you must specify the following fields:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"securityGroupId"</p>
+<div class="paragraph">
+<p>The "securityGroupId" field should specify the security group that you created in the VPC owner account (see step 2 above).</p>
+</div>
+</li>
+<li>
+<p>"assumeRoleArn" in the "haParams" object</p>
+<div class="paragraph">
+<p>The "assumeRoleArn" field should include the ARN of the IAM role that you created in the VPC owner account (see step 3 above).</p>
 </div>
 <div class="paragraph">
 <p>For example:</p>
@@ -1559,6 +1572,9 @@
 </div>
 <div class="paragraph">
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html" target="_blank" rel="noopener">Learn about the Cloud Volumes ONTAP API</a></p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ol>
