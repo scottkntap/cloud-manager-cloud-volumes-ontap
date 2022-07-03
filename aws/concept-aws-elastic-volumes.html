@@ -1354,7 +1354,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-02 18:09:22 +0000">06/02/2022</time>
+    <time datetime="2022-06-29 17:21:12 +0000">06/29/2022</time>
     
   
 
@@ -1556,18 +1556,8 @@
 <div class="sect1">
 <h2 id="limitations">Limitations</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Increasing the size of an aggregate can take up to 6 hours. During that time, Cloud Manager can&#8217;t request any additional capacity for that aggregate.</p>
-</li>
-<li>
-<p>At this time, creating a new Cloud Volumes ONTAP system with Elastic Volumes enabled on the initial aggregate is supported only with the API. This action is not supported from the Cloud Manager user interface. If you create a new Cloud Volumes ONTAP 9.11.0 or later system from the user interface, Elastic Volumes will not be enabled on the initial aggregate.</p>
 <div class="paragraph">
-<p>All other actions (such as creating a new aggregate) are supported from the user interface.</p>
-</div>
-</li>
-</ul>
+<p>Increasing the size of an aggregate can take up to 6 hours. During that time, Cloud Manager can&#8217;t request any additional capacity for that aggregate.</p>
 </div>
 </div>
 </div>
@@ -1580,15 +1570,9 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Create a new system that has Elastic Volumes enabled on the initial aggregate</p>
+<p>Create a new system that has Elastic Volumes enabled on the initial aggregate when using gp3 or io1 disks</p>
 <div class="paragraph">
-<p>As noted in <a href="#limitations">Limitations</a>, this action is only supported with the API at this time. It&#8217;s not supported from the user interface.</p>
-</div>
-<div class="paragraph">
-<p>When you initiate the API call, the Elastic Volumes feature is enabled by default on the initial aggregate.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-automation/cm/overview.html" target="_blank" rel="noopener">Learn how to create Cloud Volumes ONTAP by using the API</a></p>
+<p><a href="task-deploying-otc-aws.html">Learn how to create Cloud Volumes ONTAP system</a></p>
 </div>
 </li>
 <li>
