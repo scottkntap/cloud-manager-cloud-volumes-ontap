@@ -1345,7 +1345,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-15 15:20:06 +0000">06/15/2022</time>
+    <time datetime="2022-07-11 22:02:03 +0000">07/11/2022</time>
     
   
 
@@ -1454,18 +1454,27 @@
 <p>Navigate to the following directory: /opt/application/netapp/cloudmanager/docker_occm/data</p>
 </li>
 <li>
-<p>Edit app.conf by modifying the following parameters as shown:</p>
+<p>Edit app.conf by adding the "user-private-dns-zone-settings" parameter with the following keyword-value pairs:</p>
 <div class="literalblock">
 <div class="content">
-<pre>"user-private-dns-zone-settings": {
-   "use-existing": true,
-   "resource-group": "&lt;resource group name of the DNS zone&gt;",
-   "subscription": "&lt;subscription ID&gt;"
-  }</pre>
+<pre>"user-private-dns-zone-settings" : {
+   "resource-group" : "&lt;resource group name of the DNS zone&gt;",
+   "subscription" : "&lt;subscription ID&gt;",
+   "use-existing" : true
+}</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The subscription parameter is required only if the Private DNS Zone exists in a different subscription than the Connector.</p>
+<p>The parameter should be entered at the same level as "system-id" like shown below:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"system-id" : "&lt;system ID&gt;",
+"user-private-dns-zone-settings" : {</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the subscription keyword is required only if the Private DNS Zone exists in a different subscription than the Connector.</p>
 </div>
 </li>
 <li>
