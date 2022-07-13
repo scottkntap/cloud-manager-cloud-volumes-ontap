@@ -295,11 +295,13 @@
           <div id="react-search" 
           data-search-html="/us-en/cloud-manager-cloud-volumes-ontap/search.html"
           data-type="widget" 
-          data-placeholder="Search Documentation" 
-          data-no-results-found="No results were found for {query}" 
-          data-did-you-mean="Search for {suggestion}." 
-          data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
-          data-results-found="{hitCount} results found"  
+          data-placeholder="Search Documentation"
+          data-no-results-found="No results were found for {query}"
+          data-did-you-mean="Search for {suggestion}."
+          data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?"
+          data-results-found="{hitCount} results found"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor="azure"></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -1345,7 +1347,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-15 20:10:15 +0000">04/15/2022</time>
+    <time datetime="2022-07-13 16:03:40 +0000">07/13/2022</time>
     
   
 
@@ -1431,7 +1433,40 @@
 <h2 id="what-to-expect-if-data-loss-occurs">What to expect if data loss occurs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you choose high write speed and data loss occurs, the system should be able to boot up and continue to serve data without user intervention. Two EMS messages will be reported when a node runs into data loss. One is wafl.root.content.changed with the ERROR severity level event, the other is nv.check.failed with the DEBUG severity level event. Both messages must be present as an indication of data loss.</p>
+<p>If data loss occurs due to high write speed, the Event Management System (EMS) reports the following two events:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP 9.11.0 or later</p>
+<div class="literalblock">
+<div class="content">
+<pre>DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown with High Write Speed mode"</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Cloud Volumes ONTAP 9.8 to 9.10.1</p>
+<div class="literalblock">
+<div class="content">
+<pre>DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown"</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When this happens, Cloud Volumes ONTAP should be able to boot up and continue to serve data without user intervention.</p>
 </div>
 </div>
 </div>
