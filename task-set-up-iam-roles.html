@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Known limitations | NetApp Documentation</title>
+  <title>Set up IAM roles for Cloud Volumes ONTAP | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Known limitations | NetApp Documentation" />
+  <meta property="og:title" content="Set up IAM roles for Cloud Volumes ONTAP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html" />
-	<meta property="og:description" content="Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with..." />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html" />
+	<meta property="og:description" content="Each Cloud Volumes ONTAP node must have an attached IAM role that provides required permissions. The same is true for the HA mediator. It's easiest to let Cl..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with...">
-  <meta name="keywords" content=" limitations, flexgroup, ontap s3, s3 configuration, svm dr, svm disaster recovery, disaster recovery, storage vm dr"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Each Cloud Volumes ONTAP node must have an attached IAM role that provides required permissions. The same is true for the HA mediator. It's easiest to let Cl...">
+  <meta name="keywords" content=" iam role, mediator role, cloud volumes ontap role, policy, iam policy, permissions"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -52,9 +52,6 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  
-    
-    <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html" />
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     if (document.location.hostname === "docs.netapp.com") {
       var head = document.getElementsByTagName('head')[0];
@@ -164,7 +161,7 @@
 </head>
 
 
-  <body class role="document" data-flavor="azure">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
@@ -173,40 +170,38 @@
   <!-- Start Page Toolbar -->
   
   <div class="page-nav-toolbar">
-<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html">
   
-  
-  <div class="custom-dropdown-select selected" title="Azure">
+  <div class="custom-dropdown-select unselected" title="All cloud providers">
     <label>Cloud provider</label>
-    <div>Azure</div>  
-    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon selected" alt="" />
-    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />
+    <span>All cloud providers</span>
+    <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/filter.svg" class="custom-icon" alt="" />
   </div>
   
 
   <ul class="custom-dropdown-menu">
     
     
-    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/reference-limitations.html">
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/task-set-up-iam-roles.html">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
     </li>
     
     
     
-    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/reference-limitations.html">
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
     </li>
     
     
     
-    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/reference-limitations.html">
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
     </li>
     
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Known limitations](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-limitations.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Set up IAM roles for Cloud Volumes ONTAP](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-set-up-iam-roles.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -303,7 +298,7 @@
           data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
           data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
-          data-flavor="azure"></div>
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -327,15 +322,15 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/reference-limitations.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -389,7 +384,7 @@
         
         
         
-        <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/fullsite-sidebar/Cloud_Volumes_ONTAP_documentation.pdf" >
+        <a target="_blank" href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/fullsite-sidebar/Cloud_Volumes_ONTAP_documentation.pdf" >
           <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>PDF of this doc site</a>
 
 
@@ -402,7 +397,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Release_notes.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Release_notes.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -411,8 +406,6 @@
           
 
 
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
-  
 
 
 
@@ -433,7 +426,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Get_started.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Get_started.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -451,7 +444,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Get_started_in_Amazon_Web_Services.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Get_started_in_Amazon_Web_Services.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -471,7 +464,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Set_up_your_networking.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Set_up_your_networking.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -495,6 +488,8 @@
 
 
 
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
 
 
 
@@ -519,7 +514,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Get_started_in_Microsoft_Azure.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Get_started_in_Microsoft_Azure.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -556,7 +551,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Get_started_in_Google_Cloud.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Get_started_in_Google_Cloud.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -602,7 +597,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Use_Cloud_Volumes_ONTAP.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Use_Cloud_Volumes_ONTAP.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -618,7 +613,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/License_management.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/License_management.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -647,7 +642,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Volume_and_LUN_administration.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Volume_and_LUN_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -680,7 +675,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Aggregate_administration.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Aggregate_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -709,7 +704,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Storage_VM_administration.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Storage_VM_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -740,7 +735,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Security_and_data_encryption.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Security_and_data_encryption.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -771,7 +766,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/System_administration.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/System_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -799,7 +794,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Add__remove__or_delete_systems.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Add__remove__or_delete_systems.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -828,7 +823,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/AWS_administration.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/AWS_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -857,7 +852,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Azure_administration.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Azure_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -886,7 +881,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Google_Cloud_administration.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Google_Cloud_administration.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -922,7 +917,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/System_health_and_events.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/System_health_and_events.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -956,7 +951,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Concepts.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Concepts.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -974,7 +969,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Storage.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Storage.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -1013,7 +1008,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/High_availability_pairs.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/High_availability_pairs.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -1061,7 +1056,7 @@
           
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/azure/sidebar/Knowledge_and_support.pdf" 
+              href="/us-en/cloud-manager-cloud-volumes-ontap/pdfs/sidebar/Knowledge_and_support.pdf" 
             
           >
             <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>
@@ -1119,180 +1114,253 @@
 </script><div class="prod-nav" id="product-nav">
   <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/index.html">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/index.html">
         Cloud Volumes ONTAP docs
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Release notes</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/whats-new.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html">
         What's new
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/reference-limitations.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html">
         Known limitations
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/whats-new-ontap.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/whats-new-ontap.html">
         Cloud Volumes ONTAP Release Notes
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-overview-cvo.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-overview-cvo.html">
         Learn about Cloud Volumes ONTAP
       </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started in Amazon Web Services</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html">
+        Plan your configuration
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Set up your networking</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-aws.html">
+        Networking requirements
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html">
+        Set up an AWS transit gateway
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploy-aws-shared-vpc.html">
+        Deploy an HA pair in a shared subnet
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
+        Security group rules for AWS
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
+        Set up the AWS KMS
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html">
+        Set up IAM roles
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-aws.html">
+        Set up licensing
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html">
+        Launch Cloud Volumes ONTAP in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html">
+        Get started in AWS C2S
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Get started in Microsoft Azure</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-getting-started-azure.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html">
         Quick start
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-planning-your-config-azure.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config-azure.html">
         Plan your configuration
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/reference-networking-azure.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html">
         Set up your networking
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-set-up-azure-encryption.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html">
         Set up encryption using your key
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-set-up-licensing-azure.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-azure.html">
         Set up licensing
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-azure-high-availability-mode.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html">
         Enable high availability mode
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-deploying-otc-azure.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html">
         Launch Cloud Volumes ONTAP in Azure
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started in Google Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html">
+        Quick start
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config-gcp.html">
+        Plan your configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html">
+        Set up your networking
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-vpc-service-controls-gcp.html">
+        Plan for VPC Service Controls
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html">
+        Create a service account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-gcp-encryption.html">
+        Use customer-managed encryption keys
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html">
+        Set up licensing
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html">
+        Launch Cloud Volumes ONTAP in Google Cloud
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Use Cloud Volumes ONTAP</div>
       </a>
       <ul><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> License management</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-manage-capacity-licenses.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html">
         Manage capacity-based licenses
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-manage-keystone.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-keystone.html">
         Manage Keystone Flex Subscriptions
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-manage-node-licenses.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html">
         Manage node-based licenses
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Volume and LUN administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-create-volumes.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html">
         Create volumes
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-manage-volumes.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html">
         Manage existing volumes
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-tiering.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html">
         Tier inactive data to object storage
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-connect-lun.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connect-lun.html">
         Connect a LUN to a host
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-accelerate-data-access.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-accelerate-data-access.html">
         Accelerate data access with FlexCache
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Aggregate administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-create-aggregates.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-create-aggregates.html">
         Create aggregates
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-manage-aggregates.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html">
         Manage existing aggregates
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-manage-capacity-settings.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html">
         Manage capacity settings
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Storage VM administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-managing-svms.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
         Work with storage VMs in Cloud Manager
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-managing-svms-azure.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-aws.html">
+        Create storage VMs in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html">
         Create storage VMs in Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html">
+        Create storage VMs in Google Cloud
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Security and data encryption</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-encrypting-volumes.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">
         Encrypt volumes with NetApp encryption
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-azure-key-vault.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
         Manage keys with Azure Key Vault
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-protecting-ransomware.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
+        Manage keys with Google Cloud KMS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         Improve ransomware protection
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> System administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-updating-ontap-cloud.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html">
         Upgrade Cloud Volumes ONTAP
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-registering.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-registering.html">
         Register pay-as-you-go systems
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-managing-state.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-state.html">
         Stop and start a system
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-sync-time.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-sync-time.html">
         Synchronize system time
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-modify-write-speed.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-modify-write-speed.html">
         Modify system write speed
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-change-password.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-password.html">
         Change the system password
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Add, remove, or delete systems</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-adding-systems.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html">
         Add an existing system
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-removing.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-removing.html">
         Remove a working environment
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-deleting-working-env.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html">
         Delete a system
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> AWS administration</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html">
+        Change the EC2 instance type
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-route-tables.html">
+        Change route tables for HA pairs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html">
+        Monitor AWS costs
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Azure administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-change-azure-vm.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-azure-vm.html">
         Change the Azure VM type
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-overriding-cifs-locks.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html">
         Override CIFS locks
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-enabling-private-link.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
         Use an Azure Private Link or service endpoints
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-administer-advanced-view.html">
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Google Cloud administration</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html">
+        Change the machine type
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">
         Administration from System Manager
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-connecting-to-otc.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
         Administration from the CLI
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> System health and events</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-verify-autosupport.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html">
         Verify AutoSupport setup
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-configure-ems.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-configure-ems.html">
         Configure EMS
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Concepts</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-licensing.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html">
         Licensing
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Storage</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-client-protocols.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
         Client protocols
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-storage.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         Disks and aggregates
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-data-tiering.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">
+        Elastic Volumes in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html">
         Data tiering
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-storage-management.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html">
         Storage management
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-write-speed.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-write-speed.html">
         Write speed
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-flash-cache.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html">
         Flash Cache
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-worm.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html">
         WORM storage
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> High-availability pairs</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-ha-azure.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-ha.html">
+        HA pairs in AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-ha-azure.html">
         HA pairs in Azure
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-degraded-ha-pair.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html">
+        HA pairs in GCP
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-degraded-ha-pair.html">
         Actions during storage takeover
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-security.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-security.html">
         Security
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-performance.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html">
         Performance
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-license-management.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-license-management.html">
         Management of node-based BYOL
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-active-iq.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-active-iq.html">
         AutoSupport and Active IQ Digital Advisor
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/reference-default-configs.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html">
         Default configurations
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-support-registration.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-support-registration.html">
         Register for support
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-get-help.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-get-help.html">
         Get help
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/legal-notices.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/legal-notices.html">
         Legal notices
       </a></li></ul>
 </div>
@@ -1342,14 +1410,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Known limitations</h1>
+  <h1 class="n-doc__component-detail-heading">Set up IAM roles for Cloud Volumes ONTAP</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-04-19 19:14:46 +0000">04/19/2022</time>
+    <time datetime="2022-06-28 09:17:29 +0000">06/28/2022</time>
     
   
 
@@ -1367,52 +1435,185 @@
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
-<p>Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.</p>
+<p>An IAM role with the required permissions must be attached to each Cloud Volumes ONTAP node. The same is true for the HA mediator. It&#8217;s easiest to let Cloud Manager create the IAM roles for you, but you can use your own roles.</p>
 </div>
 <div class="paragraph">
-<p>These limitations are specific to Cloud Volumes ONTAP management in Cloud Manager. To view limitations with the Cloud Volumes ONTAP software itself, <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html" target="_blank" rel="noopener">go to the Cloud Volumes ONTAP Release Notes</a></p>
+<p>This task is optional. When you create a Cloud Volumes ONTAP working environment, the default option is to let Cloud Manager create the IAM roles for you. If your business&#8217;s security policies require you to create the IAM role yourself, then follow the steps below.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Providing your own IAM role is required in the AWS Commercial Cloud Services Environment. <a href="task-getting-started-aws-c2s.html">Learn how to deploy Cloud Volumes ONTAP in C2S</a>.
+</td>
+</tr>
+</table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="cloud-manager-doesnt-support-flexgroup-volumes">Cloud Manager doesn&#8217;t support FlexGroup volumes</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>While Cloud Volumes ONTAP supports FlexGroup volumes, Cloud Manager does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set Cloud Manager&#8217;s Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cloud-manager-doesnt-support-s3-with-cloud-volumes-ontap">Cloud Manager doesn&#8217;t support S3 with Cloud Volumes ONTAP</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>While Cloud Volumes ONTAP supports S3 as an option for scale-out storage in some cloud providers, Cloud Manager doesn&#8217;t provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the <a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html" target="_blank" rel="noopener">S3 Configuration Power Guide</a>.</p>
-</div>
-<div class="paragraph">
-<p><a href="concept-client-protocols.html">Learn more about Cloud Volumes ONTAP support for S3 and other client protocols</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cloud-manager-doesnt-support-disaster-recovery-for-storage-vms">Cloud Manager doesn&#8217;t support disaster recovery for storage VMs</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Cloud Manager doesn&#8217;t provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.</p>
-</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Go to the AWS IAM console.</p>
+</li>
+<li>
+<p>Create an IAM policy that includes the following permissions:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856" target="_blank" rel="noopener">SVM Disaster Recovery Preparation Express Guide</a></p>
+<p>Cloud Volumes ONTAP nodes</p>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Standard regions</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+	"Version": "2012-10-17",
+	"Statement": [{
+			"Action": "s3:ListAllMyBuckets",
+			"Resource": "arn:aws:s3:::*",
+			"Effect": "Allow"
+		}, {
+			"Action": [
+				"s3:ListBucket",
+				"s3:GetBucketLocation"
+			],
+			"Resource": "arn:aws:s3:::fabric-pool-*",
+			"Effect": "Allow"
+		}, {
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:DeleteObject"
+			],
+			"Resource": "arn:aws:s3:::fabric-pool-*",
+			"Effect": "Allow"
+		}
+	]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">GovCloud (US) regions</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Action": "s3:ListAllMyBuckets",
+        "Resource": "arn:aws-us-gov:s3:::*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+        ],
+        "Resource": "arn:aws-us-gov:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
+        ],
+        "Resource": "arn:aws-us-gov:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">C2S environment</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Action": "s3:ListAllMyBuckets",
+        "Resource": "arn:aws-iso:s3:::*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+        ],
+        "Resource": "arn:aws-iso:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }, {
+        "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
+        ],
+        "Resource": "arn:aws-iso:s3:::fabric-pool-*",
+        "Effect": "Allow"
+    }]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </li>
 <li>
-<p><a href="https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857" target="_blank" rel="noopener">SVM Disaster Recovery Express Guide</a></p>
+<p>HA mediator</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+	"Version": "2012-10-17",
+	"Statement": [{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:AssignPrivateIpAddresses",
+				"ec2:CreateRoute",
+				"ec2:DeleteRoute",
+				"ec2:DescribeNetworkInterfaces",
+				"ec2:DescribeRouteTables",
+				"ec2:DescribeVpcs",
+				"ec2:ReplaceRoute",
+				"ec2:UnassignPrivateIpAddresses"
+			],
+			"Resource": "*"
+		}
+	]
+}</code></pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Create an IAM role and attach the policy that you created in the previous step to the role.</p>
+</li>
+</ol>
 </div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>You now have IAM roles that you can select when you create a new Cloud Volumes ONTAP working environment.</p>
+</div>
+<div class="ulist">
+<div class="title">More information</div>
+<ul>
+<li>
+<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html" target="_blank" rel="noopener">AWS documentation: Creating IAM policies</a></p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html" target="_blank" rel="noopener">AWS documentation: Creating IAM roles</a></p>
+</li>
+</ul>
 </div>
 
     </article>

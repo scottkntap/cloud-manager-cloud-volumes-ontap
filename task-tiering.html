@@ -494,6 +494,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -1148,6 +1150,8 @@
         Security group rules for AWS
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
         Set up the AWS KMS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html">
+        Set up IAM roles
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-aws.html">
         Set up licensing
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html">
@@ -1413,7 +1417,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-08 18:43:00 +0000">06/08/2022</time>
+    <time datetime="2022-06-30 16:11:43 +0000">06/30/2022</time>
     
   
 
@@ -1608,7 +1612,7 @@ Tiering data to object storage is not recommended when using Throughput Optimize
 <div class="sect2">
 <h3 id="requirements-to-tier-cold-data-to-azure-blob-storage">Requirements to tier cold data to Azure Blob storage</h3>
 <div class="paragraph">
-<p>You don&#8217;t need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the Cloud Manager policy has these permissions:</p>
+<p>You don&#8217;t need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the custom role for the Connector has these permissions:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1617,7 +1621,7 @@ Tiering data to object storage is not recommended when using Throughput Optimize
 </div>
 </div>
 <div class="paragraph">
-<p>The permissions are included in the latest <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies">Cloud Manager policy</a>.</p>
+<p>The permissions are included in the custom role by default. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html" target="_blank" rel="noopener">View Azure permission for the Connector</a></p>
 </div>
 </div>
 <div class="sect2">
