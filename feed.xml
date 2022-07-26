@@ -8,8 +8,19 @@
     <description>The latest updates from NetApp Documentation</description>
     <language>en-us</language>
     <ttl>60</ttl>
-    <pubDate>Mon, 25 Jul 2022 21:37:16 +0000</pubDate>
-    <lastBuildDate>Mon, 25 Jul 2022 21:37:16 +0000</lastBuildDate>
+    <pubDate>Tue, 26 Jul 2022 12:46:07 +0000</pubDate>
+    <lastBuildDate>Tue, 26 Jul 2022 12:46:07 +0000</lastBuildDate>
+    
+    
+    
+    <item>
+      <title>What&amp;#8217;s new (20 Jul 2022)</title>
+      <pubDate>Wed, 20 Jul 2022 21:00:27 +0000</pubDate>
+      <link>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html?time=1658350827</link>
+      <guid isPermaLink="false">Wed, 20 Jul 2022 21:00:27 +0000</guid>
+      <description><![CDATA[ Learn what's new with Cloud Volumes ONTAP management in Cloud Manager. ]]></description>
+    </item>
+    
     
   </channel>
 </rss>
