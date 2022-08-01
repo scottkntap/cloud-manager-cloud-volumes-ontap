@@ -1417,7 +1417,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-09 14:54:28 +0000">05/09/2022</time>
+    <time datetime="2022-08-01 11:04:58 +0000">08/01/2022</time>
     
   
 
@@ -1451,7 +1451,17 @@
 <div class="sect2">
 <h3 id="inbound-rules">Inbound rules</h3>
 <div class="paragraph">
-<p>The source for inbound rules in the predefined security group is 0.0.0.0/0.</p>
+<p>When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Selected VPC only</strong>: the source for inbound traffic is the subnet range of the VPC for the Cloud Volumes ONTAP system and the subnet range of the VPC where the Connector resides. This is the recommended option.</p>
+</li>
+<li>
+<p><strong>All VPCs</strong>: the source for inbound traffic is the 0.0.0.0/0 IP range.</p>
+</li>
+</ul>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1797,7 +1807,7 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kerberos V change &amp; set password (RPCSEC_GSS)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">AutoSupport</p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">AutoSupport</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
@@ -1810,6 +1820,13 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">support.netapp.com</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AutoSupport (only if the transport protocol is changed from HTTPS to HTTP)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3128</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node management LIF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sending AutoSupport messages through a proxy server on the Connector, if an outbound internet connection isn&#8217;t available</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Backup to S3</p></td>
@@ -2176,7 +2193,7 @@ Rather than open ports 443 and 53, you can create an interface VPC endpoint from
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3128</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides the Cloud Data Sense instance with internet access, if your AWS network doesn’t use a NAT or proxy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deploying the Connector.</p></td>
 </tr>
 </tbody>
 </table>

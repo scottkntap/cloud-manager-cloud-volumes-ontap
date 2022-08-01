@@ -1417,7 +1417,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-18 13:28:51 +0000">07/18/2022</time>
+    <time datetime="2022-07-28 14:39:01 +0000">07/28/2022</time>
     
   
 
@@ -1580,7 +1580,13 @@ Your browser does not support the video tag.
 </div>
 </li>
 <li>
-<p><strong>Location &amp; Connectivity</strong>: Select a location, a resource group, a security group, and then select the checkbox to confirm network connectivity between the Connector and the target location.</p>
+<p><strong>Location</strong>: Select a region, availability zone, VNet, and subnet, and then select the checkbox to confirm network connectivity between the Connector and the target location.</p>
+<div class="paragraph">
+<p>For single node systems, you can choose the Availability Zone in which you&#8217;d like to deploy Cloud Volumes ONTAP. If you don&#8217;t select an AZ, Cloud Manager will select one for you.</p>
+</div>
+</li>
+<li>
+<p><strong>Connectivity</strong>: Choose a new or existing resource group and then choose whether to use the predefined security group or to use your own.</p>
 <div class="paragraph">
 <p>The following table describes fields for which you might need guidance:</p>
 </div>
@@ -1597,7 +1603,7 @@ Your browser does not support the video tag.
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability Zone</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For single node systems, you can choose the Availability Zone in which you&#8217;d like to deploy Cloud Volumes ONTAP. If you don&#8217;t select an AZ, Cloud Manager will select one for you.</p></td>
 </tr>
 <tr>
@@ -1622,7 +1628,23 @@ If the Azure account that you&#8217;re using has the <a href="https://docs.netap
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Security group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generated security group</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If you let Cloud Manager generate the security group for you, you need to choose how you&#8217;ll allow traffic:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you choose <strong>Selected VNet only</strong>, the source for inbound traffic is the subnet range of the selected VNet and the subnet range of the VNet where the Connector resides. This is the recommended option.</p>
+</li>
+<li>
+<p>If you choose <strong>All VNets</strong>, the source for inbound traffic is the 0.0.0.0/0 IP range.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use existing</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you choose an existing security group, then it must meet Cloud Volumes ONTAP requirements. <a href="reference-networking-azure.html#security-group-rules-for-cloud-volumes-ontap">View the default security group</a>.</p></td>
 </tr>
 </tbody>

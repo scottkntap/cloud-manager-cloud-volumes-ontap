@@ -1347,7 +1347,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-20 21:00:27 +0000">07/20/2022</time>
+    <time datetime="2022-07-27 18:31:18 +0000">07/27/2022</time>
     
   
 
@@ -1374,6 +1374,56 @@
 </div>
 <div class="paragraph">
 <p>The enhancements described on this page are specific to Cloud Manager features that enable management of Cloud Volumes ONTAP. To learn what&#8217;s new with the Cloud Volumes ONTAP software itself, <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html" target="_blank" rel="noopener">go to the Cloud Volumes ONTAP Release Notes</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="31-july-2022">31 July 2022</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following changes were introduced with the 3.9.21 release of the Connector.</p>
+</div>
+<div class="sect2">
+<h3 id="mtekm-license">MTEKM license</h3>
+<div class="paragraph">
+<p>The Multi-tenant Encryption Key Management (MTEKM) license is now included with new and existing Cloud Volumes ONTAP systems running version 9.11.1 or later.</p>
+</div>
+<div class="paragraph">
+<p>Multi-tenant external key management enables individual storage VMs (SVMs) to maintain their own keys through a KMIP server when using NetApp Volume Encryption.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">Learn how to encrypt volumes with NetApp encryption solutions</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proxy-server">Proxy server</h3>
+<div class="paragraph">
+<p>Cloud Manager now automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server, if an outbound internet connection isn&#8217;t available to send AutoSupport messages.</p>
+</div>
+<div class="paragraph">
+<p>AutoSupport proactively monitors the health of your system and sends messages to NetApp technical support.</p>
+</div>
+<div class="paragraph">
+<p>The only requirement is to ensure that the Connector&#8217;s security group allows <em>inbound</em> connections over port 3128. You&#8217;ll need to open this port after you deploy the Connector.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="change-charging-method">Change charging method</h3>
+<div class="paragraph">
+<p>You can now change the charging method for a Cloud Volumes ONTAP system that uses capacity-based licensing. For example, if you deployed a Cloud Volumes ONTAP system with the Essentials package, you can change it to the Professional package if your business needs changed. This feature is available from the Digital Wallet.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html">Learn how to change charging methods</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="security-group-enhancement">Security group enhancement</h3>
+<div class="paragraph">
+<p>When you create a Cloud Volumes ONTAP working environment, the user interface now enables you to choose whether you want the predefined security group to allow traffic within the selected network only (recommended) or all networks.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-allow-traffic.png" alt="A screenshot that shows the Allow Traffic Within option that&#8217;s available in the working environment wizard when selecting a security group."></span></p>
+</div>
 </div>
 </div>
 </div>

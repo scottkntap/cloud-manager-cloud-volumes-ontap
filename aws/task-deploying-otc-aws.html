@@ -1360,7 +1360,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-18 13:28:51 +0000">07/18/2022</time>
+    <time datetime="2022-07-28 14:39:01 +0000">07/28/2022</time>
     
   
 
@@ -1544,14 +1544,46 @@ If multiple IAM users work in the same AWS account, then each user needs to subs
 <li>
 <p><strong>Location &amp; Connectivity</strong>: Enter the network information that you recorded in the <a href="task-planning-your-config.html#aws-network-information-worksheet">AWS worksheet</a>.</p>
 <div class="paragraph">
-<p>If you have an AWS Outpost, you can deploy a single node Cloud Volumes ONTAP system in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS.</p>
+<p>The following table describes fields for which you might need guidance:</p>
 </div>
-<div class="paragraph">
-<p>The following image shows the page filled out:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VPC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you have an AWS Outpost, you can deploy a single node Cloud Volumes ONTAP system in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generated security group</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If you let Cloud Manager generate the security group for you, you need to choose how you&#8217;ll allow traffic:</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_cot_vpc.gif" alt="Screen shot: Shows the VPC page filled out for a new Cloud Volumes ONTAP instance."></span></p>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you choose <strong>Selected VPC only</strong>, the source for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.</p>
+</li>
+<li>
+<p>If you choose <strong>All VPCs</strong>, the source for inbound traffic is the 0.0.0.0/0 IP range.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use existing security group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you use an existing firewall policy, ensure that it includes the required rules. <a href="reference-security-groups.html">Learn about firewall rules for Cloud Volumes ONTAP</a>.</p></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p><strong>Data Encryption</strong>: Choose no data encryption or AWS-managed encryption.</p>
@@ -1939,13 +1971,44 @@ If multiple IAM users work in the same AWS account, then each user needs to subs
 </div>
 </li>
 <li>
-<p><strong>Region &amp; VPC</strong>: Enter the network information that you recorded in the AWS worksheet.</p>
+<p><strong>Location and Connectivity</strong> (single AZ) or <strong>Region &amp; VPC</strong> (multiple AZs): Enter the network information that you recorded in the AWS worksheet.</p>
 <div class="paragraph">
-<p>The following image shows the page filled out for a multiple AZ configuration:</p>
+<p>The following table describes fields for which you might need guidance:</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_cot_vpc_ha.gif" alt="Screen shot: Shows the VPC page filled out for an HA configuration. A different availability zone is selected for each instance."></span></p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generated security group</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If you let Cloud Manager generate the security group for you, you need to choose how you&#8217;ll allow traffic:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you choose <strong>Selected VPC only</strong>, the source for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.</p>
+</li>
+<li>
+<p>If you choose <strong>All VPCs</strong>, the source for inbound traffic is the 0.0.0.0/0 IP range.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use existing security group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you use an existing firewall policy, ensure that it includes the required rules. <a href="reference-security-groups.html">Learn about firewall rules for Cloud Volumes ONTAP</a>.</p></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p><strong>Connectivity and SSH Authentication</strong>: Choose connection methods for the HA pair and the mediator.</p>

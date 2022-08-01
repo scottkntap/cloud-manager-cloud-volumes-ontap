@@ -1417,7 +1417,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-18 13:28:51 +0000">07/18/2022</time>
+    <time datetime="2022-07-28 14:39:01 +0000">07/28/2022</time>
     
   
 
@@ -2012,6 +2012,43 @@ Your browser does not support the video tag.
 <div class="paragraph">
 <p><a href="reference-networking-gcp.html">Learn more about networking requirements</a>.</p>
 </div>
+<div class="paragraph">
+<p>The following table describes fields for which you might need guidance:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generated policy</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If you let Cloud Manager generate the firewall policy for you, you need to choose how you&#8217;ll allow traffic:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you choose <strong>Selected VPC only</strong>, the source filter for inbound traffic is the subnet range of the selected VPC and the subnet range of the VPC where the Connector resides. This is the recommended option.</p>
+</li>
+<li>
+<p>If you choose <strong>All VPCs</strong>, the source filter for inbound traffic is the 0.0.0.0/0 IP range.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use existing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you use an existing firewall policy, ensure that it includes the required rules. <a href="reference-networking-gcp.html#firewall-rules-for-cloud-volumes-ontap">Learn about firewall rules for Cloud Volumes ONTAP</a>.</p></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p><strong>Charging Methods and NSS Account</strong>: Specify which charging option would you like to use with this system, and then specify a NetApp Support Site account.</p>

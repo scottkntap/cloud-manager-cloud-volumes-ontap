@@ -1417,7 +1417,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-01 15:41:42 +0000">06/01/2022</time>
+    <time datetime="2022-07-28 14:39:01 +0000">07/28/2022</time>
     
   
 
@@ -2116,7 +2116,17 @@ If you need a different size later, you can use the Advanced allocation option t
 <div class="sect3">
 <h4 id="inbound-rules-2">Inbound rules</h4>
 <div class="paragraph">
-<p>The source for inbound rules in the predefined security group is 0.0.0.0/0.</p>
+<p>When you create a working environment and choose a predefined security group, you can choose to allow traffic within one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Selected VPC only</strong>: the source for inbound traffic is the subnet range of the VPC for the Cloud Volumes ONTAP system and the subnet range of the VPC where the Connector resides. This is the recommended option.</p>
+</li>
+<li>
+<p><strong>All VPCs</strong>: the source for inbound traffic is the 0.0.0.0/0 IP range.</p>
+</li>
+</ul>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
