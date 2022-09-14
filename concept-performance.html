@@ -53,11 +53,34 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
-    if (document.location.hostname === "docs.netapp.com") {
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
       var head = document.getElementsByTagName('head')[0];
       var onetrustConsent = document.createElement("script");
       onetrustConsent.type = "text/javascript";
-      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
       head.appendChild(onetrustConsent);
 
       var onetrustScript = document.createElement("script");
@@ -65,30 +88,11 @@
       onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
       onetrustScript.charset = "UTF-8";
       onetrustScript.dataset.documentLanguage = "true";
-      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      onetrustScript.dataset.domainScript = consentId;
       head.appendChild(onetrustScript);
-    }
-
-    function OptanonWrapper() { }
-
-    if (document.location.hostname === "docs.netapp.com") {
-      var adobe = document.createElement("script");
-      adobe.type = "text/plain";
-      adobe.className = "optanon-category-C0002";
-      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-      head.appendChild(adobe);
-
-      var google = document.createElement("script");
-      google.type = "text/plain";
-      google.className = "optanon-category-C0002";
-      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
-      head.appendChild(google);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-81697994-3');
-    }
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -201,7 +205,7 @@
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Performance](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-performance.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Performance](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-performance.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -373,6 +377,7 @@
   <!-- Sidebar Column -->
   
   <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/collapse.png" alt="Collapse navigation panel"></button>
       <div class="n-pdf-header">
   <a id="toggleButtonPdf" class="n-pdf-button" type="button">
     <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/pdf.png" alt="" width="16" height="16"/>Available PDFs<span>
@@ -1114,253 +1119,840 @@
 </script><div class="prod-nav" id="product-nav">
   <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/index.html">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes ONTAP docs"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/index.html">
         Cloud Volumes ONTAP docs
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Release notes"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Release notes</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="What's new"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html">
         What's new
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Known limitations"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-limitations.html">
         Known limitations
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/whats-new-ontap.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes ONTAP Release Notes"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/whats-new-ontap.html">
         Cloud Volumes ONTAP Release Notes
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-overview-cvo.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Learn about Cloud Volumes ONTAP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-overview-cvo.html">
         Learn about Cloud Volumes ONTAP
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started in Amazon Web Services"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Get started in Amazon Web Services</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html">
         Quick start
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Plan your configuration"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html">
         Plan your configuration
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up your networking"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Set up your networking</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-aws.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Networking requirements"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-aws.html">
         Networking requirements
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up an AWS transit gateway"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html">
         Set up an AWS transit gateway
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploy-aws-shared-vpc.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Deploy an HA pair in a shared subnet"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploy-aws-shared-vpc.html">
         Deploy an HA pair in a shared subnet
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Security group rules for AWS"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-security-groups.html">
         Security group rules for AWS
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up the AWS KMS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html">
         Set up the AWS KMS
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up IAM roles"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html">
         Set up IAM roles
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-aws.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up licensing"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-aws.html">
         Set up licensing
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Launch Cloud Volumes ONTAP in AWS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html">
         Launch Cloud Volumes ONTAP in AWS
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started in AWS C2S"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws-c2s.html">
         Get started in AWS C2S
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started in Microsoft Azure"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Get started in Microsoft Azure</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html">
         Quick start
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config-azure.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Plan your configuration"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config-azure.html">
         Plan your configuration
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up your networking"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html">
         Set up your networking
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up encryption using your key"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html">
         Set up encryption using your key
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-azure.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up licensing"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-azure.html">
         Set up licensing
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Enable high availability mode"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-high-availability-mode.html">
         Enable high availability mode
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Launch Cloud Volumes ONTAP in Azure"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html">
         Launch Cloud Volumes ONTAP in Azure
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started in Google Cloud"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Get started in Google Cloud</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Quick start"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html">
         Quick start
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config-gcp.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Plan your configuration"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config-gcp.html">
         Plan your configuration
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up your networking"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html">
         Set up your networking
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-vpc-service-controls-gcp.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Plan for VPC Service Controls"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-vpc-service-controls-gcp.html">
         Plan for VPC Service Controls
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create a service account"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html">
         Create a service account
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-gcp-encryption.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Use customer-managed encryption keys"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-gcp-encryption.html">
         Use customer-managed encryption keys
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up licensing"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-licensing-google.html">
         Set up licensing
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Launch Cloud Volumes ONTAP in Google Cloud"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html">
         Launch Cloud Volumes ONTAP in Google Cloud
-      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Use Cloud Volumes ONTAP"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Use Cloud Volumes ONTAP</div>
       </a>
-      <ul><li class="subfolders "><a href="#">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="License management"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> License management</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage capacity-based licenses"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html">
         Manage capacity-based licenses
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-keystone.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage Keystone Flex Subscriptions"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-keystone.html">
         Manage Keystone Flex Subscriptions
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage node-based licenses"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html">
         Manage node-based licenses
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Volume and LUN administration"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Volume and LUN administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create volumes"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html">
         Create volumes
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage existing volumes"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html">
         Manage existing volumes
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier inactive data to object storage"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html">
         Tier inactive data to object storage
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connect-lun.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Connect a LUN to a host"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connect-lun.html">
         Connect a LUN to a host
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-accelerate-data-access.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Accelerate data access with FlexCache"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-accelerate-data-access.html">
         Accelerate data access with FlexCache
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aggregate administration"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Aggregate administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-create-aggregates.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create aggregates"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-create-aggregates.html">
         Create aggregates
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage existing aggregates"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html">
         Manage existing aggregates
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage capacity settings"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html">
         Manage capacity settings
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Storage VM administration"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Storage VM administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
         Work with storage VMs in Cloud Manager
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-aws.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create storage VMs in AWS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-aws.html">
         Create storage VMs in AWS
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create storage VMs in Azure"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html">
         Create storage VMs in Azure
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Create storage VMs in Google Cloud"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-gcp.html">
         Create storage VMs in Google Cloud
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Security and data encryption"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Security and data encryption</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Encrypt volumes with NetApp encryption"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-encrypting-volumes.html">
         Encrypt volumes with NetApp encryption
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage keys with Azure Key Vault"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-azure-key-vault.html">
         Manage keys with Azure Key Vault
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage keys with Google Cloud KMS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-google-key-manager.html">
         Manage keys with Google Cloud KMS
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Improve ransomware protection"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html">
         Improve ransomware protection
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="System administration"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> System administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Upgrade Cloud Volumes ONTAP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html">
         Upgrade Cloud Volumes ONTAP
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-registering.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Register pay-as-you-go systems"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-registering.html">
         Register pay-as-you-go systems
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-state.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Stop and start a system"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-state.html">
         Stop and start a system
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-sync-time.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Synchronize system time"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-sync-time.html">
         Synchronize system time
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-modify-write-speed.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Modify system write speed"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-modify-write-speed.html">
         Modify system write speed
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-password.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Change the system password"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-password.html">
         Change the system password
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Add, remove, or delete systems"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Add, remove, or delete systems</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Add an existing system"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html">
         Add an existing system
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-removing.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Remove a working environment"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-removing.html">
         Remove a working environment
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Delete a system"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html">
         Delete a system
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="AWS administration"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> AWS administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Change the EC2 instance type"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html">
         Change the EC2 instance type
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-route-tables.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Change route tables for HA pairs"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-route-tables.html">
         Change route tables for HA pairs
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitor AWS costs"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html">
         Monitor AWS costs
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure administration"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Azure administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-azure-vm.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Change the Azure VM type"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-azure-vm.html">
         Change the Azure VM type
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Override CIFS locks"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html">
         Override CIFS locks
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Use an Azure Private Link or service endpoints"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
         Use an Azure Private Link or service endpoints
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Google Cloud administration"
+      data-li-level="3" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Google Cloud administration</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Change the machine type"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html">
         Change the machine type
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Administration from System Manager"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">
         Administration from System Manager
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Administration from the CLI"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">
         Administration from the CLI
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="System health and events"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> System health and events</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Verify AutoSupport setup"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-verify-autosupport.html">
         Verify AutoSupport setup
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-configure-ems.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configure EMS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-configure-ems.html">
         Configure EMS
-      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Concepts"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Concepts</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Licensing"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html">
         Licensing
-      </a></li><li class="subfolders "><a href="#">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Storage"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Storage</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Client protocols"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html">
         Client protocols
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Disks and aggregates"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         Disks and aggregates
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Elastic Volumes in AWS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">
         Elastic Volumes in AWS
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Data tiering"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html">
         Data tiering
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Storage management"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage-management.html">
         Storage management
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-write-speed.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Write speed"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-write-speed.html">
         Write speed
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Flash Cache"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html">
         Flash Cache
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="WORM storage"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html">
         WORM storage
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="High-availability pairs"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> High-availability pairs</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-ha.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="HA pairs in AWS"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-ha.html">
         HA pairs in AWS
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-ha-azure.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="HA pairs in Azure"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-ha-azure.html">
         HA pairs in Azure
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="HA pairs in GCP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html">
         HA pairs in GCP
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-degraded-ha-pair.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Actions during storage takeover"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-degraded-ha-pair.html">
         Actions during storage takeover
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-security.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Security"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-security.html">
         Security
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Performance"
+      data-li-level="2#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html">
         Performance
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-license-management.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Management of node-based BYOL"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-license-management.html">
         Management of node-based BYOL
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-active-iq.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="AutoSupport and Active IQ Digital Advisor"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-active-iq.html">
         AutoSupport and Active IQ Digital Advisor
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Default configurations"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html">
         Default configurations
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Knowledge and support"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-support-registration.html">
+      <ul>
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Register for support"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-support-registration.html">
         Register for support
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-get-help.html">
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get help"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-get-help.html">
         Get help
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/legal-notices.html">
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Legal notices"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/legal-notices.html">
         Legal notices
       </a></li></ul>
 </div>
@@ -1379,8 +1971,9 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container --><article class="page-content">
+    <!-- Begin of page container --><article class="page-content" id="main">
       <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/expand.png" alt="Expand navigation panel"></button>
   <div class="ie-menu">
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
