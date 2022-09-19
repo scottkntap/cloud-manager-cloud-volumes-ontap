@@ -1767,7 +1767,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-25 14:26:17 +0000">07/25/2022</time>
+    <time datetime="2022-09-19 13:49:16 +0000">09/19/2022</time>
     
   
 
@@ -2157,9 +2157,22 @@ The computer from which you are accessing Cloud Manager must have a network conn
 <div class="paragraph">
 <p>You can place the Cloud Volumes ONTAP software image on the Connector or on an HTTP server and then initiate the software upgrade from Cloud Manager. You might use this option if Cloud Manager can&#8217;t access the S3 bucket to upgrade the software.</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">Before you begin</div>
+<ul>
+<li>
 <p>Cloud Manager operations such as volume or aggregate creation must not be in progress on the Cloud Volumes ONTAP system.</p>
+</li>
+<li>
+<p>If you use HTTPS to host ONTAP images, the upgrade can fail due to SSL authentication issues, which are caused by missing certificates. The workaround is to generate and install a CA-signed certificate to be used for authentication between ONTAP and Cloud Manager.</p>
+<div class="paragraph">
+<p>Go to the NetApp Knowledge Base to view step-by-step instructions:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_configure_Cloud_Manager_as_an_HTTPS_server_to_host_upgrade_images" target="_blank" rel="noopener">NetApp KB: How to configure Cloud Manager as an HTTPS server to host upgrade images</a></p>
+</div>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
