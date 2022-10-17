@@ -146,6 +146,17 @@
               $("#mysidebar").navgoco('toggle', true);
           });
 
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/us-en/cloud-manager-cloud-volumes-ontap"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
       });
 
   </script>
@@ -1066,7 +1077,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Release notes</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="What's new"
@@ -1096,7 +1107,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Learn about Cloud Volumes ONTAP"
@@ -1112,7 +1123,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Get started in Microsoft Azure</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Quick start"
@@ -1170,7 +1181,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Use Cloud Volumes ONTAP</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="License management"
@@ -1179,7 +1190,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> License management</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Manage capacity-based licenses"
@@ -1209,7 +1220,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Volume and LUN administration</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create volumes"
@@ -1253,7 +1264,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Aggregate administration</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create aggregates"
@@ -1283,7 +1294,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Storage VM administration</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Work with storage VMs in Cloud Manager"
@@ -1306,7 +1317,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Security and data encryption</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Encrypt volumes with NetApp encryption"
@@ -1336,7 +1347,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> System administration</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Upgrade Cloud Volumes ONTAP"
@@ -1387,7 +1398,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Add, remove, or delete systems</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Add an existing system"
@@ -1417,7 +1428,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Azure administration</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Change the Azure VM type"
@@ -1461,7 +1472,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> System health and events</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Verify AutoSupport setup"
@@ -1484,7 +1495,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Concepts</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Licensing"
@@ -1500,7 +1511,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Storage</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Client protocols"
@@ -1558,7 +1569,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> High-availability pairs</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="HA pairs in Azure"
@@ -1616,7 +1627,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Register for support"
@@ -1649,6 +1660,7 @@
 </script>
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
 
 
   </div>
