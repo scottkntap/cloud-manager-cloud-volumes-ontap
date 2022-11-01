@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,7 +2024,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-28 14:39:01 +0000">07/28/2022</time>
+    <time datetime="2022-10-31 15:00:41 +0000">10/31/2022</time>
     
   
 
@@ -2034,6 +2034,22 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
+    <img  class="avatar avatar-small"
+          alt="netapp-driley"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18422994?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2123,11 +2139,14 @@
 <h2 id="launching-a-single-node-system-in-gcp">Launching a single-node system in GCP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in GCP.</p>
+<p>Create a working environment in BlueXP to launch Cloud Volumes ONTAP in GCP.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
+<li>
+<p>From the left navigation menu, select <strong>Storage &gt; Canvas</strong>.</p>
+</li>
 <li>
 <p><a id="subscribe"></a>On the Canvas page, click <strong>Add Working Environment</strong> and follow the prompts.</p>
 </li>
@@ -2156,7 +2175,7 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Working Environment Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Service Account Name</p></td>
@@ -2164,7 +2183,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Add Labels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels are metadata for your GCP resources. BlueXP adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.<br>
 <br>
 You can add up to four labels from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four labels when creating a working environment.<br>
 <br>
@@ -2177,10 +2196,10 @@ For information about labels, refer to <a href="https://cloud.google.com/compute
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Edit Project</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.</p>
+<p>Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where BlueXP resides.</p>
 </div>
 <div class="paragraph">
-<p>If you don&#8217;t see any additional projects in the drop-down list, then you haven&#8217;t yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You&#8217;ll need to repeat this step for each project.</p>
+<p>If you don&#8217;t see any additional projects in the drop-down list, then you haven&#8217;t yet associated the BlueXP service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the BlueXP role to that project. You&#8217;ll need to repeat this step for each project.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2189,7 +2208,7 @@ For information about labels, refer to <a href="https://cloud.google.com/compute
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-This is the service account that you set up for Cloud Manager, <a href="task-creating-gcp-service-account.html">as described on this page</a>.
+This is the service account that you set up for BlueXP, <a href="task-creating-gcp-service-account.html">as described on this page</a>.
 </td>
 </tr>
 </table>
@@ -2241,7 +2260,7 @@ Your browser does not support the video tag.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generated firewall policy</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If you let Cloud Manager generate the firewall policy for you, you need to choose how you&#8217;ll allow traffic:</p>
+<p>If you let BlueXP generate the firewall policy for you, you need to choose how you&#8217;ll allow traffic:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2289,7 +2308,7 @@ Your browser does not support the video tag.
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 </td>
 </tr>
 </table>
@@ -2301,7 +2320,7 @@ If a newer Release Candidate, General Availability, or patch release is availabl
 <p>The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.</p>
 </div>
 <div class="paragraph">
-<p>The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.</p>
+<p>The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.</p>
 </div>
 <div class="paragraph">
 <p>For help choosing a disk type and size, see <a href="task-planning-your-config-gcp.html#sizing-your-system-in-gcp">Sizing your system in GCP</a>.</p>
@@ -2330,7 +2349,7 @@ If a newer Release Candidate, General Availability, or patch release is availabl
 <div class="ulist">
 <ul>
 <li>
-<p>Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can&#8217;t select it from Cloud Manager.</p>
+<p>BlueXP sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can&#8217;t select it from BlueXP</p>
 </li>
 <li>
 <p>For help with adding a GCP account, see <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-gcp-accounts.html" target="_blank" rel="noopener">Setting up and adding GCP accounts for data tiering with 9.6</a>.</p>
@@ -2373,7 +2392,7 @@ If a newer Release Candidate, General Availability, or patch release is availabl
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Access control (for NFS only)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An export policy defines the clients in the subnet that can access the volume. By default, BlueXP enters a value that provides access to all instances in the subnet.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Permissions and Users / Groups (for CIFS only)</p></td>
@@ -2395,7 +2414,7 @@ Initiator groups are tables of iSCSI host node names and control which initiator
 <br>
 iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).<br>
 <br>
-When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task-connect-lun.html">use the IQN to connect to the LUN from your hosts</a>.</p></td>
+When you create an iSCSI volume, BlueXP automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task-connect-lun.html">use the IQN to connect to the LUN from your hosts</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2453,7 +2472,7 @@ To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTA
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NTP Server</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Use Active Directory Domain</strong> to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">Cloud Manager automation docs</a> for details.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Use Active Directory Domain</strong> to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">BlueXP automation docs</a> for details.<br>
 <br>
 Note that you can configure an NTP server only when creating a CIFS server. It&#8217;s not configurable after you create the CIFS server.</p></td>
 </tr>
@@ -2474,7 +2493,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It&#
 <p>Review details about the configuration.</p>
 </li>
 <li>
-<p>Click <strong>More information</strong> to review details about support and the GCP resources that Cloud Manager will purchase.</p>
+<p>Click <strong>More information</strong> to review details about support and the GCP resources that BlueXP will purchase.</p>
 </li>
 <li>
 <p>Select the <strong>I understand&#8230;&#8203;</strong> check boxes.</p>
@@ -2489,7 +2508,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It&#
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>Cloud Manager deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.</p>
+<p>BlueXP deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.</p>
 </div>
 <div class="paragraph">
 <p>If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the working environment and click <strong>Re-create environment</strong>.</p>
@@ -2517,11 +2536,14 @@ Note that you can configure an NTP server only when creating a CIFS server. It&#
 <h2 id="launching-an-ha-pair-in-gcp">Launching an HA pair in GCP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in GCP.</p>
+<p>Create a working environment in BlueXP to launch Cloud Volumes ONTAP in GCP.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
+<li>
+<p>From the left navigation menu, select <strong>Storage &gt; Canvas</strong>.</p>
+</li>
 <li>
 <p>On the Canvas page, click <strong>Add Working Environment</strong> and follow the prompts.</p>
 </li>
@@ -2547,7 +2569,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It&#
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Working Environment Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Service Account Name</p></td>
@@ -2555,7 +2577,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It&#
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Add Labels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Labels are metadata for your GCP resources. BlueXP adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.<br>
 <br>
 You can add up to four labels from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four labels when creating a working environment.<br>
 <br>
@@ -2568,10 +2590,10 @@ For information about labels, refer to <a href="https://cloud.google.com/compute
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Edit Project</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.</p>
+<p>Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where BlueXP resides.</p>
 </div>
 <div class="paragraph">
-<p>If you don&#8217;t see any additional projects in the drop-down list, then you haven&#8217;t yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You&#8217;ll need to repeat this step for each project.</p>
+<p>If you don&#8217;t see any additional projects in the drop-down list, then you haven&#8217;t yet associated the BlueXP service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the BlueXP role to that project. You&#8217;ll need to repeat this step for each project.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2580,7 +2602,7 @@ For information about labels, refer to <a href="https://cloud.google.com/compute
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-This is the service account that you set up for Cloud Manager, <a href="task-creating-gcp-service-account.html">as described on this page</a>.
+This is the service account that you set up for BlueXP, <a href="task-creating-gcp-service-account.html">as described on this page</a>.
 </td>
 </tr>
 </table>
@@ -2637,7 +2659,7 @@ Your browser does not support the video tag.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generated policy</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If you let Cloud Manager generate the firewall policy for you, you need to choose how you&#8217;ll allow traffic:</p>
+<p>If you let BlueXP generate the firewall policy for you, you need to choose how you&#8217;ll allow traffic:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2685,7 +2707,7 @@ Your browser does not support the video tag.
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
+If a newer Release Candidate, General Availability, or patch release is available for the selected version, then BlueXP updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.10.1 and 9.10.1 P4 is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 </td>
 </tr>
 </table>
@@ -2697,7 +2719,7 @@ If a newer Release Candidate, General Availability, or patch release is availabl
 <p>The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.</p>
 </div>
 <div class="paragraph">
-<p>The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.</p>
+<p>The disk size is for all disks in the initial aggregate and for any additional aggregates that BlueXP creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.</p>
 </div>
 <div class="paragraph">
 <p>For help choosing a disk type and size, see <a href="task-planning-your-config-gcp.html#sizing-your-system-in-gcp">Sizing your system in GCP</a>.</p>
@@ -2717,7 +2739,7 @@ If a newer Release Candidate, General Availability, or patch release is availabl
 <div class="ulist">
 <ul>
 <li>
-<p>Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can&#8217;t select it from Cloud Manager.</p>
+<p>BlueXP sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can&#8217;t select it from BlueXP.</p>
 </li>
 <li>
 <p>You can choose a specific volume tiering policy when you create or edit a volume.</p>
@@ -2757,7 +2779,7 @@ If a newer Release Candidate, General Availability, or patch release is availabl
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Access control (for NFS only)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An export policy defines the clients in the subnet that can access the volume. By default, BlueXP enters a value that provides access to all instances in the subnet.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Permissions and Users / Groups (for CIFS only)</p></td>
@@ -2779,7 +2801,7 @@ Initiator groups are tables of iSCSI host node names and control which initiator
 <br>
 iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).<br>
 <br>
-When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task-connect-lun.html">use the IQN to connect to the LUN from your hosts</a>.</p></td>
+When you create an iSCSI volume, BlueXP automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task-connect-lun.html">use the IQN to connect to the LUN from your hosts</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2837,7 +2859,7 @@ To configure Google Managed Microsoft AD as the AD server for Cloud Volumes ONTA
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NTP Server</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Use Active Directory Domain</strong> to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">Cloud Manager automation docs</a> for details.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Use Active Directory Domain</strong> to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">BlueXP automation docs</a> for details.<br>
 <br>
 Note that you can configure an NTP server only when creating a CIFS server. It&#8217;s not configurable after you create the CIFS server.</p></td>
 </tr>
@@ -2858,7 +2880,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It&#
 <p>Review details about the configuration.</p>
 </li>
 <li>
-<p>Click <strong>More information</strong> to review details about support and the GCP resources that Cloud Manager will purchase.</p>
+<p>Click <strong>More information</strong> to review details about support and the GCP resources that BlueXP will purchase.</p>
 </li>
 <li>
 <p>Select the <strong>I understand&#8230;&#8203;</strong> check boxes.</p>
@@ -2873,7 +2895,7 @@ Note that you can configure an NTP server only when creating a CIFS server. It&#
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>Cloud Manager deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.</p>
+<p>BlueXP deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.</p>
 </div>
 <div class="paragraph">
 <p>If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the working environment and click <strong>Re-create environment</strong>.</p>

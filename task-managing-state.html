@@ -9,14 +9,14 @@
   <meta property="og:title" content="Managing the state of Cloud Volumes ONTAP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-state.html" />
-	<meta property="og:description" content="You can stop and start Cloud Volumes ONTAP from Cloud Manager to manage your cloud compute costs." />
+	<meta property="og:description" content="You can stop and start Cloud Volumes ONTAP from BlueXP to manage your cloud compute costs." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can stop and start Cloud Volumes ONTAP from Cloud Manager to manage your cloud compute costs.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can stop and start Cloud Volumes ONTAP from BlueXP to manage your cloud compute costs.">
   <meta name="keywords" content=" schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,11 +2024,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:41:55 +0000">03/02/2022</time>
+    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -2037,7 +2045,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You can stop and start Cloud Volumes ONTAP from Cloud Manager to manage your cloud compute costs.</p>
+<p>You can stop and start Cloud Volumes ONTAP from BlueXP to manage your cloud compute costs.</p>
 </div>
 </div>
 </div>
@@ -2045,15 +2053,15 @@
 <h2 id="scheduling-automatic-shutdowns-of-cloud-volumes-ontap">Scheduling automatic shutdowns of Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You might want to shut down Cloud Volumes ONTAP during specific time intervals to lower your compute costs. Rather than do this manually, you can configure Cloud Manager to automatically shut down and then restart systems at specific times.</p>
+<p>You might want to shut down Cloud Volumes ONTAP during specific time intervals to lower your compute costs. Rather than do this manually, you can configure BlueXP to automatically shut down and then restart systems at specific times.</p>
 </div>
 <div class="ulist">
 <div class="title">About this task</div>
 <ul>
 <li>
-<p>When you schedule an automatic shutdown of your Cloud Volumes ONTAP system, Cloud Manager postpones the shutdown if an active data transfer is in progress.</p>
+<p>When you schedule an automatic shutdown of your Cloud Volumes ONTAP system, BlueXP postpones the shutdown if an active data transfer is in progress.</p>
 <div class="paragraph">
-<p>Cloud Manager shuts down the system after the transfer is complete.</p>
+<p>BlueXP shuts down the system after the transfer is complete.</p>
 </div>
 </li>
 <li>
@@ -2089,7 +2097,7 @@
 <p><strong>Example</strong></p>
 </div>
 <div class="paragraph">
-<p>The following image shows a schedule that instructs Cloud Manager to shut down the system every Saturday at 12:00 a.m. for 48 hours. Cloud Manager restarts the system every Monday at 12:00 a.m.</p>
+<p>The following image shows a schedule that instructs BlueXP to shut down the system every Saturday at 12:00 a.m. for 48 hours. BlueXP restarts the system every Monday at 12:00 a.m.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_shutdown.gif" alt="Screen shot: Shows a shutdown schedule that shuts down Cloud Volumes ONTAP every weekend at 12:00 AM for 48 hours."></span></p>
@@ -2105,7 +2113,7 @@
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>Cloud Manager saves the schedule. The clock icon changes to indicate that a schedule is set: <span class="image"><img src="./media/screenshot_shutdown_icon_scheduled.gif" alt="Screen shot: Shows the automatic shutdown icon after a schedule is defined."></span></p>
+<p>BlueXP saves the schedule. The clock icon changes to indicate that a schedule is set: <span class="image"><img src="./media/screenshot_shutdown_icon_scheduled.gif" alt="Screen shot: Shows the automatic shutdown icon after a schedule is defined."></span></p>
 </div>
 </div>
 </div>
@@ -2122,14 +2130,14 @@
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-To reduce costs, Cloud Manager periodically deletes older snapshots of root and boot disks. Only the two most recent snapshots are retained for both the root and boot disks.
+To reduce costs, BlueXP periodically deletes older snapshots of root and boot disks. Only the two most recent snapshots are retained for both the root and boot disks.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
-<p>When you stop an HA pair, Cloud Manager shuts down both nodes.</p>
+<p>When you stop an HA pair, BlueXP shuts down both nodes.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>

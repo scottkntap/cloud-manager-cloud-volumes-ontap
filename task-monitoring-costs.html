@@ -9,14 +9,14 @@
   <meta property="og:title" content="Monitoring AWS resource costs | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html" />
-	<meta property="og:description" content="Cloud Manager enables you to view the costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp fea..." />
+	<meta property="og:description" content="BlueXP enables you to view the costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features t..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Manager enables you to view the costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp fea...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="BlueXP enables you to view the costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features t...">
   <meta name="keywords" content=" cost, costs, storage, compute, savings, aws, aws costs, billing"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,11 +2024,27 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-28 09:17:29 +0000">06/28/2022</time>
+    <time datetime="2022-10-31 15:00:41 +0000">10/31/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
+    <img  class="avatar avatar-small"
+          alt="netapp-driley"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18422994?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
     <img  class="avatar avatar-small"
           alt="netapp-bcammett"
@@ -2043,21 +2059,21 @@
 </p>
 
 <div class="paragraph lead">
-<p>Cloud Manager enables you to view the resource costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features that can reduce storage costs.</p>
+<p>BlueXP enables you to view the resource costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features that can reduce storage costs.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
-<p>Cloud Manager updates the costs when you refresh the page. You should refer to AWS for final cost details.</p>
+<p>BlueXP updates the costs when you refresh the page. You should refer to AWS for final cost details.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Step</div>
 <ol class="arabic">
 <li>
-<p>Verify that Cloud Manager can obtain cost information from AWS:</p>
+<p>Verify that BlueXP can obtain cost information from AWS:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Ensure that the IAM policy that provides Cloud Manager with permissions includes the required permissions.</p>
+<p>Ensure that the IAM policy that provides BlueXP with permissions includes the required permissions.</p>
 <div class="paragraph">
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html" target="_blank" rel="noopener">View the required permissions</a></p>
 </div>
@@ -2065,11 +2081,14 @@
 <li>
 <p><a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html" target="_blank" rel="noopener">Activate the <strong>WorkingEnvironmentId</strong> tag</a>.</p>
 <div class="paragraph">
-<p>To track your AWS costs, Cloud Manager assigns a cost allocation tag to Cloud Volumes ONTAP instances. After you create your first working environment, activate the <strong>WorkingEnvironmentId</strong> tag. User-defined tags don&#8217;t appear on AWS billing reports until you activate them in the Billing and Cost Management console.</p>
+<p>To track your AWS costs, BlueXP assigns a cost allocation tag to Cloud Volumes ONTAP instances. After you create your first working environment, activate the <strong>WorkingEnvironmentId</strong> tag. User-defined tags don&#8217;t appear on AWS billing reports until you activate them in the Billing and Cost Management console.</p>
 </div>
 </li>
 </ol>
 </div>
+</li>
+<li>
+<p>From the left navigation menu, select <strong>Storage &gt; Canvas</strong>.</p>
 </li>
 <li>
 <p>On the Canvas page, select a Cloud Volumes ONTAP working environment and then click <strong>Cost</strong>.</p>

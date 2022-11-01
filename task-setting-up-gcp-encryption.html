@@ -9,14 +9,14 @@
   <meta property="og:title" content="Using customer-managed encryption keys with Cloud Volumes ONTAP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-gcp-encryption.html" />
-	<meta property="og:description" content="While Google Cloud Storage always encrypts your data before it’s written to disk, you can use Cloud Manager APIs to create a Cloud Volumes ONTAP system that ..." />
+	<meta property="og:description" content="While Google Cloud Storage always encrypts your data before it’s written to disk, you can use BlueXP APIs to create a Cloud Volumes ONTAP system that uses cu..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="While Google Cloud Storage always encrypts your data before it’s written to disk, you can use Cloud Manager APIs to create a Cloud Volumes ONTAP system that ...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="While Google Cloud Storage always encrypts your data before it’s written to disk, you can use BlueXP APIs to create a Cloud Volumes ONTAP system that uses cu...">
   <meta name="keywords" content=" encryption, gcp, encryption key, permissions, customer-managed, gcpencryption"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,7 +2024,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-15 12:39:38 +0000">08/15/2022</time>
+    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
     
   
 
@@ -2037,19 +2037,27 @@
           style="border-radius: 50%;"/>
   </a>
   
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
 <div class="paragraph lead">
-<p>While Google Cloud Storage always encrypts your data before it&#8217;s written to disk, you can use the Cloud Manager API to create a Cloud Volumes ONTAP system that uses <em>customer-managed encryption keys</em>. These are keys that you generate and manage in GCP using the Cloud Key Management Service.</p>
+<p>While Google Cloud Storage always encrypts your data before it&#8217;s written to disk, you can use the BlueXP API to create a Cloud Volumes ONTAP system that uses <em>customer-managed encryption keys</em>. These are keys that you generate and manage in GCP using the Cloud Key Management Service.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Ensure that the Cloud Manager Connector service account has the correct permissions at the project level, in the project where the key is stored.</p>
+<p>Ensure that the BlueXP Connector service account has the correct permissions at the project level, in the project where the key is stored.</p>
 <div class="paragraph">
 <p>The permissions are provided in the <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-gcp.html" target="_blank" rel="noopener">Connector service account permissions by default</a>, but may not be applied if you use an alternate project for the Cloud Key Management Service.</p>
 </div>
@@ -2078,7 +2086,7 @@
 <p>Obtain the "id" of the key by invoking the get command for the <code>/gcp/vsa/metadata/gcp-encryption-keys</code> API call or by choosing "Copy Resource Name" on the key in the GCP console.</p>
 </li>
 <li>
-<p>If using customer-managed encryption keys and tiering data to object storage, Cloud Manager attempts to utilize the same keys that are used to encrypt the persistent disks. But you&#8217;ll first need to enable Google Cloud Storage buckets to use the keys:</p>
+<p>If using customer-managed encryption keys and tiering data to object storage, BlueXP attempts to utilize the same keys that are used to encrypt the persistent disks. But you&#8217;ll first need to enable Google Cloud Storage buckets to use the keys:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2109,7 +2117,7 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>Refer to the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">Cloud Manager automation docs</a> for more details about using the "GcpEncryption" parameter.</p>
+<p>Refer to the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">BlueXP automation docs</a> for more details about using the "GcpEncryption" parameter.</p>
 </div>
 
     </article>

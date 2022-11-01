@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,7 +2024,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-05 17:45:27 +0000">05/05/2022</time>
+    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
     
   
 
@@ -2034,6 +2034,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2115,7 +2123,7 @@
 <div class="sect2">
 <h3 id="aws-key-management-service">AWS Key Management Service</h3>
 <div class="paragraph">
-<p>When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encryption using the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html" target="_blank" rel="noopener">AWS Key Management Service (KMS)</a>. Cloud Manager requests data keys using a customer master key (CMK).</p>
+<p>When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encryption using the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/overview.html" target="_blank" rel="noopener">AWS Key Management Service (KMS)</a>. BlueXP requests data keys using a customer master key (CMK).</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2148,7 +2156,7 @@ You can&#8217;t change the AWS data encryption method after you create a Cloud V
 <p><a href="https://cloud.google.com/security/encryption-at-rest/" target="_blank" rel="noopener">Google Cloud Platform data-at-rest encryption</a> is enabled by default for Cloud Volumes ONTAP. No setup is required.</p>
 </div>
 <div class="paragraph">
-<p>While Google Cloud Storage always encrypts your data before it&#8217;s written to disk, you can use Cloud Manager APIs to create a Cloud Volumes ONTAP system that uses <em>customer-managed encryption keys</em>. These are keys that you generate and manage in GCP using the Cloud Key Management Service. <a href="task-setting-up-gcp-encryption.html">Learn more</a>.</p>
+<p>While Google Cloud Storage always encrypts your data before it&#8217;s written to disk, you can use BlueXP APIs to create a Cloud Volumes ONTAP system that uses <em>customer-managed encryption keys</em>. These are keys that you generate and manage in GCP using the Cloud Key Management Service. <a href="task-setting-up-gcp-encryption.html">Learn more</a>.</p>
 </div>
 </div>
 </div>
@@ -2174,18 +2182,18 @@ You can&#8217;t change the AWS data encryption method after you create a Cloud V
 <h2 id="ransomware-protection">Ransomware protection</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ransomware attacks can cost a business time, resources, and reputation. Cloud Manager enables you to implement the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.</p>
+<p>Ransomware attacks can cost a business time, resources, and reputation. BlueXP enables you to implement the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Cloud Manager identifies volumes that are not protected by a Snapshot policy and enables you to activate the default Snapshot policy on those volumes.</p>
+<p>BlueXP identifies volumes that are not protected by a Snapshot policy and enables you to activate the default Snapshot policy on those volumes.</p>
 <div class="paragraph">
 <p>Snapshot copies are read-only, which prevents ransomware corruption. They can also provide the granularity to create images of a single file copy or a complete disaster recovery solution.</p>
 </div>
 </li>
 <li>
-<p>Cloud Manager also enables you to block common ransomware file extensions by enabling ONTAP&#8217;s FPolicy solution.</p>
+<p>BlueXP also enables you to block common ransomware file extensions by enabling ONTAP&#8217;s FPolicy solution.</p>
 </li>
 </ul>
 </div>

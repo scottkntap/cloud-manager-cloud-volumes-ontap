@@ -9,14 +9,14 @@
   <meta property="og:title" content="Planning for VPC Service Controls in GCP | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-vpc-service-controls-gcp.html" />
-	<meta property="og:description" content="When choosing to lock down your Google environment with VPC Service Controls, you should understand how Cloud Manager and Cloud Volumes ONTAP interact with t..." />
+	<meta property="og:description" content="When choosing to lock down your Google environment with VPC Service Controls, you should understand how BlueXP and Cloud Volumes ONTAP interact with the Goog..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="When choosing to lock down your Google environment with VPC Service Controls, you should understand how Cloud Manager and Cloud Volumes ONTAP interact with t...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="When choosing to lock down your Google environment with VPC Service Controls, you should understand how BlueXP and Cloud Volumes ONTAP interact with the Goog...">
   <meta name="keywords" content=" vpc, service controls, vpc-sc, google, psc, private service connect"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,11 +2024,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:41:55 +0000">03/02/2022</time>
+    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -2037,7 +2045,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>When choosing to lock down your Google Cloud environment with VPC Service Controls, you should understand how Cloud Manager and Cloud Volumes ONTAP interact with the Google Cloud APIs, as well as how to configure your service perimeter to deploy Cloud Manager and Cloud Volumes ONTAP.</p>
+<p>When choosing to lock down your Google Cloud environment with VPC Service Controls, you should understand how BlueXP and Cloud Volumes ONTAP interact with the Google Cloud APIs, as well as how to configure your service perimeter to deploy BlueXP and Cloud Volumes ONTAP.</p>
 </div>
 <div class="paragraph">
 <p>VPC Service Controls enable you to control access to Google-managed services outside of a trusted perimeter, to block data access from untrusted locations, and to mitigate unauthorized data transfer risks. <a href="https://cloud.google.com/vpc-service-controls/docs" target="_blank" rel="noopener">Learn more about Google Cloud VPC Service Controls</a>.</p>
@@ -2048,7 +2056,7 @@
 <h2 id="how-netapp-services-communicate-with-vpc-service-controls">How NetApp services communicate with VPC Service Controls</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>NetApp services such as Cloud Central and Cloud Manager communicate directly with the Google Cloud APIs. This is either triggered from an external IP address outside of Google Cloud (for example, from api.services.cloud.netapp.com), or within Google Cloud from an internal address assigned to the Cloud Manager Connector.</p>
+<p>BlueXP communicates directly with the Google Cloud APIs. This is either triggered from an external IP address outside of Google Cloud (for example, from api.services.cloud.netapp.com), or within Google Cloud from an internal address assigned to the BlueXP Connector.</p>
 </div>
 <div class="paragraph">
 <p>Depending on the deployment style of the Connector, certain exceptions may have to be made for your service perimeter.</p>
@@ -2059,7 +2067,7 @@
 <h2 id="images">Images</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Both Cloud Volumes ONTAP and Cloud Manager use images from a project within GCP that is managed by NetApp. This can affect the deployment of the Cloud Manager Connector and Cloud Volumes ONTAP, if your organization has a policy that blocks the use of images that are not hosted within the organization.</p>
+<p>Both Cloud Volumes ONTAP and BlueXP use images from a project within GCP that is managed by NetApp. This can affect the deployment of the BlueXP Connector and Cloud Volumes ONTAP, if your organization has a policy that blocks the use of images that are not hosted within the organization.</p>
 </div>
 <div class="paragraph">
 <p>You can deploy a Connector manually using the manual installation method, but Cloud Volumes ONTAP will also need to pull images from the NetApp project. You must provide an allowed list in order to deploy a Connector and Cloud Volumes ONTAP.</p>
@@ -2075,7 +2083,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The Cloud Manager service account needs to reference an image hosted in the projectId <em>netapp-cloudmanager</em> and the project number <em>14190056516</em> from the service project.</p>
+<p>The BlueXP service account needs to reference an image hosted in the projectId <em>netapp-cloudmanager</em> and the project number <em>14190056516</em> from the service project.</p>
 </li>
 <li>
 <p>The service account for the default Google APIs Service Agent needs to reference an image hosted in the projectId <em>netapp-cloudmanager</em> and the project number <em>14190056516</em> from the service project.</p>
@@ -2095,7 +2103,7 @@
 <p>Policies allow exceptions to the VPC Service Controls rule sets. For more information about policies, please visit the <a href="https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules#policy-model" target="_blank" rel="noopener">GCP VPC Service Controls Policy Documentation</a>.</p>
 </div>
 <div class="paragraph">
-<p>To set the policies that Cloud Manager requires, navigate to your VPC Service Controls Perimeter within your organization and add the following policies. The fields should match the options given in the VPC Service Controls policy page. Also note that <strong>all</strong> rules are required and the <strong>OR</strong> parameters should be used in the rule set.</p>
+<p>To set the policies that BlueXP requires, navigate to your VPC Service Controls Perimeter within your organization and add the following policies. The fields should match the options given in the VPC Service Controls policy page. Also note that <strong>all</strong> rules are required and the <strong>OR</strong> parameters should be used in the rule set.</p>
 </div>
 <div class="sect2">
 <h3 id="ingress-rules">Ingress rules</h3>

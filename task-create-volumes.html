@@ -9,14 +9,14 @@
   <meta property="og:title" content="Create FlexVol volumes | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
-	<meta property="og:description" content="If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Mana..." />
+	<meta property="og:description" content="If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from BlueXP." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Mana...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from BlueXP.">
   <meta name="keywords" content=" storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, templates"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,7 +2024,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-13 19:44:41 +0000">09/13/2022</time>
+    <time datetime="2022-10-31 15:00:41 +0000">10/31/2022</time>
     
   
 
@@ -2034,6 +2034,22 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
+    <img  class="avatar avatar-small"
+          alt="netapp-driley"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18422994?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2053,15 +2069,15 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.</p>
+<p>If you need more storage after you launch your initial Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from BlueXP.</p>
 </div>
 <div class="paragraph">
-<p>Cloud Manager provides several ways to create a new volume:</p>
+<p>BlueXP provides several ways to create a new volume:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Specify details for a new volume and let Cloud Manager handle the underlying data aggregates for you. <a href="#create-a-volume">Learn more</a>.</p>
+<p>Specify details for a new volume and let BlueXP handle the underlying data aggregates for you. <a href="#create-a-volume">Learn more</a>.</p>
 </li>
 <li>
 <p>Create a volume on a data aggregate of your choice. <a href="#create-a-volume">Learn more</a>.</p>
@@ -2085,7 +2101,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="#Connect a LUN to a host">use the IQN to connect to the LUN from your hosts</a>.</p>
+<p>When you create an iSCSI volume, BlueXP automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="#Connect a LUN to a host">use the IQN to connect to the LUN from your hosts</a>.</p>
 </li>
 <li>
 <p>You can create additional LUNs from System Manager or the CLI.</p>
@@ -2104,16 +2120,19 @@
 <h2 id="create-a-volume">Create a volume</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The most common way to create a volume is to specify the type of volume that you need and then Cloud Manager handles the disk allocation for you. But you also have the option to choose the specific aggregate on which you want to create the volume.</p>
+<p>The most common way to create a volume is to specify the type of volume that you need and then BlueXP handles the disk allocation for you. But you also have the option to choose the specific aggregate on which you want to create the volume.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
+<p>From the left navigation menu, select <strong>Storage &gt; Canvas</strong>.</p>
+</li>
+<li>
 <p>On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision a FlexVol volume.</p>
 </li>
 <li>
-<p>Create a new volume by letting Cloud Manager handle the disk allocation for you, or choose a specific aggregate for the volume.</p>
+<p>Create a new volume by letting BlueXP handle the disk allocation for you, or choose a specific aggregate for the volume.</p>
 <div class="paragraph">
 <p>Choosing a specific aggregate is recommended only if you have a good understanding of the data aggregates on your Cloud Volumes ONTAP system.</p>
 </div>
@@ -2187,7 +2206,7 @@
 <li>
 <p><strong>Protocol</strong>: Choose a protocol for the volume (NFS, CIFS, or iSCSI) and then provide the required information.</p>
 <div class="paragraph">
-<p>If you select CIFS and a server isn&#8217;t set up, Cloud Manager prompts you to set up CIFS connectivity after you click <strong>Next</strong>.</p>
+<p>If you select CIFS and a server isn&#8217;t set up, BlueXP prompts you to set up CIFS connectivity after you click <strong>Next</strong>.</p>
 </div>
 <div class="paragraph">
 <p><a href="concept-client-protocols.html">Learn about supported client protocols and versions</a>.</p>
@@ -2208,7 +2227,7 @@
 </dd>
 <dt class="hdlist1">Export policy</dt>
 <dd>
-<p>Defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.</p>
+<p>Defines the clients in the subnet that can access the volume. By default, BlueXP enters a value that provides access to all instances in the subnet.</p>
 </dd>
 </dl>
 </div>
@@ -2267,7 +2286,7 @@
 </dd>
 <dt class="hdlist1">NTP Server</dt>
 <dd>
-<p>Select <strong>Use Active Directory Domain</strong> to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">Cloud Manager automation docs</a> for details.</p>
+<p>Select <strong>Use Active Directory Domain</strong> to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">BlueXP automation docs</a> for details.</p>
 <div class="paragraph">
 <p>Note that you can configure an NTP server only when creating a CIFS server. It&#8217;s not configurable after you create the CIFS server.</p>
 </div>
@@ -2283,7 +2302,7 @@
 <dl>
 <dt class="hdlist1">LUN</dt>
 <dd>
-<p>iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We&#8217;ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task-connect-lun.html">use the IQN to connect to the LUN from your hosts</a>.</p>
+<p>iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices. When you create an iSCSI volume, BlueXP automatically creates a LUN for you. We&#8217;ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <a href="task-connect-lun.html">use the IQN to connect to the LUN from your hosts</a>.</p>
 </dd>
 <dt class="hdlist1">Initiator group</dt>
 <dd>
@@ -2348,7 +2367,7 @@
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>Cloud Manager creates the volume on the Cloud Volumes ONTAP system.</p>
+<p>BlueXP creates the volume on the Cloud Volumes ONTAP system.</p>
 </div>
 </div>
 </div>
@@ -2376,6 +2395,9 @@ You can only create NFS or CIFS volumes when using templates.
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
+<li>
+<p>From the left navigation menu, select <strong>Storage &gt; Canvas</strong>.</p>
+</li>
 <li>
 <p>On the Canvas page, click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.</p>
 </li>
@@ -2448,11 +2470,14 @@ You can click the checkbox <strong>Show read-only parameters</strong> to show al
 <h2 id="create-a-volume-on-the-second-node-in-an-ha-configuration">Create a volume on the second node in an HA configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By default, Cloud Manager creates volumes on the first node in an HA configuration. If you need an active-active configuration, in which both nodes serve data to clients, you must create aggregates and volumes on the second node.</p>
+<p>By default, BlueXP creates volumes on the first node in an HA configuration. If you need an active-active configuration, in which both nodes serve data to clients, you must create aggregates and volumes on the second node.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
+<li>
+<p>From the left navigation menu, select <strong>Storage &gt; Canvas</strong>.</p>
+</li>
 <li>
 <p>On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.</p>
 </li>
@@ -2466,7 +2491,7 @@ You can click the checkbox <strong>Show read-only parameters</strong> to show al
 <p>For Home Node, choose the second node in the HA pair.</p>
 </li>
 <li>
-<p>After Cloud Manager creates the aggregate, select it and then click <strong>Create volume</strong>.</p>
+<p>After BlueXP creates the aggregate, select it and then click <strong>Create volume</strong>.</p>
 </li>
 <li>
 <p>Enter details for the new volume, and then click <strong>Create</strong>.</p>
@@ -2475,7 +2500,7 @@ You can click the checkbox <strong>Show read-only parameters</strong> to show al
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>Cloud Manager creates the volume on the second node in the HA pair.</p>
+<p>BlueXP creates the volume on the second node in the HA pair.</p>
 </div>
 <div class="admonitionblock tip">
 <table>

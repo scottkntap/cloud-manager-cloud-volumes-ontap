@@ -1135,7 +1135,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1372,11 +1372,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in Azure"
@@ -1759,7 +1759,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -1781,7 +1781,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-13 14:49:00 +0000">10/13/2022</time>
+    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
     
   
 
@@ -1791,6 +1791,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1831,7 +1839,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>If an outbound internet connection isn&#8217;t available to send AutoSupport messages, Cloud Manager automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector&#8217;s security group allows <em>inbound</em> connections over port 3128. You&#8217;ll need to open this port after you deploy the Connector.</p>
+<p>If an outbound internet connection isn&#8217;t available to send AutoSupport messages, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector&#8217;s security group allows <em>inbound</em> connections over port 3128. You&#8217;ll need to open this port after you deploy the Connector.</p>
 </div>
 <div class="paragraph">
 <p>If you defined strict outbound rules for Cloud Volumes ONTAP, then you&#8217;ll also need to ensure that the Cloud Volumes ONTAP security group allows <em>outbound</em> connections over port 3128.</p>
@@ -1840,13 +1848,13 @@
 <p>After you&#8217;ve verified that outbound internet access is available, you can test AutoSupport to ensure that it can send messages. For instructions, refer to <a href="https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html" target="_blank" rel="noopener">ONTAP docs: Set up AutoSupport</a>.</p>
 </div>
 <div class="paragraph">
-<p>If Cloud Manager notifies you that AutoSupport messages can&#8217;t be sent, <a href="task-verify-autosupport.html#troubleshoot-your-autosupport-configuration">troubleshoot your AutoSupport configuration</a>.</p>
+<p>If BlueXP notifies you that AutoSupport messages can&#8217;t be sent, <a href="task-verify-autosupport.html#troubleshoot-your-autosupport-configuration">troubleshoot your AutoSupport configuration</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="ip-addresses">IP addresses</h3>
 <div class="paragraph">
-<p>Cloud Manager allocates the following number of IP addresses to Cloud Volumes ONTAP in Azure:</p>
+<p>BlueXP allocates the following number of IP addresses to Cloud Volumes ONTAP in Azure:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1859,7 +1867,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Note that Cloud Manager creates an SVM management LIF on HA pairs, but not on single node systems in Azure.</p>
+<p>Note that BlueXP creates an SVM management LIF on HA pairs, but not on single node systems in Azure.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1877,13 +1885,13 @@ A LIF is an IP address associated with a physical port. An SVM management LIF is
 <div class="sect2">
 <h3 id="secure-connections-to-azure-services">Secure connections to Azure services</h3>
 <div class="paragraph">
-<p>By default, Cloud Manager enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure storage accounts.</p>
+<p>By default, BlueXP enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure storage accounts.</p>
 </div>
 <div class="paragraph">
-<p>In most cases, there&#8217;s nothing that you need to do—​Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you&#8217;ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.</p>
+<p>In most cases, there&#8217;s nothing that you need to do—​BlueXP manages the Azure Private Link for you. But if you use Azure Private DNS, then you&#8217;ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.</p>
 </div>
 <div class="paragraph">
-<p>You can also disable the Private Link connection, if required by your business needs. If you disable the link, Cloud Manager configures Cloud Volumes ONTAP to use a service endpoint instead.</p>
+<p>You can also disable the Private Link connection, if required by your business needs. If you disable the link, BlueXP configures Cloud Volumes ONTAP to use a service endpoint instead.</p>
 </div>
 <div class="paragraph">
 <p><a href="task-enabling-private-link.html">Learn more about using Azure Private Links or service endpoints with Cloud Volumes ONTAP</a>.</p>
@@ -1913,19 +1921,19 @@ A LIF is an IP address associated with a physical port. An SVM management LIF is
 <p>You must use a <em>dedicated</em> resource group for each Cloud Volumes ONTAP HA pair that you deploy in Azure. Only one HA pair is supported in a resource group.</p>
 </div>
 <div class="paragraph">
-<p>Cloud Manager experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.</p>
+<p>BlueXP experiences connection issues if you try to deploy a second Cloud Volumes ONTAP HA pair in an Azure resource group.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="security-groups">Security groups</h3>
 <div class="paragraph">
-<p>You don&#8217;t need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to the security group rules listed below.</p>
+<p>You don&#8217;t need to create security groups because BlueXP does that for you. If you need to use your own, refer to the security group rules listed below.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="security-group-rules">Security group rules</h3>
 <div class="paragraph">
-<p>Cloud Manager creates Azure security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.</p>
+<p>BlueXP creates Azure security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.</p>
 </div>
 <div class="paragraph">
 <p>The security group for Cloud Volumes ONTAP requires both inbound and outbound rules.</p>
@@ -2640,7 +2648,7 @@ If your network uses a proxy server for all communication to the internet, you c
 <td class="tableblock halign-left valign-top"><p class="tableblock">https://*.cloudmanager.cloud.netapp.com<br>
 <br>
 https://cloudmanager.cloud.netapp.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To provide SaaS features and services within Cloud Manager.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide SaaS features and services within BlueXP.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io<br>
@@ -2779,7 +2787,7 @@ The source IP address is the Connector host.
 <td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used for DNS resolve by Cloud Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used for DNS resolve by BlueXP</p></td>
 </tr>
 </tbody>
 </table>

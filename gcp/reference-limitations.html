@@ -1135,7 +1135,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1379,11 +1379,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/gcp/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in Google Cloud"
@@ -1752,7 +1752,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -1774,7 +1774,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-19 19:14:46 +0000">04/19/2022</time>
+    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
     
   
 
@@ -1784,6 +1784,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1798,23 +1806,23 @@
 <p>Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.</p>
 </div>
 <div class="paragraph">
-<p>These limitations are specific to Cloud Volumes ONTAP management in Cloud Manager. To view limitations with the Cloud Volumes ONTAP software itself, <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html" target="_blank" rel="noopener">go to the Cloud Volumes ONTAP Release Notes</a></p>
+<p>These limitations are specific to Cloud Volumes ONTAP management in BlueXP (formerly Cloud Manager). To view limitations with the Cloud Volumes ONTAP software itself, <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html" target="_blank" rel="noopener">go to the Cloud Volumes ONTAP Release Notes</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cloud-manager-doesnt-support-flexgroup-volumes">Cloud Manager doesn&#8217;t support FlexGroup volumes</h2>
+<h2 id="bluexp-doesnt-support-flexgroup-volumes">BlueXP doesn&#8217;t support FlexGroup volumes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While Cloud Volumes ONTAP supports FlexGroup volumes, Cloud Manager does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set Cloud Manager&#8217;s Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.</p>
+<p>While Cloud Volumes ONTAP supports FlexGroup volumes, BlueXP does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set BlueXP&#8217;s Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cloud-manager-doesnt-support-s3-with-cloud-volumes-ontap">Cloud Manager doesn&#8217;t support S3 with Cloud Volumes ONTAP</h2>
+<h2 id="bluexp-doesnt-support-s3-with-cloud-volumes-ontap">BlueXP doesn&#8217;t support S3 with Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While Cloud Volumes ONTAP supports S3 as an option for scale-out storage in some cloud providers, Cloud Manager doesn&#8217;t provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the <a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html" target="_blank" rel="noopener">S3 Configuration Power Guide</a>.</p>
+<p>While Cloud Volumes ONTAP supports S3 as an option for scale-out storage in some cloud providers, BlueXP doesn&#8217;t provide any management capabilities for this feature. Using the CLI is the best practice to configure S3 client access from Cloud Volumes ONTAP. For details, refer to the <a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html" target="_blank" rel="noopener">S3 Configuration Power Guide</a>.</p>
 </div>
 <div class="paragraph">
 <p><a href="concept-client-protocols.html">Learn more about Cloud Volumes ONTAP support for S3 and other client protocols</a>.</p>
@@ -1822,10 +1830,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="cloud-manager-doesnt-support-disaster-recovery-for-storage-vms">Cloud Manager doesn&#8217;t support disaster recovery for storage VMs</h2>
+<h2 id="bluexp-doesnt-support-disaster-recovery-for-storage-vms">BlueXP doesn&#8217;t support disaster recovery for storage VMs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cloud Manager doesn&#8217;t provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.</p>
+<p>BlueXP doesn&#8217;t provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.</p>
 </div>
 <div class="ulist">
 <ul>

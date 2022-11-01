@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,11 +2024,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-15 16:49:44 +0000">04/15/2022</time>
+    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
     <img  class="avatar avatar-small"
           alt="netapp-bcammett"
@@ -2051,16 +2059,16 @@
 <li>
 <p>Ensure that an active Customer Master Key (CMK) exists.</p>
 <div class="paragraph">
-<p>The CMK can be an AWS-managed CMK or a customer-managed CMK. It can be in the same AWS account as Cloud Manager and Cloud Volumes ONTAP or in a different AWS account.</p>
+<p>The CMK can be an AWS-managed CMK or a customer-managed CMK. It can be in the same AWS account as BlueXP and Cloud Volumes ONTAP or in a different AWS account.</p>
 </div>
 <div class="paragraph">
 <p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys" target="_blank" rel="noopener">AWS Documentation: Customer Master Keys (CMKs)</a></p>
 </div>
 </li>
 <li>
-<p>Modify the key policy for each CMK by adding the IAM role that provides permissions to Cloud Manager as a <em>key user</em>.</p>
+<p>Modify the key policy for each CMK by adding the IAM role that provides permissions to BlueXP as a <em>key user</em>.</p>
 <div class="paragraph">
-<p>Adding the IAM role as a key user gives Cloud Manager permissions to use the CMK with Cloud Volumes ONTAP.</p>
+<p>Adding the IAM role as a key user gives BlueXP permissions to use the CMK with Cloud Volumes ONTAP.</p>
 </div>
 <div class="paragraph">
 <p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html" target="_blank" rel="noopener">AWS Documentation: Editing Keys</a></p>
@@ -2079,13 +2087,13 @@
 <li>
 <p>In the <strong>General configuration</strong> pane, copy the ARN of the key.</p>
 <div class="paragraph">
-<p>You&#8217;ll need to provide the ARN to Cloud Manager when you create the Cloud Volumes ONTAP system.</p>
+<p>You&#8217;ll need to provide the ARN to BlueXP when you create the Cloud Volumes ONTAP system.</p>
 </div>
 </li>
 <li>
-<p>In the <strong>Other AWS accounts</strong> pane, add the AWS account that provides Cloud Manager with permissions.</p>
+<p>In the <strong>Other AWS accounts</strong> pane, add the AWS account that provides BlueXP with permissions.</p>
 <div class="paragraph">
-<p>In most cases, this is the account where Cloud Manager resides. If Cloud Manager wasn&#8217;t installed in AWS, it would be the account for which you provided AWS access keys to Cloud Manager.</p>
+<p>In most cases, this is the account where BlueXP resides. If BlueXP wasn&#8217;t installed in AWS, it would be the account for which you provided AWS access keys to BlueXP.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_cmk_add_accounts.gif" alt="This screenshot shows the &quot;Add other AWS accounts&quot; button from the AWS KMS console."></span></p>
@@ -2095,15 +2103,15 @@
 </div>
 </li>
 <li>
-<p>Now switch to the AWS account that provides Cloud Manager with permissions and open the IAM console.</p>
+<p>Now switch to the AWS account that provides BlueXP with permissions and open the IAM console.</p>
 </li>
 <li>
 <p>Create an IAM policy that includes the permissions listed below.</p>
 </li>
 <li>
-<p>Attach the policy to the IAM role or IAM user that provides permissions to Cloud Manager.</p>
+<p>Attach the policy to the IAM role or IAM user that provides permissions to BlueXP.</p>
 <div class="paragraph">
-<p>The following policy provides the permissions that Cloud Manager needs to use the CMK from the external AWS account. Be sure to modify the region and account ID in the "Resource" sections.</p>
+<p>The following policy provides the permissions that BlueXP needs to use the CMK from the external AWS account. Be sure to modify the region and account ID in the "Resource" sections.</p>
 </div>
 <div class="listingblock">
 <div class="content">

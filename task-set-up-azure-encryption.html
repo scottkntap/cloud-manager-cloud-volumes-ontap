@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,7 +2024,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-30 16:11:43 +0000">06/30/2022</time>
+    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
     
   
 
@@ -2034,6 +2034,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2064,7 +2072,7 @@
 <p>From Azure, create a key vault and then generate a key in that vault</p>
 </li>
 <li>
-<p>From Cloud Manager, use the API to create a Cloud Volumes ONTAP working environment that uses the key</p>
+<p>From BlueXP, use the API to create a Cloud Volumes ONTAP working environment that uses the key</p>
 </li>
 </ol>
 </div>
@@ -2102,7 +2110,7 @@
 <p>All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.</p>
 </li>
 <li>
-<p>For root, boot, and data disks, Cloud Manager uses a <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption" target="_blank" rel="noopener">disk encryption set</a>, which enables management of encryption keys with managed disks.</p>
+<p>For root, boot, and data disks, BlueXP uses a <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption" target="_blank" rel="noopener">disk encryption set</a>, which enables management of encryption keys with managed disks.</p>
 </li>
 <li>
 <p>Any new data disks also use the same disk encryption set.</p>
@@ -2180,11 +2188,11 @@
 <h2 id="create-a-working-environment-that-uses-the-encryption-key">Create a working environment that uses the encryption key</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After you create the key vault and generate an encryption key, you can create a new Cloud Volumes ONTAP system that is configured to use the key. These steps are supported by using the Cloud Manager API.</p>
+<p>After you create the key vault and generate an encryption key, you can create a new Cloud Volumes ONTAP system that is configured to use the key. These steps are supported by using the BlueXP API.</p>
 </div>
 <div class="paragraph">
 <div class="title">Required permissions</div>
-<p>If you want to use a customer-managed key with a single node Cloud Volumes ONTAP system, ensure that the Cloud Manager Connector has the following permissions:</p>
+<p>If you want to use a customer-managed key with a single node Cloud Volumes ONTAP system, ensure that the BlueXP Connector has the following permissions:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2215,7 +2223,7 @@ The first three permissions aren&#8217;t required for HA pairs.
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Obtain the list of key vaults in your Azure subscription by using the following Cloud Manager API call.</p>
+<p>Obtain the list of key vaults in your Azure subscription by using the following BlueXP API call.</p>
 <div class="paragraph">
 <p>For an HA pair: <code>GET /azure/ha/metadata/vaults</code></p>
 </div>
@@ -2230,7 +2238,7 @@ The first three permissions aren&#8217;t required for HA pairs.
 </div>
 </li>
 <li>
-<p>Obtain the list of keys within the vault by using the following Cloud Manager API call.</p>
+<p>Obtain the list of keys within the vault by using the following BlueXP API call.</p>
 <div class="paragraph">
 <p>For an HA pair: <code>GET /azure/ha/metadata/keys-vault</code></p>
 </div>
@@ -2245,7 +2253,7 @@ The first three permissions aren&#8217;t required for HA pairs.
 </div>
 </li>
 <li>
-<p>Create a Cloud Volumes ONTAP system by using the following Cloud Manager API call.</p>
+<p>Create a Cloud Volumes ONTAP system by using the following BlueXP API call.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>

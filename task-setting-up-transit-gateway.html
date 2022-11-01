@@ -1130,7 +1130,7 @@
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
 </script><div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
@@ -1527,11 +1527,11 @@
       <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
-      data-pdf-filename="Work with storage VMs in Cloud Manager"
+      data-pdf-filename="Work with storage VMs in BlueXP"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms.html">
-        Work with storage VMs in Cloud Manager
+        Work with storage VMs in BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Create storage VMs in AWS"
@@ -2002,7 +2002,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -2024,7 +2024,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-06 13:56:08 +0000">04/06/2022</time>
+    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
     
   
 
@@ -2034,6 +2034,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2091,10 +2099,10 @@
 <li>
 <p>Create routes in the transit gateway&#8217;s route table by specifying the HA pair&#8217;s floating IP addresses.</p>
 <div class="paragraph">
-<p>You can find the floating IP addresses on the Working Environment Information page in Cloud Manager. Here&#8217;s an example:</p>
+<p>You can find the floating IP addresses on the Working Environment Information page in BlueXP. Here&#8217;s an example:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_floating_ips.gif" alt="A screenshot of Cloud Manager that shows the floating IP addresses for the cluster management interface, two NFS and CIFS data interfaces, and the SVM management interface."></span></p>
+<p><span class="image"><img src="./media/screenshot_floating_ips.gif" alt="A screenshot of BlueXP that shows the floating IP addresses for the cluster management interface, two NFS and CIFS data interfaces, and the SVM management interface."></span></p>
 </div>
 <div class="paragraph">
 <p>The following sample image shows the route table for the transit gateway. It includes routes to the CIDR blocks of the two VPCs and four floating IP addresses used by Cloud Volumes ONTAP.</p>
@@ -2128,7 +2136,7 @@
 <p>This step is important because it completes the routing between the VPCs.</p>
 </div>
 <div class="paragraph">
-<p>The following sample image shows the route table for VPC 1. It includes a route to the floating IP addresses and to VPC 2, which is where a client resides. Cloud Manager automatically added the floating IPs to the route table when it deployed the HA pair.</p>
+<p>The following sample image shows the route table for VPC 1. It includes a route to the floating IP addresses and to VPC 2, which is where a client resides. BlueXP automatically added the floating IPs to the route table when it deployed the HA pair.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_transit_gateway3.png" alt="A screenshot of the AWS console that shows the route table for VPC 1. It includes a route to the floating IP addresses and to VPC 2, which is where a client resides."></span></p>
@@ -2137,7 +2145,7 @@
 <li>
 <p>Mount volumes to clients using the floating IP address.</p>
 <div class="paragraph">
-<p>You can find the correct IP address in Cloud Manager by selecting a volume and clicking <strong>Mount Command</strong>.</p>
+<p>You can find the correct IP address in BlueXP by selecting a volume and clicking <strong>Mount Command</strong>.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_mount.gif" alt="Screen shot: Shows the Mount Command which is available when you select a volume."></span></p>
