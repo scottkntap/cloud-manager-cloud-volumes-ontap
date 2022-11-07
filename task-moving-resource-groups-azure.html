@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Disks and aggregates | NetApp Documentation</title>
+  <title>Moving resource groups | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Disks and aggregates | NetApp Documentation" />
+  <meta property="og:title" content="Moving resource groups | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html" />
-	<meta property="og:description" content="Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand your storage costs." />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html" />
+	<meta property="og:description" content="Cloud Volumes ONTAP supports Azure resource groups moves but the workflow happens in the Azure console only." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand your storage costs.">
-  <meta name="keywords" content=" storage, capacity, volumes, aggregates, raw capacity, usable capacity"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP supports Azure resource groups moves but the workflow happens in the Azure console only.">
+  <meta name="keywords" content=" move resource groups, azure, remove working environment, resource groups, azure console, Azure subscriptions"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -185,7 +185,7 @@
   <!-- Start Page Toolbar -->
   
   <div class="page-nav-toolbar">
-<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/us-en/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html">
   
   <div class="custom-dropdown-select unselected" title="All cloud providers">
     <label>Cloud provider</label>
@@ -197,26 +197,26 @@
   <ul class="custom-dropdown-menu">
     
     
-    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws/concept-storage.html">
+    <li data-value="aws" data-url="/us-en/cloud-manager-cloud-volumes-ontap/aws">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/aws-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
     </li>
     
     
     
-    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp/concept-storage.html">
+    <li data-value="gcp" data-url="/us-en/cloud-manager-cloud-volumes-ontap/gcp">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/gcp-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Google Cloud
     </li>
     
     
     
-    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/concept-storage.html">
+    <li data-value="azure" data-url="/us-en/cloud-manager-cloud-volumes-ontap/azure/task-moving-resource-groups-azure.html">
       <img alt="" src="/us-en/cloud-manager-cloud-volumes-ontap/images/azure-ico.svg" onerror="this.src='/us-en/cloud-manager-cloud-volumes-ontap/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
     </li>
     
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Disks and aggregates](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/concept-storage.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Moving resource groups](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/task-move-resource-groups-azure.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -339,15 +339,15 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/concept-storage.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/concept-storage.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/concept-storage.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-storage.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
@@ -881,6 +881,8 @@
 
 
 
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
 
 
         </li>
@@ -996,8 +998,6 @@
           
 
 
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
-  
 
 
 
@@ -1737,7 +1737,7 @@
       data-pdf-exists="true" 
       data-pdf-filename="Move resource groups"
       data-li-level="4#" 
-      class=" "
+      class="  active "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html">
         Move resource groups
       </a></li></ul></li><li 
@@ -1829,7 +1829,7 @@
       data-pdf-exists="true" 
       data-pdf-filename="Disks and aggregates"
       data-li-level="3#" 
-      class="  active "
+      class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html">
         Disks and aggregates
       </a></li><li 
@@ -2026,26 +2026,18 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Disks and aggregates</h1>
+  <h1 class="n-doc__component-detail-heading">Moving resource groups</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2022-11-07 17:28:58 +0000">11/07/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
     <img  class="avatar avatar-small"
           alt="netapp-rlithman"
@@ -2059,206 +2051,38 @@
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
-<p>Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand your storage costs.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/caution.svg" alt="Caution">
-</td>
-<td class="content">
-All disks and aggregates must be created and deleted directly from BlueXP. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="overview">Overview</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Cloud Volumes ONTAP uses cloud provider storage as disks and groups them into one or more aggregates. Aggregates provide storage to one or more volumes.</p>
+<p>Cloud Volumes ONTAP supports Azure resource groups moves but the workflow happens in the Azure console only.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/diagram_storage.png" alt="This illustration shows an aggregate that is comprised of disks, and the data volumes that Cloud Volumes ONTAP makes available to hosts."></span></p>
+<p>You can move a working environment from one resource group to a different resource group in Azure within the same Azure subscription. Moving resource groups between different Azure subscriptions is not supported.</p>
 </div>
-<div class="paragraph">
-<p>Several types of cloud disks are supported. You choose the disk type when you create a volume and the default disk size when you deploy Cloud Volumes ONTAP.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="Tip">
-</td>
-<td class="content">
-The total amount of storage purchased from a cloud provider is the <em>raw capacity</em>. The <em>usable capacity</em> is less because approximately 12 to 14 percent is overhead that is reserved for Cloud Volumes ONTAP use. For example, if BlueXP creates a 500 GiB aggregate, the usable capacity is 442.94 GiB.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="aws-storage">AWS storage</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In AWS, Cloud Volumes ONTAP uses EBS storage for user data and local NVMe storage as Flash Cache on some EC2 instance types.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">EBS storage</dt>
-<dd>
-<p>In AWS, an aggregate can contain up to 6 disks that are all the same size. But if you have a configuration that supports the Amazon EBS Elastic Volumes feature, then an aggregate can contain up to 8 disks. <a href="concept-aws-elastic-volumes.html">Learn more about support for Elastic Volumes</a>.</p>
-<div class="paragraph">
-<p>The maximum disk size is 16 TiB.</p>
-</div>
-<div class="paragraph">
-<p>The underlying EBS disk type can be either General Purpose SSDs (gp3 or gp2), Provisioned IOPS SSD (io1), or Throughput Optimized HDD (st1). You can pair an EBS disk with Amazon S3 to <a href="concept-data-tiering.html">tier inactive data to low-cost object storage</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Tiering data to object storage is not recommended when using Throughput Optimized HDDs (st1).
-</td>
-</tr>
-</table>
-</div>
-</dd>
-<dt class="hdlist1">Local NVMe storage</dt>
-<dd>
-<p>Some EC2 instance types include local NVMe storage, which Cloud Volumes ONTAP uses as <a href="concept-flash-cache.html">Flash Cache</a>.</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p><strong>Related links</strong></p>
-</div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
 <li>
-<p><a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html" target="_blank" rel="noopener">AWS documentation: EBS Volume Types</a></p>
+<p>Remove the working environment from <strong>Canvas</strong>.</p>
+<div class="paragraph">
+<p>To learn how to remove a working environment, see <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-removing.html">Removing Cloud Volumes ONTAP working environments</a>.</p>
+</div>
 </li>
 <li>
-<p><a href="task-planning-your-config.html">Learn how to choose disk types and disk sizes for your systems in AWS</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html" target="_blank" rel="noopener">Review storage limits for Cloud Volumes ONTAP in AWS</a></p>
-</li>
-<li>
-<p><a href="http://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html" target="_blank" rel="noopener">Review supported configurations for Cloud Volumes ONTAP in AWS</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="azure-storage">Azure storage</h2>
-<div class="sectionbody">
+<p>Execute the resource group move in the Azure console.</p>
 <div class="paragraph">
-<p>In Azure, an aggregate can contain up to 12 disks that are all the same size. The disk type and maximum disk size depends on whether you use a single node system or an HA pair:</p>
+<p>To complete the move, refer to <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription" target="_blank" rel="noopener">Move resources to a new resource group or subscription in Microsoft Azure’s documentation</a>.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Single node systems</dt>
-<dd>
-<p>Single node systems can use three types of Azure Managed Disks:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Premium SSD Managed Disks</em> provide high performance for I/O-intensive workloads at a higher cost.</p>
 </li>
 <li>
-<p><em>Standard SSD Managed Disks</em> provide consistent performance for workloads that require low IOPS.</p>
+<p>In <strong>Canvas</strong>, discover the working environment.</p>
 </li>
 <li>
-<p><em>Standard HDD Managed Disks</em> are a good choice if you don&#8217;t need high IOPS and want to reduce your costs.</p>
-<div class="paragraph">
-<p>Each managed disk type has a maximum disk size of 32 TiB.</p>
+<p>Look for the new resource group in the information for the working environment.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>You can pair a managed disk with Azure Blob storage to <a href="concept-data-tiering.html">tier inactive data to low-cost object storage</a>.</p>
-</div>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">HA pairs</dt>
-<dd>
-<p>HA pairs use Premium page blobs, which have a maximum disk size of 8 TiB.</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p><strong>Related links</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types" target="_blank" rel="noopener">Microsoft Azure documentation: Azure managed disk types</a></p>
-</li>
-<li>
-<p><a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-pageblob-overview" target="_blank" rel="noopener">Microsoft Azure documentation: Overview of Azure page blobs</a></p>
-</li>
-<li>
-<p><a href="task-planning-your-config-azure.html">Learn how to choose disk types and disk sizes for your systems in Azure</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html" target="_blank" rel="noopener">Review storage limits for Cloud Volumes ONTAP in Azure</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="google-cloud-storage">Google Cloud storage</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In Google Cloud, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 64 TiB.</p>
-</div>
-<div class="paragraph">
-<p>The disk type can be either <em>Zonal SSD persistent disks</em>, <em>Zonal Balanced persistent disks</em>, or <em>Zonal standard persistent disks</em>. You can pair persistent disks with a Google Storage bucket to <a href="concept-data-tiering.html">tier inactive data to low-cost object storage</a>.</p>
-</div>
-<div class="paragraph">
-<p><strong>Related links</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://cloud.google.com/compute/docs/disks/" target="_blank" rel="noopener">Google Cloud documentation: Storage Options</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html" target="_blank" rel="noopener">Review storage limits for Cloud Volumes ONTAP in Google Cloud</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="raid-type">RAID type</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The RAID type for each Cloud Volumes ONTAP aggregate is RAID0 (striping). Cloud Volumes ONTAP relies on the cloud provider for disk availability and durability. No other RAID types are supported.</p>
-</div>
-<div class="sect2">
-<h3 id="hot-spares">Hot spares</h3>
-<div class="paragraph">
-<p>RAID0 doesn&#8217;t support the use of hot spares for redundancy.</p>
-</div>
-<div class="paragraph">
-<p>Creating unused disks (hot spares) attached to a Cloud Volumes ONTAP instance is an unnecessary expense and may prevent provisioning additional space as needed. Therefore, it&#8217;s not recommended.</p>
-</div>
-</div>
-</div>
+<div class="title">Result</div>
+<p>The working environment and its resources (VMs, disks, storage accounts, network interfaces, snapshots) are in the new resource group.</p>
 </div>
 
     </article>

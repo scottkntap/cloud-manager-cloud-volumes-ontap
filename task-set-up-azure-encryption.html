@@ -883,6 +883,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -1731,6 +1733,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html">
         Use an Azure Private Link or service endpoints
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Move resource groups"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html">
+        Move resource groups
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Google Cloud administration"
@@ -2024,24 +2033,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2022-11-07 18:00:25 +0000">11/07/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
     <img  class="avatar avatar-small"
           alt="netapp-rlithman"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2089,15 +2098,18 @@
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">HA pairs</dt>
+<dt class="hdlist1">Azure HA single availability zone</dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p>All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.</p>
+<p>All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.<sup>1</sup></p>
 </li>
 <li>
-<p>Any new storage accounts (for example, when you add disks or aggregates) also use the same key.</p>
+<p>Any new storage accounts (for example, when you add disks or aggregates) also use the same key.<sup>1</sup></p>
+</li>
+<li>
+<p>From ONTAP 9.10.1P3, for NVRAM and the core disk, BlueXP uses a <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption" target="_blank" rel="noopener">disk encryption set</a>, which enables management of encryption keys with managed disks. Lower versions will use Microsoft-managed key, instead of the customer-managed key.</p>
 </li>
 </ul>
 </div>
@@ -2107,7 +2119,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key.</p>
+<p>All Azure storage accounts for Cloud Volumes ONTAP are encrypted using a customer-managed key. <sup>1</sup></p>
 </li>
 <li>
 <p>For root, boot, and data disks, BlueXP uses a <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption" target="_blank" rel="noopener">disk encryption set</a>, which enables management of encryption keys with managed disks.</p>
@@ -2116,12 +2128,20 @@
 <p>Any new data disks also use the same disk encryption set.</p>
 </li>
 <li>
-<p>NVRAM and the core disk are encrypted using a Microsoft-managed key, instead of the customer-managed key.</p>
+<p>From ONTAP 9.9.1P7, For NVRAM and the core disk, BlueXP uses a disk encryption set, which enables management of encryption keys with managed disks. Lower versions will use Microsoft-managed key, instead of the customer-managed key.</p>
 </li>
 </ul>
 </div>
 </dd>
 </dl>
+</div>
+<div class="olist arabic">
+<div class="title">Footnote</div>
+<ol class="arabic">
+<li>
+<p>If you want to encrypt your storage accounts during their creation, you must create and provide the ID of the resource in the Cloud Volumes ONTAP creation request. This applies for all type of deployments. If you do not provide this, the storage accounts still will be encrypted, but BlueXP will first create the storage accounts with Microsoft-managed key encryption and then will update the storage accounts to use the customer-managed key.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2156,7 +2176,7 @@
 <p><strong>Purge protection</strong></p>
 </li>
 <li>
-<p><strong>Azure Disk Encryption for volume encryption</strong> (for single node Cloud Volumes ONTAP systems only)</p>
+<p><strong>Azure Disk Encryption for volume encryption</strong></p>
 </li>
 </ul>
 </div>
@@ -2201,7 +2221,8 @@
 "Microsoft.Compute/diskEncryptionSets/delete"
 "Microsoft.KeyVault/vaults/deploy/action",
 "Microsoft.KeyVault/vaults/read",
-"Microsoft.KeyVault/vaults/accessPolicies/write"</code></pre>
+"Microsoft.KeyVault/vaults/accessPolicies/write"
+"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2267,8 +2288,9 @@ The first three permissions aren&#8217;t required for HA pairs.
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"azureEncryptionParameters": {
-       "key": "keyName",
-       "vaultName": "vaultName"
+              "key": "keyName",
+              "vaultName": "vaultName",
+              "userAssignedIdentity": " userAssignedIdentityId", [Optional]***
 }</code></pre>
 </div>
 </div>
@@ -2287,8 +2309,9 @@ The first three permissions aren&#8217;t required for HA pairs.
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"azureEncryptionParameters": {
-       "key": "keyName",
-       "vaultName": "vaultName"
+              "key": "keyName",
+              "vaultName": "vaultName",
+              "userAssignedIdentity": " userAssignedIdentityId", [Optional]***
 }</code></pre>
 </div>
 </div>

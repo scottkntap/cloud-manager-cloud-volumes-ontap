@@ -218,7 +218,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap//search.html</loc>
       
-      <lastmod>2022-11-01T16:04:24+00:00</lastmod>
+      <lastmod>2022-11-07T18:35:05+00:00</lastmod>
       
     </url>
   
@@ -517,6 +517,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html</loc>
+      
+      <lastmod>2022-11-07T17:28:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html</loc>
       
       <lastmod>2022-10-21T19:57:59+00:00</lastmod>
@@ -568,7 +575,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2022-11-07T18:00:25+00:00</lastmod>
       
     </url>
   
@@ -666,7 +673,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html</loc>
       
-      <lastmod>2022-10-25T14:08:45+00:00</lastmod>
+      <lastmod>2022-11-07T17:27:15+00:00</lastmod>
       
     </url>
   
