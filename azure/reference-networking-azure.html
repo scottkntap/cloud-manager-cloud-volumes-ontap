@@ -1770,7 +1770,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2022-11-08 16:03:24 +0000">11/08/2022</time>
     
   
 
@@ -1843,32 +1843,163 @@
 <div class="sect2">
 <h3 id="ip-addresses">IP addresses</h3>
 <div class="paragraph">
-<p>BlueXP allocates the following number of IP addresses to Cloud Volumes ONTAP in Azure:</p>
+<p>BlueXP automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP in Azure. You need to make sure that your networking has enough private IP addresses available.</p>
+</div>
+<div class="paragraph">
+<p>The number of LIFs that Cloud Manager allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+An iSCSI LIF provides client access over the iSCSI protocol and is used by the system for other important networking workflows. These LIFs are required and should not be deleted.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="ip-addresses-for-a-single-node-system">IP addresses for a single node system</h4>
+<div class="paragraph">
+<p>BlueXP allocates 5 or 6 IP addresses to a single node system:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Single node: 5 IP addresses</p>
+<p>Cluster management IP</p>
 </li>
 <li>
-<p>HA pair: 16 IP addresses</p>
+<p>Node management IP</p>
+</li>
+<li>
+<p>Intercluster IP for SnapMirror</p>
+</li>
+<li>
+<p>NFS/CIFS IP</p>
+</li>
+<li>
+<p>iSCSI IP</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. This LIF is required and should not be deleted.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>SVM management (optional - not configured by default)</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ip-addresses-for-ha-pairs">IP addresses for HA pairs</h4>
+<div class="paragraph">
+<p>BlueXP allocates IP addresses to 4 NICs (per node) during deployment.</p>
 </div>
 <div class="paragraph">
 <p>Note that BlueXP creates an SVM management LIF on HA pairs, but not on single node systems in Azure.</p>
 </div>
-<div class="admonitionblock tip">
+<div class="paragraph">
+<p><strong>NIC0</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Node management IP</p>
+</li>
+<li>
+<p>Intercluster IP</p>
+</li>
+<li>
+<p>iSCSI IP</p>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="Tip">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
+The iSCSI IP provides client access over the iSCSI protocol. It is also used by the system for other important networking workflows. This LIF is required and should not be deleted.
 </td>
 </tr>
 </table>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NIC1</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cluster network IP</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NIC2</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cluster Interconnect IP (HA IC)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NIC3</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pageblob NIC IP (disk access)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+NIC3 is only applicable to HA deployments with page blob systems.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The above IP addresses do not migrate on failover events.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, 4 frontend IPs (FIPs) are configured to migrate on failover events. These frontend IPs live in the load balancer.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cluster management IP</p>
+</li>
+<li>
+<p>NodeA data IP (NFS/CIFS)</p>
+</li>
+<li>
+<p>NodeB data IP (NFS/CIFS)</p>
+</li>
+<li>
+<p>SVM management IP</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
