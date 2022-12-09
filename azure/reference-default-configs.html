@@ -1770,24 +1770,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-07 17:19:09 +0000">12/07/2022</time>
+    <time datetime="2022-12-09 14:53:07 +0000">12/09/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
     <img  class="avatar avatar-small"
           alt="netapp-rlithman"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1955,7 +1955,7 @@ UNIX for NFS volumes</p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>See the <em>volume create</em> man page for information about these attributes.</p>
+<p>See the <a href="https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html">ONTAP <em>volume create</em> man page</a> for information about these attributes.</p>
 </div>
 </li>
 </ul>
@@ -1998,7 +1998,7 @@ UNIX for NFS volumes</p></td>
 <p>One Azure snapshot for each boot disk and root disk</p>
 </li>
 <li>
-<p>Boot and root disks are encrypted by default.</p>
+<p>Every disk by default in Azure is encrypted at rest.</p>
 </li>
 </ul>
 </div>
@@ -2006,6 +2006,7 @@ UNIX for NFS volumes</p></td>
 <div class="sect2">
 <h3 id="azure-ha-pair">Azure (HA pair)</h3>
 <div class="ulist">
+<div class="title">HA pairs with page blob</div>
 <ul>
 <li>
 <p>Two 10 GiB Premium SSD disks for the boot volume (one per node)</p>
@@ -2023,7 +2024,30 @@ UNIX for NFS volumes</p></td>
 <p>One Azure snapshot for each boot disk and root disk</p>
 </li>
 <li>
-<p>Boot and root disks are encrypted by default.</p>
+<p>Every disk by default in Azure is encrypted at rest.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">HA pairs in multiple availability zones</div>
+<ul>
+<li>
+<p>Two 10 GiB Premium SSD disks for the boot volume (one per node)</p>
+</li>
+<li>
+<p>Two 512 GiB Premium Storage page blobs for the root volume (one per node)</p>
+</li>
+<li>
+<p>Two 1024 GiB Standard HDD disks for saving cores (one per node)</p>
+</li>
+<li>
+<p>Two 512 GiB Premium SSD disks for NVRAM (one per node)</p>
+</li>
+<li>
+<p>One Azure snapshot for each boot disk and root disk</p>
+</li>
+<li>
+<p>Every disk by default in Azure is encrypted at rest.</p>
 </li>
 </ul>
 </div>

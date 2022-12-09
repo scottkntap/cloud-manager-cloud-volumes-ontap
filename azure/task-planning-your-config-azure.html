@@ -1770,24 +1770,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2022-12-09 14:23:57 +0000">12/09/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
     <img  class="avatar avatar-small"
           alt="netapp-rlithman"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1873,11 +1873,11 @@
 </ul>
 </div>
 </dd>
-<dt class="hdlist1">Azure disk type</dt>
+<dt class="hdlist1">Azure disk type with single node systems</dt>
 <dd>
 <p>When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk.</p>
 <div class="paragraph">
-<p>HA systems use Premium page blobs. Meanwhile, single node systems can use two types of Azure Managed Disks:</p>
+<p>Single node systems can use three types of Azure Managed Disks:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1889,12 +1889,16 @@
 </li>
 <li>
 <p><em>Standard HDD Managed Disks</em> are a good choice if you don&#8217;t need high IOPS and want to reduce your costs.</p>
-<div class="paragraph">
-<p>For additional details about the use cases for these disks, see <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types" target="_blank" rel="noopener">Microsoft Azure Documentation: What disk types are available in Azure?</a>.</p>
-</div>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>For additional details about the use cases for these disks, see <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types" target="_blank" rel="noopener">Microsoft Azure Documentation: What disk types are available in Azure?</a>.</p>
+</div>
+</dd>
+<dt class="hdlist1">Azure disk type with HA pairs</dt>
+<dd>
+<p>HA systems use Premium SSD Shared Managed Disks which both provide high performance for I/O-intensive workloads at a higher cost. HA deployments created before the 9.12.1 release use Premium page blobs.</p>
 </dd>
 <dt class="hdlist1">Azure disk size</dt>
 <dd>

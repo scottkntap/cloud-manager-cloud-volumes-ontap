@@ -1800,7 +1800,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-18 13:28:51 +0000">07/18/2022</time>
+    <time datetime="2022-12-09 13:24:48 +0000">12/09/2022</time>
     
   
 
@@ -1851,7 +1851,23 @@
 <p>Charging for WORM storage is hourly, according to the total provisioned capacity of WORM volumes.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://cloud.netapp.com/pricing" target="_blank" rel="noopener">Learn about pricing for WORM storage</a>.</p>
+<p>You should understand the following charging behavior with Cloud Volumes ONTAP 9.10.1 and later:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Beginning with ONTAP 9.10.1, WORM volumes and non-WORM volumes can exist on the same aggregate.</p>
+</li>
+<li>
+<p>If you enable WORM when you create a Cloud Volumes ONTAP working environment, every volume that you create from BlueXP has WORM enabled. However, you can use the ONTAP CLI or System Manager to create volumes that have WORM disabled. Those volumes are not charged at the WORM rate.</p>
+</li>
+<li>
+<p>If you don&#8217;t enable WORM when you create a working environment, every volume that you create from BlueXP has WORM disabled. You are not charged at the WORM rate for those volumes. However, you can use the ONTAP CLI or System Manager to create WORM-enabled volumes. Those volumes will be charged at the WORM rate.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/pricing" target="_blank" rel="noopener">Learn about pricing for WORM storage</a></p>
 </div>
 </div>
 </div>

@@ -29,7 +29,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html</loc>
       
-      <lastmod>2022-06-28T09:21:13+00:00</lastmod>
+      <lastmod>2022-11-18T16:22:23+00:00</lastmod>
       
     </url>
   
@@ -64,7 +64,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-ha-azure.html</loc>
       
-      <lastmod>2022-11-11T15:53:06+00:00</lastmod>
+      <lastmod>2022-12-09T14:29:31+00:00</lastmod>
       
     </url>
   
@@ -127,21 +127,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-storage.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2022-12-06T16:55:43+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html</loc>
       
-      <lastmod>2022-07-18T13:28:51+00:00</lastmod>
+      <lastmod>2022-12-09T13:24:48+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-write-speed.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2022-12-09T18:05:14+00:00</lastmod>
       
     </url>
   
@@ -169,7 +169,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html</loc>
       
-      <lastmod>2022-12-07T17:19:09+00:00</lastmod>
+      <lastmod>2022-12-09T14:53:07+00:00</lastmod>
       
     </url>
   
@@ -183,21 +183,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-aws.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2022-12-09T13:28:34+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-azure.html</loc>
       
-      <lastmod>2022-11-08T16:03:24+00:00</lastmod>
+      <lastmod>2022-12-09T14:53:07+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2022-12-09T13:28:34+00:00</lastmod>
       
     </url>
   
@@ -218,7 +218,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap//search.html</loc>
       
-      <lastmod>2022-12-09T17:18:03+00:00</lastmod>
+      <lastmod>2022-12-09T18:26:35+00:00</lastmod>
       
     </url>
   
@@ -365,7 +365,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html</loc>
       
-      <lastmod>2022-11-11T15:53:06+00:00</lastmod>
+      <lastmod>2022-11-18T19:58:20+00:00</lastmod>
       
     </url>
   
@@ -533,7 +533,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config-azure.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2022-12-09T14:23:57+00:00</lastmod>
       
     </url>
   
@@ -575,14 +575,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-azure-encryption.html</loc>
       
-      <lastmod>2022-11-08T20:09:45+00:00</lastmod>
+      <lastmod>2022-11-11T20:22:26+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2022-12-09T13:28:54+00:00</lastmod>
       
     </url>
   
@@ -673,7 +673,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html</loc>
       
-      <lastmod>2022-12-05T16:57:07+00:00</lastmod>
+      <lastmod>2022-12-09T18:05:14+00:00</lastmod>
       
     </url>
   

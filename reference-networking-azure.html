@@ -2013,7 +2013,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-08 16:03:24 +0000">11/08/2022</time>
+    <time datetime="2022-12-09 14:53:07 +0000">12/09/2022</time>
     
   
 
@@ -2216,7 +2216,7 @@ The iSCSI IP provides client access over the iSCSI protocol. It is also used by 
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-NIC3 is only applicable to HA deployments with page blob systems.
+NIC3 is only applicable to HA deployments that use page blob storage.
 </td>
 </tr>
 </table>
@@ -2248,10 +2248,10 @@ NIC3 is only applicable to HA deployments with page blob systems.
 <div class="sect2">
 <h3 id="secure-connections-to-azure-services">Secure connections to Azure services</h3>
 <div class="paragraph">
-<p>By default, BlueXP enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure storage accounts.</p>
+<p>By default, BlueXP enables an Azure Private Link for connections between Cloud Volumes ONTAP and Azure page blob storage accounts.</p>
 </div>
 <div class="paragraph">
-<p>In most cases, there&#8217;s nothing that you need to do—​BlueXP manages the Azure Private Link for you. But if you use Azure Private DNS, then you&#8217;ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.</p>
+<p>In most cases, there&#8217;s nothing that you need to do—BlueXP manages the Azure Private Link for you. But if you use Azure Private DNS, then you&#8217;ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.</p>
 </div>
 <div class="paragraph">
 <p>You can also disable the Private Link connection, if required by your business needs. If you disable the link, BlueXP configures Cloud Volumes ONTAP to use a service endpoint instead.</p>
@@ -3008,10 +3008,33 @@ If your network uses a proxy server for all communication to the internet, you c
 <td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://*.cloudmanager.cloud.netapp.com<br>
-<br>
-https://cloudmanager.cloud.netapp.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To provide SaaS features and services within BlueXP.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>https://*.api.bluexp.netapp.com</p>
+</div>
+<div class="paragraph">
+<p>https://api.bluexp.netapp.com</p>
+</div>
+<div class="paragraph">
+<p>https://*.cloudmanager.cloud.netapp.com</p>
+</div>
+<div class="paragraph">
+<p>https://cloudmanager.cloud.netapp.com</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To provide SaaS features and services within BlueXP.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
+</td>
+</tr>
+</table>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io<br>
