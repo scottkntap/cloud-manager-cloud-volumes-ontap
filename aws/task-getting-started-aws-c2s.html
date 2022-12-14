@@ -1800,24 +1800,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2022-12-14 16:42:50 +0000">12/14/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
     <img  class="avatar avatar-small"
           alt="netapp-rlithman"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1829,7 +1829,37 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Similar to a standard AWS region, you can use BlueXP (formerly Cloud Manager) in the <a href="https://aws.amazon.com/federal/us-intelligence-community/">AWS Commercial Cloud Services (C2S)</a> environment to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS C2S is a closed region specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS C2S region users.</p>
+<p>Similar to a standard AWS region, you can use Cloud Manager in the <a href="https://aws.amazon.com/federal/us-intelligence-community/">AWS Commercial Cloud Services (C2S)</a> environment to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage. AWS C2S is a closed region specific to the U.S. Intelligence Community; the instructions on this page only apply to AWS C2S region users.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="supported-versions-in-c2s">Supported versions in C2S</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP 9.8 is supported</p>
+</li>
+<li>
+<p>Version 3.9.4 of the Connector is supported</p>
+<div class="paragraph">
+<p>The Connector is software that&#8217;s required to deploy and manage Cloud Volumes ONTAP in AWS. You&#8217;ll log in to Cloud Manager from the software that gets installed on the Connector instance. The SaaS website for Cloud Manager isn&#8217;t supported in the C2S environment.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Cloud Manager was recently renamed to BlueXP, but we&#8217;re continuing to refer to it as Cloud Manager in C2S because the user interface that&#8217;s included with version 3.9.4 of the Connector is still called Cloud Manager.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1837,7 +1867,7 @@
 <h2 id="supported-features-in-c2s">Supported features in C2S</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following features are available from BlueXP in the C2S environment:</p>
+<p>The following features are available from Cloud Manager in the C2S environment:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1866,17 +1896,14 @@
 <div class="ulist">
 <ul>
 <li>
-<p>None of NetApp&#8217;s cloud services are available from BlueXP.</p>
+<p>None of NetApp&#8217;s cloud services are available from Cloud Manager.</p>
 </li>
 <li>
 <p>Because there&#8217;s no internet access in the C2S environment, the following features aren&#8217;t available either:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Integration with BlueXP</p>
-</li>
-<li>
-<p>Automated software upgrades from BlueXP</p>
+<p>Automated software upgrades from Cloud Manager</p>
 </li>
 <li>
 <p>NetApp AutoSupport</p>
@@ -1903,22 +1930,22 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Preparing your AWS environment.</p>
+<p><a href="#preparing-your-aws-environment">Preparing your AWS environment</a></p>
 <div class="paragraph">
 <p>This includes setting up networking, subscribing to Cloud Volumes ONTAP, setting up permissions, and optionally setting up the AWS KMS.</p>
 </div>
 </li>
 <li>
-<p>Installing the Connector and setting up BlueXP.</p>
+<p><a href="#installing-the-connector-and-setting-up-cloud-manager">Installing the Connector and setting up Cloud Manager</a></p>
 <div class="paragraph">
-<p>Before you can start using BlueXP to deploy Cloud Volumes ONTAP, you&#8217;ll need to create a <em>Connector</em>. The Connector enables BlueXP to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP).</p>
+<p>Before you can start using Cloud Manager to deploy Cloud Volumes ONTAP, you&#8217;ll need to create a <em>Connector</em>. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment (this includes Cloud Volumes ONTAP).</p>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll log in to BlueXP from the software that gets installed on the Connector instance.</p>
+<p>You&#8217;ll log in to Cloud Manager from the software that gets installed on the Connector instance.</p>
 </div>
 </li>
 <li>
-<p>Launching Cloud Volumes ONTAP from BlueXP.</p>
+<p><a href="#launching-cloud-volumes-ontap-from-cloud-manager">Launching Cloud Volumes ONTAP from Cloud Manager</a></p>
 </li>
 </ol>
 </div>
@@ -1928,7 +1955,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="prepare-your-aws-environment">Prepare your AWS environment</h2>
+<h2 id="preparing-your-aws-environment">Preparing your AWS environment</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Your AWS environment must meet a few requirements.</p>
@@ -1959,7 +1986,7 @@
 <div class="sect2">
 <h3 id="subscribe-to-cloud-volumes-ontap">Subscribe to Cloud Volumes ONTAP</h3>
 <div class="paragraph">
-<p>A Marketplace subscription is required to deploy Cloud Volumes ONTAP from BlueXP.</p>
+<p>A Marketplace subscription is required to deploy Cloud Volumes ONTAP from Cloud Manager.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -1976,7 +2003,7 @@
 <li>
 <p>Repeat these steps for the other offerings, if you plan to deploy them.</p>
 <div class="paragraph">
-<p>You must use BlueXP to launch Cloud Volumes ONTAP instances. You must not launch Cloud Volumes ONTAP instances from the EC2 console.</p>
+<p>You must use Cloud Manager to launch Cloud Volumes ONTAP instances. You must not launch Cloud Volumes ONTAP instances from the EC2 console.</p>
 </div>
 </li>
 </ol>
@@ -1985,7 +2012,7 @@
 <div class="sect2">
 <h3 id="set-up-permissions">Set up permissions</h3>
 <div class="paragraph">
-<p>Set up IAM policies and roles that provide BlueXP and Cloud Volumes ONTAP with the permissions that they need to perform actions in the AWS Commercial Cloud Services environment.</p>
+<p>Set up IAM policies and roles that provide the Connector and Cloud Volumes ONTAP with the permissions that they need to perform actions in the AWS Commercial Cloud Services environment.</p>
 </div>
 <div class="paragraph">
 <p>You need an IAM policy and IAM role for each of the following:</p>
@@ -2193,7 +2220,7 @@
 <p>You must select the Connector IAM role when you launch the Connector instance.</p>
 </div>
 <div class="paragraph">
-<p>You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from BlueXP.</p>
+<p>You can select the IAM roles for Cloud Volumes ONTAP and the HA mediator when you create a Cloud Volumes ONTAP working environment from Cloud Manager.</p>
 </div>
 </li>
 </ol>
@@ -2216,13 +2243,13 @@
 <li>
 <p>If the CMK is in an AWS account separate from the account where you plan to deploy Cloud Volumes ONTAP, then you need to obtain the ARN of that key.</p>
 <div class="paragraph">
-<p>You’ll need to provide the ARN to BlueXP when you create the Cloud Volumes ONTAP system.</p>
+<p>You&#8217;ll need to provide the ARN to Cloud Manager when you create the Cloud Volumes ONTAP system.</p>
 </div>
 </li>
 <li>
-<p>Add the IAM role for the BlueXP instance to the list of key users for a CMK.</p>
+<p>Add the IAM role for the Connector instance to the list of key users for a CMK.</p>
 <div class="paragraph">
-<p>This gives BlueXP permissions to use the CMK with Cloud Volumes ONTAP.</p>
+<p>This gives Cloud Manager permissions to use the CMK with Cloud Volumes ONTAP.</p>
 </div>
 </li>
 </ol>
@@ -2231,10 +2258,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="install-and-set-up-bluexp">Install and set up BlueXP</h2>
+<h2 id="installing-the-connector-and-setting-up-cloud-manager">Installing the Connector and setting up Cloud Manager</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before you can launch Cloud Volumes ONTAP systems in AWS, you must first launch the Connector instance from the AWS Marketplace and then log in and set up BlueXP.</p>
+<p>Before you can launch Cloud Volumes ONTAP systems in AWS, you must first launch the Connector instance from the AWS Marketplace and then log in and set up Cloud Manager.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -2242,7 +2269,7 @@
 <li>
 <p>Obtain a root certificate signed by a certificate authority (CA) in the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format. Consult your organization&#8217;s policies and procedures for obtaining the certificate.</p>
 <div class="paragraph">
-<p>You&#8217;ll need to upload the certificate during the setup process. BlueXP uses the trusted certificate when sending requests to AWS over HTTPS.</p>
+<p>You&#8217;ll need to upload the certificate during the setup process. Cloud Manager uses the trusted certificate when sending requests to AWS over HTTPS.</p>
 </div>
 </li>
 <li>
@@ -2250,7 +2277,7 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Go to the AWS Intelligence Community Marketplace page for BlueXP.</p>
+<p>Go to the AWS Intelligence Community Marketplace page for Cloud Manager.</p>
 </li>
 <li>
 <p>On the Custom Launch tab, choose the option to launch the instance from the EC2 console.</p>
@@ -2281,7 +2308,7 @@
 </div>
 </li>
 <li>
-<p>Set up BlueXP from a host that has a connection to the Connector instance:</p>
+<p>Set up Cloud Manager from a host that has a connection to the Connector instance:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2294,14 +2321,14 @@
 <p>Upload the certificate that you obtained in step 1.</p>
 </li>
 <li>
-<p>Complete the steps in the Setup wizard to set up BlueXP.</p>
+<p>Complete the steps in the Setup wizard to set up Cloud Manager.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>System Details</strong>: Enter a name for this instance of BlueXP and provide your company name.</p>
+<p><strong>System Details</strong>: Enter a name for this instance of Cloud Manager and provide your company name.</p>
 </li>
 <li>
-<p><strong>Create User</strong>: Create the Admin user that you&#8217;ll use to administer BlueXP.</p>
+<p><strong>Create User</strong>: Create the Admin user that you&#8217;ll use to administer Cloud Manager.</p>
 </li>
 <li>
 <p><strong>Review</strong>: Review the details and approve the end user license agreement.</p>
@@ -2323,10 +2350,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="launch-cloud-volumes-ontap">Launch Cloud Volumes ONTAP</h2>
+<h2 id="launching-cloud-volumes-ontap-from-cloud-manager">Launching Cloud Volumes ONTAP from Cloud Manager</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can launch Cloud Volumes ONTAP instances in the AWS Commercial Cloud Services environment by creating new working environments in BlueXP.</p>
+<p>You can launch Cloud Volumes ONTAP instances in the AWS Commercial Cloud Services environment by creating new working environments in Cloud Manager.</p>
 </div>
 <div class="ulist">
 <div class="title">What you&#8217;ll need</div>
@@ -2417,7 +2444,7 @@ If you need a different size later, you can use the Advanced allocation option t
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>BlueXP launches the Cloud Volumes ONTAP instance. You can track the progress in the timeline.</p>
+<p>Cloud Manager launches the Cloud Volumes ONTAP instance. You can track the progress in the timeline.</p>
 </div>
 </div>
 </div>
@@ -2425,7 +2452,7 @@ If you need a different size later, you can use the Advanced allocation option t
 <h2 id="security-group-rules">Security group rules</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>BlueXP creates security groups that include the inbound and outbound rules that BlueXP and Cloud Volumes ONTAP need to operate successfully in the cloud. You might want to refer to the ports for testing purposes or if you prefer to use your own security groups.</p>
+<p>Cloud Manager creates security groups that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully in the cloud. You might want to refer to the ports for testing purposes or if you prefer to use your own security groups.</p>
 </div>
 <div class="sect2">
 <h3 id="security-group-for-the-connector">Security group for the Connector</h3>
@@ -2767,7 +2794,7 @@ If you need a different size later, you can use the Advanced allocation option t
 <div class="sect2">
 <h3 id="internal-security-group-for-the-ha-mediator">Internal security group for the HA mediator</h3>
 <div class="paragraph">
-<p>The predefined internal security group for the Cloud Volumes ONTAP HA mediator includes the following rules. BlueXP always creates this security group. You don&#8217;t have the option to use your own.</p>
+<p>The predefined internal security group for the Cloud Volumes ONTAP HA mediator includes the following rules. Cloud Manager always creates this security group. You don&#8217;t have the option to use your own.</p>
 </div>
 <div class="sect3">
 <h4 id="inbound-rules-4">Inbound rules</h4>
