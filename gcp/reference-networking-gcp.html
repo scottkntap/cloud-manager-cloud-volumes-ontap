@@ -1756,7 +1756,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 13:28:34 +0000">12/09/2022</time>
+    <time datetime="2022-12-15 14:39:14 +0000">12/15/2022</time>
     
   
 
@@ -2055,27 +2055,15 @@ If you&#8217;re using an HA pair, the HA mediator doesn&#8217;t require outbound
 <h2 id="requirements-for-the-connector">Requirements for the Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="Tip">
-</td>
-<td class="content">
-If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html" target="_blank" rel="noopener">Configuring the Connector to use a proxy server</a>.
-</td>
-</tr>
-</table>
+<p>Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you&#8217;ll need to ensure that the following requirements are met.</p>
 </div>
 <div class="sect2">
 <h3 id="connection-to-target-networks">Connection to target networks</h3>
 <div class="paragraph">
-<p>A Connector requires a network connection to the VPCs in which you want to deploy Cloud Volumes ONTAP. If you&#8217;re deploying an HA pair, then the Connector needs a connection to VPC-0 only.</p>
+<p>A Connector requires a network connection to the type of working environment that you&#8217;re creating and the services that you&#8217;re planning to enable.</p>
 </div>
 <div class="paragraph">
-<p>If you plan to deploy Cloud Volumes ONTAP in a VPC separate from the Connector, then you&#8217;ll need to set up VPC Network Peering. <a href="https://cloud.google.com/vpc/docs/vpc-peering" target="_blank" rel="noopener">Learn more about VPC Network Peering</a></p>
+<p>For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the virtual network in which you launch Cloud Volumes ONTAP.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2136,6 +2124,37 @@ https://*.blob.core.windows.net</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="proxy-server">Proxy server</h3>
+<div class="paragraph">
+<p>If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IP address</p>
+</li>
+<li>
+<p>Credentials</p>
+</li>
+<li>
+<p>HTTPS certificate</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="security-group">Security group</h3>
+<div class="paragraph">
+<p>There&#8217;s no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface">local UI</a>, which you&#8217;ll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ip-address-limitation">IP address limitation</h3>
+<div class="paragraph">
+<p>There&#8217;s a possible conflict with IP addresses in the 172 range. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html">Learn more about this limitation</a>.</p>
+</div>
 </div>
 </div>
 </div>
