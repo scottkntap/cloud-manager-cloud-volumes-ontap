@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Networking requirements for Cloud Volumes ONTAP in GCP | NetApp Documentation</title>
+  <title>Networking requirements for Cloud Volumes ONTAP in Google Cloud | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Networking requirements for Cloud Volumes ONTAP in GCP | NetApp Documentation" />
+  <meta property="og:title" content="Networking requirements for Cloud Volumes ONTAP in Google Cloud | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html" />
-	<meta property="og:description" content="Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volume..." />
+	<meta property="og:description" content="Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volume...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly.">
   <meta name="keywords" content=" networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, tiering, data tiering, bucket, private google access, set up data tiering, data tiering requirement, gcp networking, google networking, shared vpc, host project, service project"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -197,7 +197,7 @@
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Networking requirements for Cloud Volumes ONTAP in GCP](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-networking-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/issues/new?body=Page%3A%20[Networking requirements for Cloud Volumes ONTAP in Google Cloud](https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-networking-gcp.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/discuss-sm.svg" alt="" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/blob/main/reference-networking-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/edit-sm.svg" alt="" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-cloud-volumes-ontap/images/article-sm.svg" alt="" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -1758,14 +1758,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Networking requirements for Cloud Volumes ONTAP in GCP</h1>
+  <h1 class="n-doc__component-detail-heading">Networking requirements for Cloud Volumes ONTAP in Google Cloud</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-12-15 14:39:14 +0000">12/15/2022</time>
+    <time datetime="2023-01-27 16:34:44 +0000">01/27/2023</time>
     
   
 
@@ -1802,10 +1802,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.</p>
+<p>Set up your Google Cloud networking so Cloud Volumes ONTAP systems can operate properly.</p>
 </div>
 <div class="paragraph">
-<p>If you want to deploy an HA pair, you should <a href="concept-ha-google-cloud.html">learn how HA pairs work in GCP</a>.</p>
+<p>If you want to deploy an HA pair, you should <a href="concept-ha-google-cloud.html">learn how HA pairs work in Google Cloud</a>.</p>
 </div>
 </div>
 </div>
@@ -1813,13 +1813,141 @@
 <h2 id="requirements-for-cloud-volumes-ontap">Requirements for Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following requirements must be met in GCP.</p>
+<p>The following requirements must be met in Google Cloud.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Internal load balancers</dt>
-<dd>
+<div class="sect2">
+<h3 id="requirements-specific-to-single-node-systems">Requirements specific to single node systems</h3>
+<div class="paragraph">
+<p>If you want to deploy a single node system, ensure that your networking meets the following requirements.</p>
+</div>
+<div class="sect3">
+<h4 id="one-vpc">One VPC</h4>
+<div class="paragraph">
+<p>One Virtual Private Cloud (VPC) is required for a single node system.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="private-ip-addresses">Private IP addresses</h4>
+<div class="paragraph">
+<p>BlueXP allocates 3 or 4 private IP addresses to a single node system in Google Cloud.</p>
+</div>
+<div class="paragraph">
+<p>You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:</p>
+</div>
+<div class="paragraph">
+<p><code>skipSvmManagementLif: true</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="requirements-specific-to-ha-pairs">Requirements specific to HA pairs</h3>
+<div class="paragraph">
+<p>If you want to deploy an HA pair, ensure that your networking meets the following requirements.</p>
+</div>
+<div class="sect3">
+<h4 id="one-or-multiple-zones">One or multiple zones</h4>
+<div class="paragraph">
+<p>You can ensure the high availability of your data by deploying an HA configuration across multiple or in a single zone. BlueXP will prompt you to choose multiple zones or a single zone when you create the HA pair.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Multiple zones (recommended)</p>
+<div class="paragraph">
+<p>Deploying an HA configuration across three zones ensures continuous data availability if a failure occurs within a zone. Note that write performance is slightly lower compared to using a single zone, but it&#8217;s minimal.</p>
+</div>
+</li>
+<li>
+<p>Single zone</p>
+<div class="paragraph">
+<p>When deployed in a single zone, a Cloud Volumes ONTAP HA configuration uses a spread placement policy. This policy ensures that an HA configuration is protected from a single point of failure within the zone, without having to use separate zones to achieve fault isolation.</p>
+</div>
+<div class="paragraph">
+<p>This deployment model does lower your costs because there are no data egress charges between zones.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="four-virtual-private-clouds">Four Virtual Private Clouds</h4>
+<div class="paragraph">
+<p>Four Virtual Private Clouds (VPCs) are required for an HA configuration. Four VPCs are required because Google Cloud requires that each network interface resides in a separate VPC network.</p>
+</div>
+<div class="paragraph">
+<p>BlueXP will prompt you to choose four VPCs when you create the HA pair:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>VPC-0 for inbound connections to the data and nodes</p>
+</li>
+<li>
+<p>VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_gcp_ha.png" alt="A conceptual image showing a Cloud Volume HA pair and the four VPCs required for configuration."></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="subnets">Subnets</h4>
+<div class="paragraph">
+<p>A private subnet is required for each VPC.</p>
+</div>
+<div class="paragraph">
+<p>If you place the Connector in VPC-0, then you will need to enable Private Google Access on the subnet to access the APIs and to enable data tiering.</p>
+</div>
+<div class="paragraph">
+<p>The subnets in these VPCs must have distinct CIDR ranges. They can&#8217;t have overlapping CIDR ranges.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="private-ip-addresses-2">Private IP addresses</h4>
+<div class="paragraph">
+<p>BlueXP allocates 14 or 15 private IP addresses to an HA pair in Google Cloud:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>7 or 8 private IP addresses for VPC-0</p>
+<div class="paragraph">
+<p>You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:</p>
+</div>
+<div class="paragraph">
+<p><code>skipSvmManagementLif: true</code></p>
+</div>
+</li>
+<li>
+<p>Two private IP addresses for VPC-1</p>
+</li>
+<li>
+<p>Two private IP addresses for VPC-2</p>
+</li>
+<li>
+<p>Three private IP addresses for VPC-3</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="internal-load-balancers">Internal load balancers</h4>
+<div class="paragraph">
 <p>BlueXP automatically creates four Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair. No setup is required from your end. We&#8217;ve listed this as a requirement simply to inform you of the network traffic and to mitigate any security concerns.</p>
+</div>
 <div class="paragraph">
 <p>One load balancer is for cluster management, one is for storage VM (SVM) management, one is for NAS traffic to node 1, and the last is for NAS traffic to node 2.</p>
 </div>
@@ -1857,67 +1985,13 @@
 </li>
 </ul>
 </div>
-</dd>
-<dt class="hdlist1">One or multiple zones for HA pairs</dt>
-<dd>
-<p>You can ensure the high availability of your data by deploying an HA configuration across multiple or in a single zone. BlueXP will prompt you to choose multiple zones or a single zone when you create the HA pair.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Multiple zones (recommended)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="shared-vpcs">Shared VPCs</h3>
 <div class="paragraph">
-<p>Deploying an HA configuration across three zones ensures continuous data availability if a failure occurs within a zone. Note that write performance is slightly lower compared to using a single zone, but it&#8217;s minimal.</p>
-</div>
-</li>
-<li>
-<p>Single zone</p>
-<div class="paragraph">
-<p>When deployed in a single zone, a Cloud Volumes ONTAP HA configuration uses a spread placement policy. This policy ensures that an HA configuration is protected from a single point of failure within the zone, without having to use separate zones to achieve fault isolation.</p>
-</div>
-<div class="paragraph">
-<p>This deployment model does lower your costs because there are no data egress charges between zones.</p>
-</div>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Four Virtual Private Clouds for HA pairs</dt>
-<dd>
-<p>Four Virtual Private Clouds (VPCs) are required for an HA configuration. Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.</p>
-<div class="paragraph">
-<p>BlueXP will prompt you to choose four VPCs when you create the HA pair:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>VPC-0 for inbound connections to the data and nodes</p>
-</li>
-<li>
-<p>VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/diagram_gcp_ha.png" alt="A conceptual image showing a Cloud Volume HA pair and the four VPCs required for configuration."></span></p>
-</div>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Subnets for HA pairs</dt>
-<dd>
-<p>A private subnet is required for each VPC.</p>
-<div class="paragraph">
-<p>If you place the Connector in VPC-0, then you will need to enable Private Google Access on the subnet to access the APIs and to enable data tiering.</p>
-</div>
-<div class="paragraph">
-<p>The subnets in these VPCs must have distinct CIDR ranges. They can&#8217;t have overlapping CIDR ranges.</p>
-</div>
-</dd>
-<dt class="hdlist1">One Virtual Private Cloud for single node systems</dt>
-<dd>
-<p>One VPC is required for a single node system.</p>
-</dd>
-<dt class="hdlist1">Shared VPCs</dt>
-<dd>
 <p>Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs.</p>
+</div>
 <div class="paragraph">
 <p>For a single node system, the VPC can be either a shared VPC or a standalone VPC.</p>
 </div>
@@ -1930,14 +2004,18 @@
 <div class="paragraph">
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#shared-vpc-permissions" target="_blank" rel="noopener">Review the required shared VPC permissions covered in Connector deployment</a></p>
 </div>
-</dd>
-<dt class="hdlist1">Packet mirroring in VPCs</dt>
-<dd>
+</div>
+<div class="sect2">
+<h3 id="packet-mirroring-in-vpcs">Packet mirroring in VPCs</h3>
+<div class="paragraph">
 <p><a href="https://cloud.google.com/vpc/docs/packet-mirroring" target="_blank" rel="noopener">Packet mirroring</a> must be disabled in the Google Cloud VPC in which you deploy Cloud Volumes ONTAP. Cloud Volumes ONTAP can&#8217;t operate properly if packet mirroring is enabled.</p>
-</dd>
-<dt class="hdlist1">Outbound internet access for Cloud Volumes ONTAP</dt>
-<dd>
+</div>
+</div>
+<div class="sect2">
+<h3 id="outbound-internet-access">Outbound internet access</h3>
+<div class="paragraph">
 <p>Cloud Volumes ONTAP requires outbound internet access for NetApp AutoSupport, which proactively monitors the health of your system and sends messages to NetApp technical support.</p>
+</div>
 <div class="paragraph">
 <p>Routing and firewall policies must allow HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:</p>
 </div>
@@ -1948,6 +2026,9 @@
 </li>
 <li>
 <p>https://support.netapp.com/asupprod/post/1.0/postAsup</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>If an outbound internet connection isn&#8217;t available to send AutoSupport messages, BlueXP automatically configures your Cloud Volumes ONTAP systems to use the Connector as a proxy server. The only requirement is to ensure that the Connector&#8217;s firewall allows <em>inbound</em> connections over port 3128. You&#8217;ll need to open this port after you deploy the Connector.</p>
 </div>
@@ -1969,218 +2050,51 @@ If you&#8217;re using an HA pair, the HA mediator doesn&#8217;t require outbound
 </tr>
 </table>
 </div>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
 <div class="paragraph">
 <p>If BlueXP notifies you that AutoSupport messages can&#8217;t be sent, <a href="task-verify-autosupport.html#troubleshoot-your-autosupport-configuration">troubleshoot your AutoSupport configuration</a>.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Private IP addresses</dt>
-<dd>
-<p>BlueXP allocates the following number of private IP addresses to Cloud Volumes ONTAP in GCP:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Single node</strong>: 3 or 4 private IP addresses</p>
+</div>
+<div class="sect2">
+<h3 id="connection-to-google-cloud-storage-for-data-tiering">Connection to Google Cloud Storage for data tiering</h3>
 <div class="paragraph">
-<p>You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:</p>
+<p>If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you&#8217;re using an HA pair, this is the subnet in VPC-0). For instructions, refer to <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">Google Cloud documentation: Configuring Private Google Access</a>.</p>
 </div>
 <div class="paragraph">
-<p><code>skipSvmManagementLif: true</code></p>
+<p>For additional steps required to set up data tiering in BlueXP, see <a href="task-tiering.html">Tiering cold data to low-cost object storage</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="connections-to-ontap-systems-in-other-networks">Connections to ONTAP systems in other networks</h3>
+<div class="paragraph">
+<p>To replicate data between a Cloud Volumes ONTAP system in Google Cloud and ONTAP systems in other networks, you must have a VPN connection between the VPC and the other network—for example, your corporate network.</p>
 </div>
 <div class="paragraph">
-<p>A LIF is an IP address associated with a physical port. A storage VM (SVM) management LIF is required for management tools like SnapCenter.</p>
+<p>For instructions, refer to <a href="https://cloud.google.com/vpn/docs/concepts/overview" target="_blank" rel="noopener">Google Cloud documentation: Cloud VPN overview</a>.</p>
 </div>
-</li>
-<li>
-<p><strong>HA pair</strong>: 14 or 15 private IP addresses</p>
-<div class="ulist">
-<ul>
-<li>
-<p>7 or 8 private IP addresses for VPC-0</p>
+</div>
+<div class="sect2">
+<h3 id="firewall-rules">Firewall rules</h3>
 <div class="paragraph">
-<p>You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:</p>
+<p>BlueXP creates Google Cloud firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own firewall rules.</p>
 </div>
 <div class="paragraph">
-<p><code>skipSvmManagementLif: true</code></p>
+<p>The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules. If you&#8217;re deploying an HA configuration, these are the firewall rules for Cloud Volumes ONTAP in VPC-0.</p>
 </div>
-</li>
-<li>
-<p>Two private IP addresses for VPC-1</p>
-</li>
-<li>
-<p>Two private IP addresses for VPC-2</p>
-</li>
-<li>
-<p>Three private IP addresses for VPC-3</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Firewall rules</dt>
-<dd>
-<p>You don&#8217;t need to create firewall rules because BlueXP does that for you. If you need to use your own, refer to the firewall rules listed below.</p>
 <div class="paragraph">
 <p>Note that two sets of firewall rules are required for an HA configuration:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <a href="#firewall-rules-for-cloud-volumes-ontap">Learn more</a>.</p>
+<p>One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP.</p>
 </li>
 <li>
-<p>Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound &amp; outbound communication between the HA components. <a href="#firewall-rules-for-cloud-volumes-ontap">Learn more</a>.</p>
+<p>Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound &amp; outbound communication between the HA components. <a href="#Rules for VPC-1">VPC-2, and VPC-3,Learn more</a>.</p>
 </li>
 </ul>
 </div>
-</dd>
-<dt class="hdlist1">Connection from Cloud Volumes ONTAP to Google Cloud Storage for data tiering</dt>
-<dd>
-<p>If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you&#8217;re using an HA pair, this is the subnet in VPC-0). For instructions, refer to <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">Google Cloud documentation: Configuring Private Google Access</a>.</p>
-<div class="paragraph">
-<p>For additional steps required to set up data tiering in BlueXP, see <a href="task-tiering.html">Tiering cold data to low-cost object storage</a>.</p>
-</div>
-</dd>
-<dt class="hdlist1">Connections to ONTAP systems in other networks</dt>
-<dd>
-<p>To replicate data between a Cloud Volumes ONTAP system in GCP and ONTAP systems in other networks, you must have a VPN connection between the VPC and the other network—for example, your corporate network.</p>
-<div class="paragraph">
-<p>For instructions, refer to <a href="https://cloud.google.com/vpn/docs/concepts/overview" target="_blank" rel="noopener">Google Cloud documentation: Cloud VPN overview</a>.</p>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="requirements-for-the-connector">Requirements for the Connector</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you&#8217;ll need to ensure that the following requirements are met.</p>
-</div>
-<div class="sect2">
-<h3 id="connection-to-target-networks">Connection to target networks</h3>
-<div class="paragraph">
-<p>A Connector requires a network connection to the type of working environment that you&#8217;re creating and the services that you&#8217;re planning to enable.</p>
-</div>
-<div class="paragraph">
-<p>For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the virtual network in which you launch Cloud Volumes ONTAP.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="outbound-internet-access">Outbound internet access</h3>
-<div class="paragraph">
-<p>The Connector requires outbound internet access to manage resources and processes within your public cloud environment.</p>
-</div>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Endpoints</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.netapp.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>https://*.api.bluexp.netapp.com</p>
-</div>
-<div class="paragraph">
-<p>https://api.bluexp.netapp.com</p>
-</div>
-<div class="paragraph">
-<p>https://*.cloudmanager.cloud.netapp.com</p>
-</div>
-<div class="paragraph">
-<p>https://cloudmanager.cloud.netapp.com</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>To provide SaaS features and services within BlueXP.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
-</td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io<br>
-<br>
-https://*.blob.core.windows.net</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To upgrade the Connector and its Docker components.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="proxy-server">Proxy server</h3>
-<div class="paragraph">
-<p>If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>IP address</p>
-</li>
-<li>
-<p>Credentials</p>
-</li>
-<li>
-<p>HTTPS certificate</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="security-group">Security group</h3>
-<div class="paragraph">
-<p>There&#8217;s no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface">local UI</a>, which you&#8217;ll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="ip-address-limitation">IP address limitation</h3>
-<div class="paragraph">
-<p>There&#8217;s a possible conflict with IP addresses in the 172 range. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html">Learn more about this limitation</a>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="firewall-rules-for-cloud-volumes-ontap">Firewall rules for Cloud Volumes ONTAP</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>BlueXP creates GCP firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own firewall rules.</p>
-</div>
-<div class="paragraph">
-<p>The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules.</p>
-</div>
-<div class="paragraph">
-<p>If you&#8217;re deploying an HA configuration, these are the firewall rules for Cloud Volumes ONTAP in VPC-0.</p>
-</div>
-<div class="sect2">
-<h3 id="inbound-rules">Inbound rules</h3>
+<div class="sect3">
+<h4 id="inbound-rules">Inbound rules</h4>
 <div class="paragraph">
 <p>When you create a working environment, you can choose the source filter for the predefined firewall policy during deployment:</p>
 </div>
@@ -2339,13 +2253,13 @@ https://*.blob.core.windows.net</p></td>
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="outbound-rules">Outbound rules</h3>
+<div class="sect3">
+<h4 id="outbound-rules">Outbound rules</h4>
 <div class="paragraph">
 <p>The predefined security group for Cloud Volumes ONTAP opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.</p>
 </div>
-<div class="sect3">
-<h4 id="basic-outbound-rules">Basic outbound rules</h4>
+<div class="sect4">
+<h5 id="basic-outbound-rules">Basic outbound rules</h5>
 <div class="paragraph">
 <p>The predefined security group for Cloud Volumes ONTAP includes the following outbound rules.</p>
 </div>
@@ -2381,8 +2295,8 @@ https://*.blob.core.windows.net</p></td>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="advanced-outbound-rules">Advanced outbound rules</h4>
+<div class="sect4">
+<h5 id="advanced-outbound-rules">Advanced outbound rules</h5>
 <div class="paragraph">
 <p>If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Volumes ONTAP.</p>
 </div>
@@ -2671,13 +2585,10 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 </table>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="firewall-rules-for-vpc-1-vpc-2-and-vpc-3">Firewall rules for VPC-1, VPC-2, and VPC-3</h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="rules-for-vpc-1-vpc-2-and-vpc-3">Rules for VPC-1, VPC-2, and VPC-3</h4>
 <div class="paragraph">
-<p>In GCP, an HA configuration is deployed across four VPCs. The firewall rules needed for the HA configuration in VPC-0 are <a href="#firewall-rules-for-cloud-volumes-ontap">listed above for Cloud Volumes ONTAP</a>.</p>
+<p>In Google Cloud, an HA configuration is deployed across four VPCs. The firewall rules needed for the HA configuration in VPC-0 are <a href="#firewall-rules">listed above for Cloud Volumes ONTAP</a>.</p>
 </div>
 <div class="paragraph">
 <p>Meanwhile, the predefined firewall rules that BlueXP creates for instances in VPC-1, VPC-2, and VPC-3 enables ingress communication over <em>all</em> protocols and ports. These rules enable communication between HA nodes.</p>
@@ -2687,140 +2598,16 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="firewall-rules-for-the-connector">Firewall rules for the Connector</h2>
+<h2 id="requirements-for-the-connector">Requirements for the Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The firewall rules for the Connector requires both inbound and outbound rules.</p>
+<p>If you haven&#8217;t created a Connector yet, you should review networking requirements for the Connector as well.</p>
 </div>
-<div class="sect2">
-<h3 id="inbound-rules-2">Inbound rules</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides SSH access to the Connector host</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTP access from client web browsers to the local user interface</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTPS access from client web browsers to the local user interface</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3128</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deploying the Connector.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="outbound-rules-2">Outbound rules</h3>
 <div class="paragraph">
-<p>The predefined firewall rules for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.</p>
-</div>
-<div class="sect3">
-<h4 id="basic-outbound-rules-2">Basic outbound rules</h4>
-<div class="paragraph">
-<p>The predefined firewall rules for the Connector includes the following outbound rules.</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 70%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All UDP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="advanced-outbound-rules-2">Advanced outbound rules</h4>
-<div class="paragraph">
-<p>If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-The source IP address is the Connector host.
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Service</th>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Destination</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API calls and AutoSupport</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Outbound internet and ONTAP cluster management LIF</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API calls to GCP and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used for DNS resolve by BlueXP</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html" target="_blank" rel="noopener">View networking requirements for the Connector</a></p>
 </div>
 </div>
 </div>

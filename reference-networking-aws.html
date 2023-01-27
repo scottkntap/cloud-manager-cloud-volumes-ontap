@@ -2022,7 +2022,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-15 14:39:14 +0000">12/15/2022</time>
+    <time datetime="2023-01-27 15:51:05 +0000">01/27/2023</time>
     
   
 
@@ -2051,7 +2051,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>BlueXP (formerly Cloud Manager) handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.</p>
+<p>BlueXP handles the set up of networking components for Cloud Volumes ONTAP, such as IP addresses, netmasks, and routes. You need to make sure that outbound internet access is available, that enough private IP addresses are available, that the right connections are in place, and more.</p>
 </div>
 </div>
 </div>
@@ -2470,106 +2470,10 @@ BlueXP automatically creates static IP addresses for iSCSI access and for NAS ac
 <h2 id="requirements-for-the-connector">Requirements for the Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Set up your networking so the Connector can manage resources and processes within your public cloud environment. Other than having a virtual network and subnet for the Connector, you&#8217;ll need to ensure that the following requirements are met.</p>
-</div>
-<div class="sect2">
-<h3 id="connection-to-target-networks">Connection to target networks</h3>
-<div class="paragraph">
-<p>A Connector requires a network connection to the type of working environment that you&#8217;re creating and the services that you&#8217;re planning to enable.</p>
+<p>If you haven&#8217;t created a Connector yet, you should review networking requirements for the Connector as well.</p>
 </div>
 <div class="paragraph">
-<p>For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the virtual network in which you launch Cloud Volumes ONTAP.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="outbound-internet-access">Outbound internet access</h3>
-<div class="paragraph">
-<p>The Connector requires outbound internet access to manage resources and processes within your public cloud environment.</p>
-</div>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Endpoints</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.netapp.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To obtain licensing information and to send AutoSupport messages to NetApp support.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>https://*.api.bluexp.netapp.com</p>
-</div>
-<div class="paragraph">
-<p>https://api.bluexp.netapp.com</p>
-</div>
-<div class="paragraph">
-<p>https://*.cloudmanager.cloud.netapp.com</p>
-</div>
-<div class="paragraph">
-<p>https://cloudmanager.cloud.netapp.com</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>To provide SaaS features and services within BlueXP.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-The Connector is currently contacting "cloudmanager.cloud.netapp.com" but it will start contacting "api.bluexp.netapp.com" in an upcoming release.
-</td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io<br>
-<br>
-https://*.blob.core.windows.net</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To upgrade the Connector and its Docker components.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="proxy-server">Proxy server</h3>
-<div class="paragraph">
-<p>If your organization requires deployment of an HTTP proxy for all outgoing internet traffic, obtain the following information about your HTTP proxy:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>IP address</p>
-</li>
-<li>
-<p>Credentials</p>
-</li>
-<li>
-<p>HTTPS certificate</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="security-group">Security group</h3>
-<div class="paragraph">
-<p>There&#8217;s no incoming traffic to the Connector, unless you initiate it or if the Connector is used as a proxy for AutoSupport messages. HTTP and HTTPS provide access to the <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface">local UI</a>, which you&#8217;ll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="ip-address-limitation">IP address limitation</h3>
-<div class="paragraph">
-<p>There&#8217;s a possible conflict with IP addresses in the 172 range. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html">Learn more about this limitation</a>.</p>
-</div>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html" target="_blank" rel="noopener">View networking requirements for the Connector</a></p>
 </div>
 </div>
 </div>
