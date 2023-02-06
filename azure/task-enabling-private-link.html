@@ -232,15 +232,12 @@
           <li class="n-top-hat__list-item">
             <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
           </li>
-          <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
-          </li>
         </ul>
       </div>
       <div class="n-top-hat__utils">
         <ul class="n-top-hat__list">
           <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+            <a href="https://www.netapp.com/company/contact-us/" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
           </li>
         </ul>
       </div>
@@ -324,47 +321,20 @@
         </li><li>
           <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
           <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
           <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
           <a href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
-        </li><li>
-          <a href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
   </div>
-  <script>
-    $(function(){
-        var currentLocalization = $('html').attr('lang');
-
-        var localizationsDictionary = {
-            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
-            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
-            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
-            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
-            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
-            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
-            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
-            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
-            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
-            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
-            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
-            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
-            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
-            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
-            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
-        };
-
-        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
-            $('.n-property-bar__property-link').attr('href', '/');
-        }
-    });
-  </script>
   <!-- End property bar -->
 </header>
 
@@ -833,6 +803,8 @@
             AWS administration
           </a>
           
+
+
 
 
 
@@ -1779,7 +1751,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2023-01-31 16:27:54 +0000">01/31/2023</time>
     
   
 
@@ -1855,7 +1827,7 @@
 <h2 id="work-with-azure-private-links">Work with Azure Private Links</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In most cases, there’s nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. ​BlueXP manages Azure Private Links for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.</p>
+<p>In most cases, there&#8217;s nothing that you need to do to set up Azure Private links with Cloud Volumes ONTAP. BlueXP manages Azure Private Links for you. But if you use Azure Private DNS, then you&#8217;ll need to edit a configuration file. You should also be aware of a requirement for the Connector location in Azure.</p>
 </div>
 <div class="sect2">
 <h3 id="how-private-link-connections-work">How Private Link connections work</h3>
@@ -1903,6 +1875,7 @@
    "resource-group" : "&lt;resource group name of the DNS zone&gt;",
    "subscription" : "&lt;subscription ID&gt;",
    "use-existing" : true
+   "create-private-dns-zone-link" : true
 }</pre>
 </div>
 </div>
@@ -1974,7 +1947,7 @@
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2023 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
               <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>

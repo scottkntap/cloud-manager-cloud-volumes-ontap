@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can activate write once, read many (WORM) storage on a Cloud Volumes ONTAP system to retain files in unmodified form for a specified retention period. Cl...">
-  <meta name="keywords" content=" worm, write once, read many, snaplock, retain, retention, period, cloud worm, worm storage"><!-- Icons -->
+  <meta name="keywords" content=" worm, write once, read many, snaplock, retain, retention, period, cloud worm, worm storage, tiering"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-cloud-volumes-ontap/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -232,15 +232,12 @@
           <li class="n-top-hat__list-item">
             <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
           </li>
-          <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
-          </li>
         </ul>
       </div>
       <div class="n-top-hat__utils">
         <ul class="n-top-hat__list">
           <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+            <a href="https://www.netapp.com/company/contact-us/" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
           </li>
         </ul>
       </div>
@@ -324,47 +321,20 @@
         </li><li>
           <a href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/concept-worm.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-worm.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
           <a href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/concept-worm.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
           <a href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/concept-worm.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/concept-worm.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/concept-worm.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
           <a href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/concept-worm.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
-        </li><li>
-          <a href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/concept-worm.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
   </div>
-  <script>
-    $(function(){
-        var currentLocalization = $('html').attr('lang');
-
-        var localizationsDictionary = {
-            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
-            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
-            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
-            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
-            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
-            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
-            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
-            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
-            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
-            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
-            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
-            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
-            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
-            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
-            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
-        };
-
-        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
-            $('.n-property-bar__property-link').attr('href', '/');
-        }
-    });
-  </script>
   <!-- End property bar -->
 </header>
 
@@ -833,6 +803,8 @@
             AWS administration
           </a>
           
+
+
 
 
 
@@ -1765,7 +1737,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-11 17:06:36 +0000">01/11/2023</time>
+    <time datetime="2023-02-02 18:30:47 +0000">02/02/2023</time>
     
   
 
@@ -1775,6 +1747,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1890,6 +1870,30 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="worm-and-data-tiering">WORM and data tiering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you create a new Cloud Volumes ONTAP 9.8 system or later, you can enable both data tiering and WORM storage together. Enabling data tiering with WORM storage allows you to tier the data to an object store in the cloud.</p>
+</div>
+<div class="paragraph">
+<p>You should understand the following about enabling both data tiering and WORM storage:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Data that is tiered to object storage doesn&#8217;t include the ONTAP WORM functionality. To ensure end-to-end WORM capability, you&#8217;ll need to set up the bucket permissions correctly.</p>
+</li>
+<li>
+<p>The data that is tiered to object storage doesn&#8217;t carry the WORM functionality, which means technically anyone with full access to buckets and containers can go and delete the objects tiered by ONTAP.</p>
+</li>
+<li>
+<p>Reverting or downgrading to Cloud Volumes ONTAP 9.8 is blocked after enabling WORM and tiering.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="limitations">Limitations</h2>
 <div class="sectionbody">
 <div class="ulist">
@@ -1899,9 +1903,6 @@
 </li>
 <li>
 <p>In addition to the trusted storage administrator model, WORM storage in Cloud Volumes ONTAP also implicitly operates under a "trusted cloud administrator" model. A cloud administrator could delete WORM data before its expiry date by removing or editing cloud storage directly from the cloud provider.</p>
-</li>
-<li>
-<p>When WORM storage is activated, data tiering to object storage can&#8217;t be enabled.</p>
 </li>
 </ul>
 </div>
@@ -1923,7 +1924,7 @@
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2023 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
               <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>

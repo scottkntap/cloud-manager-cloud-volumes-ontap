@@ -134,7 +134,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-worm.html</loc>
       
-      <lastmod>2023-01-11T17:06:36+00:00</lastmod>
+      <lastmod>2023-02-02T18:30:47+00:00</lastmod>
       
     </url>
   
@@ -225,7 +225,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap//search.html</loc>
       
-      <lastmod>2023-01-27T17:23:13+00:00</lastmod>
+      <lastmod>2023-02-06T17:16:59+00:00</lastmod>
       
     </url>
   
@@ -307,6 +307,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-configure-placement-group-failure-aws.html</loc>
+      
+      <lastmod>2023-02-03T19:47:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connect-lun.html</loc>
       
       <lastmod>2022-10-31T15:39:18+00:00</lastmod>
@@ -358,28 +365,28 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html</loc>
       
-      <lastmod>2022-12-22T19:22:35+00:00</lastmod>
+      <lastmod>2023-01-31T19:57:43+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html</loc>
       
-      <lastmod>2022-11-10T21:10:36+00:00</lastmod>
+      <lastmod>2023-01-31T16:52:16+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html</loc>
       
-      <lastmod>2022-11-18T19:58:20+00:00</lastmod>
+      <lastmod>2023-01-31T16:52:16+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-01-31T16:27:54+00:00</lastmod>
       
     </url>
   
@@ -680,7 +687,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html</loc>
       
-      <lastmod>2023-01-04T17:30:18+00:00</lastmod>
+      <lastmod>2023-02-06T16:22:50+00:00</lastmod>
       
     </url>
   
