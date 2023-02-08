@@ -9,14 +9,14 @@
   <meta property="og:title" content="Security group rules for AWS | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-security-groups.html" />
-	<meta property="og:description" content="BlueXP creates AWS security groups that include the inbound and outbound rules that BlueXP and Cloud Volumes ONTAP need to operate successfully. You might wa..." />
+	<meta property="og:description" content="BlueXP creates AWS security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refe..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="BlueXP creates AWS security groups that include the inbound and outbound rules that BlueXP and Cloud Volumes ONTAP need to operate successfully. You might wa...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="BlueXP creates AWS security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refe...">
   <meta name="keywords" content=" security group, security groups, rules, ports, aws, inbound, outbound, rules"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -2001,7 +2001,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2023-02-08 14:45:54 +0000">02/08/2023</time>
     
   
 
@@ -2030,7 +2030,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>BlueXP creates AWS security groups that include the inbound and outbound rules that the Connector and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.</p>
+<p>BlueXP creates AWS security groups that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.</p>
 </div>
 </div>
 </div>
@@ -2749,156 +2749,7 @@ Rather than open ports 443 and 53, you can create an interface VPC endpoint from
 <h2 id="rules-for-the-connector">Rules for the Connector</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The security group for the Connector requires both inbound and outbound rules.</p>
-</div>
-<div class="sect2">
-<h3 id="inbound-rules-4">Inbound rules</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SSH</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides SSH access to the Connector host</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTP access from client web browsers to the local user interface and connections from Cloud Data Sense</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides HTTPS access from client web browsers to the local user interface</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3128</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provides Cloud Volumes ONTAP with internet access to send AutoSupport messages to NetApp Support. You must manually open this port after deploying the Connector.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="outbound-rules-4">Outbound rules</h3>
-<div class="paragraph">
-<p>The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.</p>
-</div>
-<div class="sect3">
-<h4 id="basic-outbound-rules-3">Basic outbound rules</h4>
-<div class="paragraph">
-<p>The predefined security group for the Connector includes the following outbound rules.</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 70%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All UDP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All outbound traffic</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="advanced-outbound-rules-3">Advanced outbound rules</h4>
-<div class="paragraph">
-<p>If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-The source IP address is the Connector host.
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all fit-content">
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Service</th>
-<th class="tableblock halign-left valign-top">Protocol</th>
-<th class="tableblock halign-left valign-top">Port</th>
-<th class="tableblock halign-left valign-top">Destination</th>
-<th class="tableblock halign-left valign-top">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API calls and AutoSupport</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">443</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Outbound internet and ONTAP cluster management LIF</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API calls to AWS and ONTAP, to Cloud Data Sense, to the Ransomware service, and sending AutoSupport messages to NetApp</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">API calls</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP HA mediator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Communication with the ONTAP HA mediator</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8088</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Backup to S3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API calls to Backup to S3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used for DNS resolve by BlueXP</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Data Sense</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Data Sense instance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Data Sense for Cloud Volumes ONTAP</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html" target="_blank" rel="noopener">View security group rules for the Connector</a></p>
 </div>
 </div>
 </div>
