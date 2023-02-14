@@ -2001,11 +2001,19 @@
 <p class="page-details">
   
     
-    <time datetime="2023-01-04 16:01:28 +0000">01/04/2023</time>
+    <time datetime="2023-02-14 17:11:57 +0000">02/14/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -2057,6 +2065,9 @@
 </li>
 <li>
 <p>Volume Encryption (VE) license installed (NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support)</p>
+</li>
+<li>
+<p>You must have a Multi-tenant Encryption Key Management (MT_EK_MGMT) license</p>
 </li>
 <li>
 <p>You must be a cluster or SVM administrator</p>
@@ -2125,13 +2136,13 @@
 <div class="title">Create Azure client secret</div>
 <ol class="arabic">
 <li>
-<p>In the Azure portal for your Cloud Volumes ONTAP application, select the <strong>Ceritificates &amp; secrets</strong> pane.</p>
+<p>In the Azure portal for your Azure Key Vault app registration, select the <strong>Certificates &amp; secrets</strong> pane.</p>
 </li>
 <li>
-<p>Select <strong>New client secret</strong> Enter a meaningful name for your client secret. NetApp recommends a 24-month expiration period, however your specific cloud governance policies may require a different setting.</p>
+<p>Select <strong>New client secret</strong>. Enter a meaningful name for your client secret. NetApp recommends a 24-month expiration period; however, your specific cloud governance policies may require a different setting.</p>
 </li>
 <li>
-<p>Select <strong>Add</strong> to save the client secret.	Immediately copy the <strong>Value</strong> of the secret and store it somewhere secure for future configuration. The secret value will not be displayed after you navigate away from the page.</p>
+<p>Click <strong>Add</strong> to create the client secret. Copy the secret string listed in the <strong>Value</strong> column and store it in a secure location for use later in <a href="#ontap">Cloud Volumes ONTAP configuration</a>. The secret value will not be displayed again after you navigate away from the page.</p>
 </li>
 </ol>
 </div>
@@ -2139,44 +2150,75 @@
 <div class="title">Create an Azure Key Vault</div>
 <ol class="arabic">
 <li>
-<p>If you have an existing Azure Key Vault, you can connect it to your Cloud Volumes ONTAP configuration, however you must adapt the access policies to the settings in this process.</p>
+<p>If you have an existing Azure Key Vault, you can connect it to your Cloud Volumes ONTAP configuration; however, you must adapt the access policies to the settings in this process.</p>
 </li>
 <li>
 <p>In the Azure portal, navigate to the <strong>Key Vaults</strong> section.</p>
 </li>
 <li>
-<p>Select <strong>Create</strong>. Enter the required information including resource group, region and pricing tier and make selections for the days to retain deleted vaults and whether or not purge protection is enabled. For the purposes of this configuration, defaults are sufficient, however your specific cloud governance policies may require different settings.</p>
+<p>Click <strong>+Create</strong> and enter the required information including resource group, region, and pricing tier. In addition, enter the number of days to retain deleted vaults and select <strong>Enable purge protection</strong> on the key vault.</p>
 </li>
 <li>
 <p>Select <strong>Next</strong> to choose an access policy.</p>
 </li>
 <li>
-<p>Select <strong>Azure Disk Encryption</strong> for the volume encryption option and <strong>Vault access policy</strong> for the permission model.</p>
+<p>Select the following options:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Under <strong>Access configuration</strong>, select the <strong>Vault access policy</strong>.</p>
 </li>
 <li>
-<p>Select <strong>Add Access Policy</strong>.</p>
+<p>Under <strong>Resource access</strong>, select <strong>Azure Disk Encryption for volume encryption</strong>.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
-<p>Select the caret adjacent to the <strong>Configure from template (optional)</strong> field. Then, select <strong>Key, Secret, &amp; Certification Management.</strong></p>
+<p>Select <strong>+Create</strong> to add an access policy.</p>
+</li>
+<li>
+<p>Under <strong>Configure from a template</strong>, click the drop-down menu and then select the <strong>Key, Secret, and Certificate Management</strong> template.</p>
 </li>
 <li>
 <p>Choose each of the drop-down permissions menus (key, secret, certificate) and then <strong>Select all </strong> at the top of the menu list to select all the permissions available. You should have:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Key permissions</strong>: 19 selected</p>
+<p><strong>Key permissions</strong>: 20 selected</p>
 </li>
 <li>
 <p><strong>Secret permissions</strong>: 8 selected</p>
 </li>
 <li>
 <p><strong>Certificate permissions</strong>: 16 selected</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-azure-key-secret-cert-all-list.png" alt="screenshot of Create an access policy showing all permissions selections needed to create an access policy"></span></p>
+</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Select <strong>Add</strong> to create the access policy.</p>
+<p>Click <strong>Next</strong> to select the <strong>Principal</strong> Azure registered application you created in <a href="#azure-app">Azure Application Registration</a>. Select <strong>Next</strong>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Only one principal can be assigned per policy.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-azure-key-secret-cert-principal.png" alt="screenshot of Create an access policy principal tab"></span></p>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong> two times until you arrive at <strong>Review and create</strong>. Then, click <strong>Create</strong>.</p>
 </li>
 <li>
 <p>Select <strong>Next</strong> to advance to <strong>Networking</strong> options.</p>
@@ -2185,7 +2227,7 @@
 <p>Choose the appropriate network access method or select <strong>All networks</strong> and <strong>Review + Create</strong> to create the key vault. (Network access method may be prescribed by a governance policy or your corporate cloud security team.)</p>
 </li>
 <li>
-<p>Record the Key Vault URI: In the key vault you created, navigate to the Overview menu and copy the <strong>Vault URI</strong> from the right-hand column. You will need this for a later step.</p>
+<p>Record the Key Vault URI: In the key vault you created, navigate to the Overview menu and copy the <strong>Vault URI</strong> from the right-hand column. You need this for a later step.</p>
 </li>
 </ol>
 </div>
@@ -2250,7 +2292,23 @@
 <p>Select the subnet name for you Cloud Volumes ONTAP deployment from the list.</p>
 </li>
 <li>
-<p>Navigate to the <strong>Service Endpoints</strong> heading. In the dropdown menu, select <strong>Microsoft.AzureActiveDirectory</strong> from the list.</p>
+<p>Navigate to the <strong>Service Endpoints</strong> heading. In the drop-down menu, select the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Microsoft.AzureActiveDirectory</strong></p>
+</li>
+<li>
+<p><strong>Microsoft.KeyVault</strong></p>
+</li>
+<li>
+<p><strong>Microsoft.Storage</strong> (optional)</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-azure-service-endpoints-services.png" alt="Screenshot of Service Endpoints showing three selected services"></span></p>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Select <strong>Save</strong> to capture your settings.</p>
@@ -2265,7 +2323,7 @@
 </li>
 <li>
 <p>Enter the advanced privilege mode in ONTAP:<br>
-<code>set advanced -con off`</code></p>
+<code>set advanced -con off</code></p>
 </li>
 <li>
 <p>Identify the desired data SVM and verify its DNS configuration:<br>
@@ -2285,11 +2343,7 @@
 </li>
 <li>
 <p>Enable Azure Key Vault using the client ID and tenant ID saved after the application registration:<br>
-<code>security key-manager external azure enable -vserver <em>SVM_name</em> -client-id <em>Azure_client_ID</em> -tenant-id <em>Azure_tenant_ID</em> -name <em>Azure_key_name</em> -key-id <em>Azure_key_ID</em></code></p>
-</li>
-<li>
-<p>Verify the key manager configuration:<br>
-<code>security key-manager external azure show</code></p>
+<code>security key-manager external azure enable -vserver <em>SVM_name</em> -client-id <em>Azure_client_ID</em> -tenant-id <em>Azure_tenant_ID</em> -name <em>Azure_key_vault_name</em> -key-id <em>Azure_key_ID</em></code></p>
 </li>
 <li>
 <p>Check the status of the key manager:<br>
@@ -2316,8 +2370,10 @@ Category: kms_wrapped_key_status
 </div>
 </div>
 <div class="paragraph">
-<p>If the <code>service_reachability</code> status is not <code>OK</code>, the SVM cannot reach the Azure Key Vault service with all the required connectivity and permissions.<br>
-The <code>kms_wrapped_key_status</code> will report <code>UNKNOWN</code> at initial configuration. Its status will change to <code>OK</code> after the first volume is encrypted.</p>
+<p>If the <code>service_reachability</code> status is not <code>OK</code>, the SVM cannot reach the Azure Key Vault service with all the required connectivity and permissions. Ensure that your Azure network policies and routing don&#8217;t block your private vNet from reaching the Azure KeyVault Public endpoint. If they do, consider using an Azure Private endpoint to access the Key vault from within the vNet. You may also need to add a static hosts entry on your SVM to resolve the private IP address for your endpoint.</p>
+</div>
+<div class="paragraph">
+<p>The <code>kms_wrapped_key_status</code> will report <code>UNKNOWN</code> at initial configuration. Its status will change to <code>OK</code> after the first volume is encrypted.</p>
 </div>
 </li>
 <li>
