@@ -1813,7 +1813,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2023-03-08 13:25:00 +0000">03/08/2023</time>
     
   
 
@@ -1844,10 +1844,10 @@
 </div>
 <div class="paragraph quick-margin-para">
 <div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="One"></span> Create a Connector</div>
-<p>If you don&#8217;t have a <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" target="_blank" rel="noopener">Connector</a> yet, an Account Admin needs to create one. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html" target="_blank" rel="noopener">Learn how to create a Connector in Azure</a>.</p>
+<p>If you don&#8217;t have a <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" target="_blank" rel="noopener">Connector</a> yet, an Account Admin needs to create one. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html" target="_blank" rel="noopener">Learn how to create a Connector in Azure</a></p>
 </div>
 <div class="paragraph quick-margin-para">
-<p>When you create your first Cloud Volumes ONTAP working environment, BlueXP (formerly Cloud Manager) prompts you to deploy a Connector if you don&#8217;t have one yet.</p>
+<p>Note that if you want to deploy Cloud Volumes ONTAP in a subnet where no internet access is available, then you need to manually install the Connector and access the BlueXP user interface that&#8217;s running on that Connector. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html" target="_blank" rel="noopener">Learn how to manually install the Connector in a location without internet access</a></p>
 </div>
 <div class="paragraph quick-margin-para">
 <div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Two"></span> Plan your configuration</div>
@@ -1860,9 +1860,9 @@
 <p>Ensure that your VNet and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.</p>
 </li>
 <li>
-<p>Enable outbound internet access from the target VNet so the Connector and Cloud Volumes ONTAP can contact several endpoints.</p>
+<p>Enable outbound internet access from the target VPC for NetApp AutoSupport.</p>
 <div class="paragraph">
-<p>This step is important because the Connector can&#8217;t manage Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to the list of endpoints for <a href="reference-networking-azure.html">the Connector and Cloud Volumes ONTAP</a>.</p>
+<p>This step isn&#8217;t required if you&#8217;re deploying Cloud Volumes ONTAP in a location where no internet access is available.</p>
 </div>
 </li>
 </ol>
