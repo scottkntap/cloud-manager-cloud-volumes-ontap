@@ -1813,7 +1813,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2023-03-10 15:57:10 +0000">03/10/2023</time>
     
   
 
@@ -1916,9 +1916,9 @@ You don&#8217;t need to install a feature license to enable data tiering (Fabric
 </dd>
 <dt class="hdlist1">Storage access tiers</dt>
 <dd>
-<p>The default storage access tier for tiered data in Azure is the <em>hot</em> tier. The hot tier is ideal for frequently accessed data.</p>
+<p>The default storage access tier for tiered data in Azure is the <em>hot</em> tier. The hot tier is ideal for frequently accessed data in the capacity tier.</p>
 <div class="paragraph">
-<p>If you don&#8217;t plan to access the inactive data, you can reduce your storage costs by changing to the <em>cool</em> storage tier. When you change the storage tier, inactive data starts in the hot storage tier and transitions to the cool storage tier, if the data is not accessed after 30 days.</p>
+<p>If you don&#8217;t plan to access the inactive data in the capacity tier, you can reduce your storage costs by changing to the <em>cool</em> storage tier. When you change the storage tier to cool, inactive capacity tier data moves directly to the cool storage tier.</p>
 </div>
 <div class="paragraph">
 <p>The access costs are higher if you do access the data, so take that into consideration before you change the storage tier. <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers" target="_blank" rel="noopener">Learn more about Azure Blob storage access tiers</a>.</p>
