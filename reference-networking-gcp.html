@@ -2109,7 +2109,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-08 14:23:27 +0000">02/08/2023</time>
+    <time datetime="2023-03-13 17:50:48 +0000">03/13/2023</time>
     
   
 
@@ -2119,6 +2119,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
+    <img  class="avatar avatar-small"
+          alt="netapp-driley"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18422994?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2951,6 +2959,18 @@ The source is the interface (IP address) on the Cloud Volumes ONTAP system.
 </div>
 <div class="paragraph">
 <p>Communication from the HA nodes to the HA mediator takes place over port 3260 (iSCSI).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+To enable high write speed for new Google Cloud HA pair deployments, a maximum transmission unit (MTU) of at least 8,896 bytes is required for VPC-1, VPC-2, and VPC-3. If you choose to upgrade existing VPC-1, VPC-2, and VPC-3 to an MTU of 8,896 bytes, you must shutdown all existing HA systems using these VPCs during the configuration process.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
