@@ -1813,7 +1813,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2023-03-20 19:04:25 +0000">03/20/2023</time>
     
   
 
@@ -1823,6 +1823,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
+    <img  class="avatar avatar-small"
+          alt="netapp-driley"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18422994?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2006,6 +2014,9 @@
 <li>
 <p>An optional IP address for a storage VM (SVM) management LIF</p>
 <div class="paragraph">
+<p>The iSCSI LIFs are required for DNS communication. An iSCSI LIF is used for this purpose because it doesn&#8217;t migrate on failover.</p>
+</div>
+<div class="paragraph">
 <p>This management LIF provides a connection to management tools like SnapCenter.</p>
 </div>
 </li>
@@ -2125,7 +2136,7 @@
 <p>IP addresses that you use for SMB data are allocated in the load balancer so that the IP addresses can migrate to the other node in case failover events occur.</p>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll need to create the following IP addresses:</p>
+<p>You&#8217;ll need to create the following IP addresses in the load balancer:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2136,7 +2147,7 @@
 <p>One IP address for NAS data LIF access from node 2</p>
 </li>
 <li>
-<p>One IP address for an iSCSI LIF on node 1</p>
+<p>One IP address for an iSCSI LIF on node 1 in each VM&#8217;s respective NIC0</p>
 </li>
 <li>
 <p>One IP address for an iSCSI LIF on node 2</p>
@@ -2162,7 +2173,19 @@
 <p>Click the name of the load balancer for the HA pair.</p>
 </li>
 <li>
-<p>Create the required number of frontend IP configurations:</p>
+<p>Create the required number of frontend IP configurations for the data and SVM LIFs only:</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+A frontend IP should only be created under the NIC0 for each corresponding SVM. For more information on how to add the IP address to the SVM NIC0, see "Step 7 [hyperlink]"
+</td>
+</tr>
+</table>
+</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2255,7 +2278,53 @@
 <li>
 <p>Ensure that the network security group rules for Cloud Volumes ONTAP allows the load balancer to send TCP probes for the health probes that were created in step 4 above. Note that this is allowed by default.</p>
 </li>
+<li>
+<p>For iSCSI LIFs, add the IP address for NIC0.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click the name of the Cloud Volumes ONTAP VM.</p>
+</li>
+<li>
+<p>Click <strong>Networking</strong>.</p>
+</li>
+<li>
+<p>Click the name of the network interface for nic0.</p>
+</li>
+<li>
+<p>Under Settings, click <strong>IP configurations</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_azure_ip_config_add.png" alt="A screenshot of the IP configurations page in the Azure portal"></span></p>
+</div>
+</li>
+<li>
+<p>Enter a name for the IP configuration, select Dynamic, and then click <strong>OK</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_azure_ip_add_config_window.png" alt="A screenshot fo the Add IP configuration window"></span></p>
+</div>
+</li>
+<li>
+<p>Click the name of the IP configuration that you just created, change the Assignment to Static, and click <strong>Save</strong>.</p>
+</li>
 </ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+It&#8217;s best to use a static IP address because a static IP ensures that the IP address won&#8217;t change, which can help to prevent unnecessary outages to your application.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2307,7 +2376,7 @@
 <p>Create a data LIF:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -netmask-length &lt;# of mask bits&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
 </div>
 </div>
 </li>
@@ -2360,7 +2429,7 @@
 <p>Create a data LIF:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs--ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nas-ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default</code></pre>
 </div>
 </div>
 </li>
@@ -2413,7 +2482,7 @@
 <p>Create a data LIF:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs--ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nas-ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy disabled -firewall-policy data -home-port e0a -auto-revert true -failover-group Default</code></pre>
 </div>
 </div>
 </li>
@@ -2480,7 +2549,7 @@
 <p>Use the following command to create an iSCSI LIF on node 1.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -netmask-length &lt;# of mask bits&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
 </div>
 </div>
 </li>
@@ -2488,7 +2557,7 @@
 <p>Use the following command to create an iSCSI LIF on node 2.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node2&gt; -data-protocol iscsi</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -netmask-length &lt;# of mask bits&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node2&gt; -data-protocol iscsi</code></pre>
 </div>
 </div>
 </li>
@@ -2519,6 +2588,15 @@
 </li>
 <li>
 <p>If you&#8217;re running Cloud Volumes ONTAP 9.11.1 or later, modify the network service policies for the storage VM.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter the following command to access advanced mode.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">::&gt; set adv -con off</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>Modifying the services is required because it ensures that Cloud Volumes ONTAP can use the iSCSI LIF for outbound management connections.</p>
 </div>
@@ -2540,6 +2618,9 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-ldap-client
 network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-nis-client</code></pre>
 </div>
+</div>
+</li>
+</ol>
 </div>
 </li>
 </ol>
@@ -2576,7 +2657,7 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 <p>Use the following command to create a NAS LIF on node 1.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs--ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port &lt;port-number-for-azure-health-probe1&gt;</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs-cifs-ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port &lt;port-number-for-azure-health-probe1&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -2589,6 +2670,40 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 </div>
 </li>
 </ol>
+</div>
+</li>
+<li>
+<p>Create iSCSI LIFs to provide DNS communication:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Use the following command to create an iSCSI LIF on node 1.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -netmask-length &lt;# of mask bits&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use the following command to create an iSCSI LIF on node 2.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -netmask-length &lt;# of mask bits&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node2&gt; -data-protocol iscsi</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Optional: Create a storage VM management LIF on node 1.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol none -address &lt;svm-mgmt-ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy system-defined -firewall-policy mgmt -home-port e0a -auto-revert false -failover-group Default -probe-port &lt;port-number-for-azure-health-probe3&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This management LIF provides a connection to management tools like SnapCenter.</p>
 </div>
 </li>
 <li>
@@ -2615,6 +2730,15 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 </li>
 <li>
 <p>If you&#8217;re running Cloud Volumes ONTAP 9.11.1 or later, modify the network service policies for the storage VM.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter the following command to access advanced mode.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">::&gt; set adv -con off</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>Modifying the services is required because it ensures that Cloud Volumes ONTAP can use the iSCSI LIF for outbound management connections.</p>
 </div>
@@ -2636,6 +2760,9 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-ldap-client
 network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-nis-client</code></pre>
 </div>
+</div>
+</li>
+</ol>
 </div>
 </li>
 </ol>
@@ -2672,7 +2799,7 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 <p>Use the following command to create a NAS LIF on node 1.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs--ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port &lt;port-number-for-azure-health-probe1&gt;</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -lif &lt;lif-name&gt; -role data -data-protocol cifs,nfs -address &lt;nfs-cifs-ip-address&gt; -netmask-length &lt;length&gt; -home-node &lt;name-of-node1&gt; -status-admin up -failover-policy system-defined -firewall-policy data -home-port e0a -auto-revert true -failover-group Default -probe-port &lt;port-number-for-azure-health-probe1&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -2688,14 +2815,14 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 </div>
 </li>
 <li>
-<p>Create iSCSI LIFs to provide DNS and SMB communication:</p>
+<p>Create iSCSI LIFs to provide DNS communication:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
 <p>Use the following command to create an iSCSI LIF on node 1.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -netmask-length &lt;# of mask bits&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node1&gt; -data-protocol iscsi</code></pre>
 </div>
 </div>
 </li>
@@ -2703,7 +2830,7 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 <p>Use the following command to create an iSCSI LIF on node 2.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node2&gt; -data-protocol iscsi</code></pre>
+<pre class="highlight"><code class="language-cli" data-lang="cli">network interface create -vserver &lt;svm-name&gt; -home-port e0a -address &lt;iscsi-ip-address&gt; -netmask-length &lt;# of mask bits&gt; -lif &lt;lif-name&gt; -home-node &lt;name-of-node2&gt; -data-protocol iscsi</code></pre>
 </div>
 </div>
 </li>
@@ -2734,6 +2861,15 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 </li>
 <li>
 <p>If you&#8217;re running Cloud Volumes ONTAP 9.11.1 or later, modify the network service policies for the storage VM.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Enter the following command to access advanced mode.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cli" data-lang="cli">::&gt; set adv -con off</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>Modifying the services is required because it ensures that Cloud Volumes ONTAP can use the iSCSI LIF for outbound management connections.</p>
 </div>
@@ -2755,6 +2891,9 @@ network interface service-policy add-service -vserver &lt;svm-name&gt; -policy d
 network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-ldap-client
 network interface service-policy add-service -vserver &lt;svm-name&gt; -policy default-data-iscsi -service management-nis-client</code></pre>
 </div>
+</div>
+</li>
+</ol>
 </div>
 </li>
 </ol>
