@@ -2109,7 +2109,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-03-27 15:51:22 +0000">03/27/2023</time>
+    <time datetime="2023-03-27 20:05:20 +0000">03/27/2023</time>
     
   
 
@@ -2317,11 +2317,14 @@ An iSCSI LIF provides client access over the iSCSI protocol and is used by the s
 </li>
 <li>
 <p><strong>HA pair</strong><br>
-BlueXP allocates 14 IP addresses to an HA pair:</p>
+BlueXP allocates 12-13 IP addresses to an HA pair:</p>
 <div class="ulist">
 <ul>
 <li>
 <p>2 Node management LIFs (e0a)</p>
+</li>
+<li>
+<p>1 Cluster management LIF (e0a)</p>
 </li>
 <li>
 <p>2 iSCSI LIFs (e0a)</p>
@@ -2339,10 +2342,7 @@ An iSCSI LIF provides client access over the iSCSI protocol and is used by the s
 </div>
 </li>
 <li>
-<p>2 NAS LIFs (e0a)</p>
-</li>
-<li>
-<p>2 Intercluster LIFs (e0a)</p>
+<p>1 or 2 NAS LIFs (e0a)</p>
 </li>
 <li>
 <p>2 Cluster LIFs (e0b)</p>
