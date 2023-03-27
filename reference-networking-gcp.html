@@ -2109,7 +2109,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-03-21 18:43:06 +0000">03/21/2023</time>
+    <time datetime="2023-03-24 20:41:22 +0000">03/24/2023</time>
     
   
 
@@ -2270,12 +2270,42 @@ A LIF is an IP address associated with a physical port. A storage VM (SVM) manag
 <div class="sect3">
 <h4 id="private-ip-addresses-2">Private IP addresses</h4>
 <div class="paragraph">
-<p>BlueXP allocates 14 or 15 private IP addresses to an HA pair in Google Cloud:</p>
+<p>BlueXP automatically allocates the required number of private IP addresses to Cloud Volumes ONTAP in GCP. You need to make sure that your networking has enough private addresses available.</p>
+</div>
+<div class="paragraph">
+<p>+<br>
+The number of LIFs that Cloud Manager allocates for Cloud Volumes ONTAP depends on whether you deploy a single node system or an HA pair. A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>7 or 8 private IP addresses for VPC-0</p>
+<p><strong>Single node</strong><br>
+BlueXP allocates 4 IP addresses to a single node system:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Node management LIF</p>
+</li>
+<li>
+<p>Cluster management LIF</p>
+</li>
+<li>
+<p>iSCSI data LIF</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+An iSCSI LIF provides client access over the iSCSI protocol and is used by the system for other important networking workflows. These LIFs are required and should not be deleted.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>NAS LIF</p>
 <div class="paragraph">
 <p>You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:</p>
 </div>
@@ -2283,14 +2313,55 @@ A LIF is an IP address associated with a physical port. A storage VM (SVM) manag
 <p><code>skipSvmManagementLif: true</code></p>
 </div>
 </li>
-<li>
-<p>Two private IP addresses for VPC-1</p>
+</ul>
+</div>
 </li>
 <li>
-<p>Two private IP addresses for VPC-2</p>
+<p><strong>HA pair</strong><br>
+BlueXP allocates 14 IP addresses to an HA pair:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2 Node management LIFs (e0a)</p>
 </li>
 <li>
-<p>Three private IP addresses for VPC-3</p>
+<p>2 iSCSI LIFs (e0a)</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+An iSCSI LIF provides client access over the iSCSI protocol and is used by the system for other important networking workflows. These LIFs are required and should not be deleted.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>2 NAS LIFs (e0a)</p>
+</li>
+<li>
+<p>2 Intercluster LIFs (e0a)</p>
+</li>
+<li>
+<p>2 Cluster LIFs (e0b)</p>
+</li>
+<li>
+<p>2 HA Interconnect IP addresses (e0c)</p>
+</li>
+<li>
+<p>2 RSM iSCSI IP addresses (e0d)</p>
+<div class="paragraph">
+<p>You can skip creation of the storage VM (SVM) management LIF if you deploy Cloud Volumes ONTAP using the API and specify the following flag:</p>
+</div>
+<div class="paragraph">
+<p><code>skipSvmManagementLif: true</code></p>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -2405,9 +2476,27 @@ If you&#8217;re using an HA pair, the HA mediator doesn&#8217;t require outbound
 <div class="paragraph">
 <p>If BlueXP notifies you that AutoSupport messages can&#8217;t be sent, <a href="task-verify-autosupport.html#troubleshoot-your-autosupport-configuration">troubleshoot your AutoSupport configuration</a>.</p>
 </div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Firewall rules</dt>
+<dd>
+<p>You don&#8217;t need to create firewall rules because BlueXP does that for you. If you need to use your own, refer to the firewall rules listed below.</p>
+<div class="paragraph">
+<p>Note that two sets of firewall rules are required for an HA configuration:</p>
 </div>
-<div class="sect2">
-<h3 id="connection-to-google-cloud-storage-for-data-tiering">Connection to Google Cloud Storage for data tiering</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <a href="#Firewall rules for Cloud Volumes ONTAP">Learn more</a>.</p>
+</li>
+<li>
+<p>Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound &amp; outbound communication between the HA components. <a href="#Firewall rules for Cloud Volumes ONTAP">Learn more</a>.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
 <div class="paragraph">
 <p>If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you&#8217;re using an HA pair, this is the subnet in VPC-0). For instructions, refer to <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">Google Cloud documentation: Configuring Private Google Access</a>.</p>
 </div>
