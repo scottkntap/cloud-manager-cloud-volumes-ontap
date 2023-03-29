@@ -1813,7 +1813,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-03-10 16:25:34 +0000">03/10/2023</time>
+    <time datetime="2023-03-29 14:34:03 +0000">03/29/2023</time>
     
   
 
@@ -2019,14 +2019,26 @@ If the Connector and Cloud Volumes ONTAP systems are deployed in different VNets
 <p><strong>Enable rollback by updating app.conf</strong></p>
 </div>
 <div class="olist arabic">
-<div class="title">Step</div>
+<div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Use the <code>PUT /occm/config</code> API call with the following request body:</p>
-<div class="listingblock">
+<p>SSH to the Connector host and log in.</p>
+</li>
+<li>
+<p>Navigate to the following directory: /opt/application/netapp/cloudmanager/docker_occm/data</p>
+</li>
+<li>
+<p>Edit app.conf by adding the following parameter and value:</p>
+<div class="literalblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{ "rollbackOnAzurePrivateLinkFailure": false }</code></pre>
+<pre>"rollback-on-private-link-failure": true</pre>
 </div>
+</div>
+</li>
+<li>
+<p>Save the file and log off the Connector.</p>
+<div class="paragraph">
+<p>A reboot isn&#8217;t required.</p>
 </div>
 </li>
 </ol>
