@@ -32,9 +32,16 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  
-    
-    <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html" />
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -1845,7 +1852,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2023-01-23 18:10:45 +0000">01/23/2023</time>
     
   
 
@@ -1855,6 +1862,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
+    <img  class="avatar avatar-small"
+          alt="netapp-driley"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18422994?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1913,31 +1928,23 @@ BlueXP gracefully changes one node at a time by initiating takeover and waiting 
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From the Canvas, select the working environment.</p>
+<p>On the Canvas page, select the working environment.</p>
 </li>
 <li>
-<p>In the right pane, click the menu icon and select <strong>Optimize Cost &amp; Performance</strong>.</p>
+<p>On the Overview tab, click the Features panel and then click the pencil icon next to <strong>Machine type</strong>.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-optimize-cost-performance.png" alt="A screenshot of the Optimize Cost &amp; Performance option that is available from the Canvas."></span></p>
+<p><span class="image"><img src="./media/screenshot_features_machine_type.png" alt="A screenshot that shows the Machine type setting under the Features panel available in the top right of the Overview page when viewing a working environment."></span></p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="Tip">
-</td>
-<td class="content">
-This option is also available by entering the working environment, opening the action menu, and selecting <strong>Change machine</strong>.
-</td>
-</tr>
-</table>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If you are using a node-based PAYGO license, you can optionally choose a different license and machine type by clicking the pencil icon next to <strong>License type</strong>.</p>
+</li>
+</ol>
 </div>
 </li>
 <li>
-<p>If you are using a node-based PAYGO license, you can optionally choose a different license.</p>
-</li>
-<li>
-<p>Select a machine type, select the check box to confirm that you understand the implications of the change, and then click <strong>OK</strong>.</p>
+<p>Choose an machine type, select the check box to confirm that you understand the implications of the change, and then click <strong>Change</strong>.</p>
 </li>
 </ol>
 </div>

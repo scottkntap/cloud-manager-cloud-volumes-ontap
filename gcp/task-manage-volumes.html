@@ -32,9 +32,16 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  
-    
-    <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" />
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -1845,7 +1852,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-02-17 20:28:04 +0000">02/17/2023</time>
+    <time datetime="2023-04-03 14:17:19 +0000">04/03/2023</time>
     
   
 
@@ -1858,19 +1865,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
-    <img  class="avatar avatar-small"
-          alt="netapp-rlithman"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54725121?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
     <img  class="avatar avatar-small"
           alt="netapp-driley"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18422994?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1902,7 +1909,13 @@
 <p>On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.</p>
 </li>
 <li>
-<p>Manage your volumes:</p>
+<p>In the working environment, click the <strong>Volumes</strong> tab.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_manage_vol_button.png" alt="A screenshot of the Manage Volume button under the Volumes tab."></span></p>
+</div>
+</li>
+<li>
+<p>On the Volumes tab, navigate to the desired volume title and then click <strong>Manage volume</strong> to access the Manage Volumes right-side panel.</p>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -1917,17 +1930,68 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">View information about a volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select a volume, and then click <strong>Info</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Under Volume Actions in the Manage volumes panel, click <strong>View volume details</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get the NFS mount command</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Under Volume Actions in the Manage volumes panel, click <strong>Mount Command</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Copy</strong>.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clone a volume</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Under Volume Actions in the Manage volumes panel, click <strong>Clone the volume</strong>.</p>
+</li>
+<li>
+<p>Modify the clone name as needed, and then click <strong>Clone</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This process creates a FlexClone volume. A FlexClone volume is a writable, point-in-time copy that is space-efficient because it uses a small amount of space for metadata, and then only consumes additional space as data is changed or added.</p>
+</div>
+<div class="paragraph">
+<p>To learn more about FlexClone volumes, see the <a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html" target="_blank" rel="noopener">ONTAP 9 Logical Storage Management Guide</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit volume tags (read-write volumes only)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Under Volume Actions in the Manage volumes panel, click <strong>Edit volume tags</strong> to modify the volume tag assigned to the selected volume.</p>
+</li>
+<li>
+<p>Enter the volume tag key and value under the provided fields.</p>
+</li>
+<li>
+<p>To include additional tags, click <strong>Add New Tag</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Edit a volume (read-write volumes only)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select a volume, and then click <strong>Edit</strong>.</p>
+<p>Under Volume Actions in the Manage volumes panel, click <strong>Edit volume settings</strong></p>
 </li>
 <li>
-<p>Modify the volume&#8217;s Snapshot policy, NFS protocol version, NFS access control list (export policy), or share permissions, and then click <strong>Update</strong>.</p>
+<p>Modify the volume&#8217;s Snapshot policy, NFS protocol version, NFS access control list (export policy), or share permissions, and then click <strong>Apply</strong>.</p>
 </li>
 </ol>
 </div>
@@ -1945,33 +2009,17 @@ If you need custom Snapshot policies, you can create them by using System Manage
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Clone a volume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a volume</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select a volume, and then click <strong>Clone</strong>.</p>
+<p>Under Volume Actions in the Manage volumes panel, click <strong>Delete the volume</strong>.</p>
 </li>
 <li>
-<p>Modify the clone name as needed, and then click <strong>Clone</strong>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>This process creates a FlexClone volume. A FlexClone volume is a writable, point-in-time copy that is space-efficient because it uses a small amount of space for metadata, and then only consumes additional space as data is changed or added.</p>
-</div>
-<div class="paragraph">
-<p>To learn more about FlexClone volumes, see the <a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html" target="_blank" rel="noopener">ONTAP 9 Logical Storage Management Guide</a>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Restore data from a Snapshot copy to a new volume</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Select a volume, and then click <strong>Restore from Snapshot copy</strong>.</p>
+<p>Under the Delete Volume window, enter the name of the volume you want to delete.</p>
 </li>
 <li>
-<p>Select a Snapshot copy, enter a name for the new volume, and then click <strong>Restore</strong>.</p>
+<p>Click <strong>Delete</strong> again to confirm.</p>
 </li>
 </ol>
 </div></div></td>
@@ -1981,7 +2029,7 @@ If you need custom Snapshot policies, you can create them by using System Manage
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select a volume, and then click <strong>Create a Snapshot copy</strong>.</p>
+<p>Under Protection Actions in the Manage Volumes panel, click <strong>Create a Snapshot copy</strong>.</p>
 </li>
 <li>
 <p>Change the name, if needed, and then click <strong>Create</strong>.</p>
@@ -1990,30 +2038,14 @@ If you need custom Snapshot policies, you can create them by using System Manage
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the NFS mount command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restore data from a Snapshot copy to a new volume</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select a volume, and then click <strong>Mount Command</strong>.</p>
+<p>Under Protection Actions in the Manage Volumes panel, click <strong>Restore from Snapshot copy</strong>.</p>
 </li>
 <li>
-<p>Click <strong>Copy</strong>.</p>
-</li>
-</ol>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">View the target iQN for an iSCSI volume</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Select a volume, and then click <strong>Target iQN</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Copy</strong>.</p>
-</li>
-<li>
-<p><a href="task-connect-lun.html">Use the IQN to connect to the LUN from your hosts</a>.</p>
+<p>Select a Snapshot copy, enter a name for the new volume, and then click <strong>Restore</strong>.</p>
 </li>
 </ol>
 </div></div></td>
@@ -2023,7 +2055,7 @@ If you need custom Snapshot policies, you can create them by using System Manage
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select a volume, and then click <strong>Change Disk Type &amp; Tiering Policy</strong>.</p>
+<p>Under Advanced Actions in the Manage Volumes panel, click <strong>Change Disk Type</strong>.</p>
 </li>
 <li>
 <p>Select the disk type, and then click <strong>Change</strong>.</p>
@@ -2048,10 +2080,7 @@ BlueXP moves the volume to an existing aggregate that uses the selected disk typ
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select a volume, and then click <strong>Change Disk Type &amp; Tiering Policy</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Edit Policy</strong>.</p>
+<p>Under Advanced Actions in the Manage Volumes panel, click <strong>Change Tiering Policy</strong>.</p>
 </li>
 <li>
 <p>Select a different policy and click <strong>Change</strong>.</p>
@@ -2077,6 +2106,9 @@ BlueXP moves the volume to an existing aggregate that uses the selected disk typ
 <ol class="loweralpha" type="a">
 <li>
 <p>Select a volume, and then click <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Type the name of the volume in the dialog.</p>
 </li>
 <li>
 <p>Click <strong>Delete</strong> again to confirm.</p>
@@ -2112,7 +2144,10 @@ BlueXP moves the volume to an existing aggregate that uses the selected disk typ
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From the working environment, click the menu icon and then click <strong>Advanced &gt; CIFS setup</strong>.</p>
+<p>From the Overview tab of the working environment, click the Feature tab under the right-side panel.</p>
+</li>
+<li>
+<p>Under the CIFS Setup field, click the <strong>pencil icon</strong> to display the CIFS Setup window.</p>
 </li>
 <li>
 <p>Specify settings for the CIFS server:</p>
@@ -2129,6 +2164,18 @@ BlueXP moves the volume to an existing aggregate that uses the selected disk typ
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select Storage VM (SVM)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selecting the Cloud Volume ONTAP storage virtual machine (SVM) displays it&#8217;s configured CIFS information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory Domain to join</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credentials authorized to join the domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DNS Primary and Secondary IP Address</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The IP addresses of the DNS servers that provide name resolution for the CIFS server.<br>
 <br>
@@ -2138,12 +2185,8 @@ The listed DNS servers must contain the service location records (SRV) needed to
 If you&#8217;re configuring Google Managed Active Directory, AD can be accessed by default with the 169.254.169.254 IP address.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory Domain to join</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credentials authorized to join the domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CIFS server NetBIOS name</p></td>
@@ -2163,15 +2206,11 @@ If you&#8217;re configuring Google Managed Active Directory, AD can be accessed 
 </ul>
 </div></div></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DNS Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.</p></td>
-</tr>
 </tbody>
 </table>
 </li>
 <li>
-<p>Click <strong>Save</strong>.</p>
+<p>Click <strong>Set</strong>.</p>
 </li>
 </ol>
 </div>
@@ -2264,21 +2303,18 @@ BlueXP displays these Action Required messages when an aggregate has reached 90%
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>In the working environment, click the menu icon, and then click <strong>Advanced &gt; Advanced allocation</strong>.</p>
+<p>In the working environment, click the <strong>Aggregates tab</strong>.</p>
 </li>
 <li>
-<p>Select the aggregate, and then click <strong>Info</strong>.</p>
+<p>Navigate to the desired aggregate tile, and then click the <strong>&#8230;&#8203; (ellipse icon) &gt; View aggregate details</strong>.</p>
 </li>
 <li>
-<p>Expand the list of volumes.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aggr_volumes.gif" alt="Screen shot: Shows the list of volumes in an aggregate in the aggregate information dialog box."></span></p>
-</div>
-</li>
-<li>
-<p>Review the size of each volume and choose one or more volumes to move out of the aggregate.</p>
+<p>Under the Overview tab of the Aggregate Details screen, review the size of each volume and choose one or more volumes to move out of the aggregate.</p>
 <div class="paragraph">
 <p>You should choose volumes that are large enough to free space in the aggregate so that you avoid additional capacity issues in the future.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_aggr_volume_overview.png" alt="Screen shot: Shows the list of volumes in an aggregate in the aggregate information dialog box."></span></p>
 </div>
 </li>
 </ol>
@@ -2388,12 +2424,15 @@ BlueXP displays these Action Required messages when an aggregate has reached 90%
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>In the working environment, click the menu icon, and then click <strong>Advanced &gt; Advanced allocation</strong>.</p>
+<p>In the working environment, click the <strong>Aggregates tab</strong>.</p>
 </li>
 <li>
-<p>Select each aggregate, click <strong>Info</strong>, and then view the available capacity (aggregate capacity minus used aggregate capacity).</p>
+<p>Navigate to the desired aggregate tile, and then click the <strong>&#8230;&#8203; (ellipse icon) &gt; View aggregate details</strong>.</p>
+</li>
+<li>
+<p>Under the aggregate tile, view the available capacity (provisioned size minus used aggregate capacity).</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aggr_capacity.gif" alt="Screen shot: Shows the total aggregate capacity and used aggregate capacity available in the aggregate information dialog box."></span></p>
+<p><span class="image"><img src="./media/screenshot_aggr_capacity.png" alt="Screen shot: Shows the total aggregate capacity and used aggregate capacity available in the aggregate information dialog box."></span></p>
 </div>
 </li>
 </ol>
@@ -2404,7 +2443,7 @@ BlueXP displays these Action Required messages when an aggregate has reached 90%
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select the aggregate, and then click <strong>Add disks</strong>.</p>
+<p>Select the aggregate, then click the <strong>&#8230;&#8203; (ellipse icon) &gt; Add Disks</strong>.</p>
 </li>
 <li>
 <p>Select the number of disks to add, and then click <strong>Add</strong>.</p>
@@ -2465,6 +2504,29 @@ BlueXP displays these Action Required messages when an aggregate has reached 90%
 <p>The <em>-generate-destination-key</em> option was specified on the volume move.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="view-flexgroup-volumes">View FlexGroup Volumes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can view FlexGroup volumes created through CLI or System Manager directly through the Volumes tab within BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FleGroup volumes through a dedicated Volumes tile. Under the Volumes tile, you can identify each FlexGroup volume group through the icon’s hover text. Additionally, you can identify and sort FlexGroup volumes under the volumes list view through the Volume Style column.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_show_flexgroup_vol.png" alt="A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile."></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create FlexGroup volumes in BlueXP is not available but planned for a future release.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

@@ -32,9 +32,16 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  
-    
-    <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html" />
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -1845,7 +1852,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2023-03-23 19:09:19 +0000">03/23/2023</time>
     
   
 
@@ -1855,6 +1862,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
+    <img  class="avatar avatar-small"
+          alt="netapp-driley"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18422994?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1886,6 +1901,9 @@
 <ol class="arabic">
 <li>
 <p>In the upper right of the BlueXP console, click the Settings icon, and select <strong>Connector Settings</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_settings_connector_button.png" alt="A screenshot of the Connector Settings option under teh Settings icon."></span></p>
+</div>
 </li>
 <li>
 <p>Under <strong>Capacity</strong>, modify any of the following settings:</p>
@@ -1898,7 +1916,7 @@
 <p><a href="concept-storage-management.html#capacity-management">Learn how Capacity Management Mode works</a>.</p>
 </div>
 </dd>
-<dt class="hdlist1">Free Space Ratio</dt>
+<dt class="hdlist1">Aggregate Capacity Threshold - Free Space Ratio</dt>
 <dd>
 <p>Triggers a notification when the free space ratio on an aggregate drops below the specified threshold.</p>
 <div class="paragraph">
@@ -1908,7 +1926,7 @@
 <p>(aggregate capacity - total used capacity on the aggregate) / aggregate capacity</p>
 </div>
 </dd>
-<dt class="hdlist1">Free Space Ratio for Data Tiering</dt>
+<dt class="hdlist1">Aggregate Capacity Thresholds - Free Space Ratio for Data Tiering</dt>
 <dd>
 <p>Defines how much free space is required on the performance tier (disks) when tiering data to a capacity tier (object storage).</p>
 <div class="paragraph">

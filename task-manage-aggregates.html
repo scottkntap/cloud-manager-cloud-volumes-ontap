@@ -32,6 +32,16 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html" />
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -2109,11 +2119,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-31 15:00:41 +0000">10/31/2022</time>
+    <time datetime="2023-03-31 15:37:23 +0000">03/31/2023</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
+    <img  class="avatar avatar-small"
+          alt="netapp-driley"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18422994?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
     <img  class="avatar avatar-small"
           alt="netapp-bcammett"
@@ -2127,14 +2145,6 @@
           alt="netapp-rlithman"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54725121?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
-    <img  class="avatar avatar-small"
-          alt="netapp-driley"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18422994?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2176,7 +2186,13 @@ All disks and aggregates must be created and deleted directly from BlueXP. You s
 <p>On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage aggregates.</p>
 </li>
 <li>
-<p>Click the menu icon and then click <strong>Advanced &gt; Advanced allocation</strong>.</p>
+<p>In the working environment, click the <strong>Aggregates</strong> tab.</p>
+</li>
+<li>
+<p>On the Aggregates tab, navigate to the desired title and then click the <strong>&#8230;&#8203; (ellipse icon)</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_aggr_menu_options.png" alt="A screenshot of the Aggregates menu options."></span></p>
+</div>
 </li>
 <li>
 <p>Manage your aggregates:</p>
@@ -2194,18 +2210,18 @@ All disks and aggregates must be created and deleted directly from BlueXP. You s
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">View information about an aggregate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select an aggregate and click <strong>Info</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Under the &#8230;&#8203; (ellipse icon) menu, click <strong>View aggregate details</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create a volume on a specific aggregate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select an aggregate and click <strong>Create volume</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Under the &#8230;&#8203; (ellipse icon) menu, click <strong>Add volume</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Add disks to an aggregate</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select an aggregate and click <strong>Add disks</strong>.</p>
+<p>Under the &#8230;&#8203; (ellipse icon) menu, click <strong>Add disks</strong>.</p>
 </li>
 <li>
 <p>Select the number of disks that you want to add and click <strong>Add</strong>.</p>
@@ -2230,10 +2246,10 @@ All disks in an aggregate must be the same size.
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select an aggregate and click <strong>Increase capacity</strong>.</p>
+<p>Under the &#8230;&#8203; (ellipse icon) menu, click <strong>Increase capacity</strong>.</p>
 </li>
 <li>
-<p>Enter the additional capacity that you&#8217;d like to add and then click <strong>Add</strong>.</p>
+<p>Enter the additional capacity that you&#8217;d like to add and then click <strong>Increase</strong>.</p>
 <div class="paragraph">
 <p>Note that you must increase the capacity of the aggregate by a minimum of 256 GiB or 10% of the aggregate&#8217;s size.</p>
 </div>
@@ -2249,7 +2265,7 @@ All disks in an aggregate must be the same size.
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Select an aggregate that does not contain any volumes and click <strong>Delete</strong>.</p>
+<p>Select an aggregate tile that does not contain any volumes click the <strong>&#8230;&#8203; (ellipse icon) &gt; Delete</strong>.</p>
 </li>
 <li>
 <p>Click <strong>Delete</strong> again to confirm.</p>

@@ -32,6 +32,16 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/whats-new.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/whats-new.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/whats-new.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/whats-new.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/whats-new.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/whats-new.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/whats-new.html" />
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -2109,7 +2119,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-03-16 15:17:13 +0000">03/16/2023</time>
+    <time datetime="2023-04-03 15:42:27 +0000">04/03/2023</time>
     
   
 
@@ -2130,14 +2140,6 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
-    <img  class="avatar avatar-small"
-          alt="netapp-bcammett"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/18287750?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
@@ -2152,6 +2154,68 @@
 </div>
 <div class="paragraph">
 <p>The enhancements described on this page are specific to BlueXP features that enable management of Cloud Volumes ONTAP. To learn what&#8217;s new with the Cloud Volumes ONTAP software itself, <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html" target="_blank" rel="noopener">go to the Cloud Volumes ONTAP Release Notes</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-april-2023">3 April 2023</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following changes were introduced with the 3.9.28 release of the Connector.</p>
+</div>
+<div class="sect2">
+<h3 id="turin-region-now-supported-in-google-cloud">Turin region now supported in Google Cloud</h3>
+<div class="paragraph">
+<p>The Turin region is now supported in Google Cloud for Cloud Volumes ONTAP and the Connector for Cloud Volumes ONTAP 9.12.1 GA and later.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="digital-wallet-enhancement">Digital Wallet enhancement</h3>
+<div class="paragraph">
+<p>The Digital Wallet now shows the licensed capacity that you purchased with marketplace private offers.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html">Learn how to view the consumed capacity in your account</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="support-for-comments-during-volume-creation">Support for comments during volume creation</h3>
+<div class="paragraph">
+<p>This release enables you to make comments when creating an Cloud Volumes ONTAP FlexGroup volume or FlexVol volume when using the API.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bluexp-user-interface-redesign-for-cloud-volumes-ontap-overview-volumes-and-aggregates-pages">BlueXP user interface redesign for Cloud Volumes ONTAP Overview, Volumes, and Aggregates pages</h3>
+<div class="paragraph">
+<p>BlueXP now has a redesigned user interface for Cloud Volumes ONTAP Overview, Volumes, and Aggregates pages. The tile-based design presents more comprehensive information in each tile for a better user experience.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-resource-page-rn.png" alt="This screenshot shows the redesigned BlueXP user interface on the Cloud Volumes ONTAP overview page. Various tiles show storage efficiency, version, capacity distribution, information about the Cloud Volumes ONTAP deployment, volumes, aggregates, replications, and backups."></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="flexgroup-volumes-viewable-through-cloud-volumes-ontap">FlexGroup Volumes viewable through Cloud Volumes ONTAP</h3>
+<div class="paragraph">
+<p>FlexGroup volumes created through CLI or System Manager directly are now viewable through the redesigned Volumes tile in BlueXP. Identical to the information provided for FlexVol volumes, BlueXP provides detailed information for created FlexGroup volumes through a dedicated Volumes tile.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Currently, you can only view existing FlexGroup volumes under BlueXP. The ability to create FlexGroup volumes in BlueXP is not available but planned for a future release.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-show-flexgroup-volume.png" alt="A screenshot that shows the FlexGroup volume icon hover text under the Volumes tile."></span></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html" target="_blank" rel="noopener">Learn more about viewing created FlexGroup volumes.</a></p>
+</div>
 </div>
 </div>
 </div>
@@ -2252,16 +2316,12 @@
 <h2 id="5-february-2023">5 February 2023</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following changes were introduced with the 3.9.26 release of the Connector.</p>
-</div>
-<div class="sect2">
-<h3 id="placement-group-creation-in-aws">Placement group creation in AWS</h3>
-<div class="paragraph">
-<p>A new configuration setting is now available for placement group creation with AWS HA single availability zone (AZ) deployments. Now you can choose to bypass failed placement group creations and allow AWS HA single AZ deployments to complete successfully.</p>
+<p>The following changes were introduced with the 3.9.26 release of the Connector.<br>
+=== Placement group creation in AWS<br>
+A new configuration setting is now available for placement group creation with AWS HA single availability zone (AZ) deployments. Now you can choose to bypass failed placement group creations and allow AWS HA single AZ deployments to complete successfully.</p>
 </div>
 <div class="paragraph">
 <p>For detailed information on how to configure the placement group creation setting, see <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-configure-placement-group-failure-aws.html#overview" target="_blank" rel="noopener">Configure placement group creation for AWS HA Single AZ</a>.</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="private-dns-zone-configuration-update">Private DNS zone configuration update</h3>
@@ -2287,16 +2347,12 @@
 <h2 id="1-january-2023">1 January 2023</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following changes were introduced with the 3.9.25 release of the Connector.</p>
-</div>
-<div class="sect2">
-<h3 id="licensing-packages-available-in-google-cloud">Licensing packages available in Google Cloud</h3>
-<div class="paragraph">
-<p>Optimized and Edge Cache capacity-based licensing packages are available for Cloud Volumes ONTAP in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract.</p>
+<p>The following changes were introduced with the 3.9.25 release of the Connector.<br>
+=== Licensing packages available in Google Cloud<br>
+Optimized and Edge Cache capacity-based licensing packages are available for Cloud Volumes ONTAP in the Google Cloud Marketplace as a pay-as-you-go offering or as an annual contract.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#packages" target="_blank" rel="noopener">Cloud Volumes ONTAP licensing</a>.</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="default-configuration-for-cloud-volumes-ontap">Default configuration for Cloud Volumes ONTAP</h3>
@@ -2361,10 +2417,9 @@
 <h2 id="15-november-2022">15 November 2022</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following changes were introduced with the 3.9.23 release of the Connector.</p>
+<p>The following changes were introduced with the 3.9.23 release of the Connector.<br>
+=== ONTAP S3 license in Google Cloud</p>
 </div>
-<div class="sect2">
-<h3 id="ontap-s3-license-in-gcp">ONTAP S3 license in GCP</h3>
 <div class="paragraph">
 <p>An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP systems running version 9.12.1 or later in Google Cloud Platform.</p>
 </div>
@@ -2373,21 +2428,18 @@
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
 <h2 id="6-november-2022">6 November 2022</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following changes were introduced with the 3.9.23 release of the Connector.</p>
+<p>The following changes were introduced with the 3.9.23 release of the Connector.<br>
+=== Moving resource groups in Azure</p>
 </div>
-<div class="sect2">
-<h3 id="moving-resource-groups-in-azure">Moving resource groups in Azure</h3>
 <div class="paragraph">
 <p>You can now move a working environment from one resource group to a different resource group in Azure within the same Azure subscription.</p>
 </div>
 <div class="paragraph">
 <p>For more information, see <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-moving-resource-groups-azure.html">Moving resource groups</a>.</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="ndmp-copy-certification">NDMP-copy certification</h3>
@@ -2395,11 +2447,9 @@
 <p>NDMP-copy is now certified for use with Cloud Volume ONTAP.</p>
 </div>
 <div class="paragraph">
-<p>For information on how to configure and use NDMP, see <a href="https://docs.netapp.com/us-en/ontap/ndmp/index.html">NDMP configuration overview</a>.</p>
+<p>For information on how to configure and use NDMP, see <a href="https://docs.netapp.com/us-en/ontap/ndmp/index.html">NDMP configuration overview</a>.<br>
+=== Managed disk encryption support for Azure</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="managed-disk-encryption-support-for-azure">Managed disk encryption support for Azure</h3>
 <div class="paragraph">
 <p>A new Azure permission has been added that now allows you to encrypt all managed disks upon creation.</p>
 </div>
@@ -2552,11 +2602,9 @@
 <p>BlueXP now supports the Amazon EBS Elastic Volumes feature when creating a Cloud Volumes ONTAP working environment from the user interface. The Elastic Volumes feature is enabled by default when using gp3 or io1 disks. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">Learn more about support for Elastic Volumes in AWS</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">Learn more about support for Elastic Volumes in AWS</a>.<br>
+=== ONTAP S3 license in AWS</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="ontap-s3-license-in-aws">ONTAP S3 license in AWS</h3>
 <div class="paragraph">
 <p>An ONTAP S3 license is now included on new and existing Cloud Volumes ONTAP systems running version 9.11.0 or later in AWS.</p>
 </div>
@@ -2608,11 +2656,9 @@
 <p>This Advanced View is available as a Preview with Cloud Volumes ONTAP 9.10.0 and later. We plan to refine this experience and add enhancements in upcoming releases. Please send us feedback by using the in-product chat.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">Learn more about the Advanced View</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html">Learn more about the Advanced View</a>.<br>
+=== Support for Amazon EBS Elastic Volumes</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="support-for-amazon-ebs-elastic-volumes">Support for Amazon EBS Elastic Volumes</h3>
 <div class="paragraph">
 <p>Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP aggregate provides better performance and additional capacity, while enabling BlueXP to automatically increase the underlying disk capacity as needed.</p>
 </div>
@@ -2710,11 +2756,9 @@
 <p>The K8s tab was deprecated in a previous and has now been removed. If you want to use Kubernetes with Cloud Volumes ONTAP, you can add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html" target="_blank" rel="noopener">Learn about Kubernetes data management in BlueXP</a></p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html" target="_blank" rel="noopener">Learn about Kubernetes data management in BlueXP</a><br>
+=== Annual contract in Azure</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="annual-contract-in-azure">Annual contract in Azure</h3>
 <div class="paragraph">
 <p>The Essentials and Professional packages are now available in Azure through an annual contract. You can contact your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.</p>
 </div>
@@ -2731,11 +2775,9 @@
 <p>You can now store tiered data in the Amazon S3 Glacier Instant Retrieval storage class.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html#changing-the-storage-class-for-tiered-data">Learn how to change the storage class for tiered data</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html#changing-the-storage-class-for-tiered-data">Learn how to change the storage class for tiered data</a>.<br>
+=== New AWS permissions required for the Connector</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="new-aws-permissions-required-for-the-connector">New AWS permissions required for the Connector</h3>
 <div class="paragraph">
 <p>The following permissions are now required to create an AWS spread placement group when deploying an HA pair in a single Availability Zone (AZ):</p>
 </div>

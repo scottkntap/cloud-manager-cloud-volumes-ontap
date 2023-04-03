@@ -22,7 +22,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-03-26T20:12:51+00:00</lastmod>
       
     </url>
   
@@ -85,14 +85,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-ha-google-cloud.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-ha.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
@@ -239,7 +239,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap//search.html</loc>
       
-      <lastmod>2023-03-29T14:44:34+00:00</lastmod>
+      <lastmod>2023-04-03T16:11:28+00:00</lastmod>
       
     </url>
   
@@ -253,14 +253,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-adding-systems.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-03-23T19:09:19+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-administer-advanced-view.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-01-23T20:27:53+00:00</lastmod>
       
     </url>
   
@@ -281,35 +281,35 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-azure-vm.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-01-23T18:10:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-01-23T18:10:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-gcp-machine.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-01-23T18:10:45+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-password.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-route-tables.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-01-20T16:48:18+00:00</lastmod>
       
     </url>
   
@@ -330,7 +330,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connect-lun.html</loc>
       
-      <lastmod>2022-10-31T15:39:18+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
@@ -344,14 +344,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-aggregates.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-03-26T15:58:09+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
@@ -365,7 +365,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deleting-working-env.html</loc>
       
-      <lastmod>2022-10-31T15:39:18+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
@@ -400,7 +400,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-enabling-private-link.html</loc>
       
-      <lastmod>2023-03-29T14:34:03+00:00</lastmod>
+      <lastmod>2023-04-03T14:57:24+00:00</lastmod>
       
     </url>
   
@@ -463,21 +463,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-aggregates.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-03-28T15:26:15+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-settings.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-03-23T19:09:19+00:00</lastmod>
       
     </url>
   
@@ -498,14 +498,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html</loc>
       
-      <lastmod>2023-02-17T20:28:04+00:00</lastmod>
+      <lastmod>2023-04-03T14:17:19+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-state.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-01-23T19:00:11+00:00</lastmod>
       
     </url>
   
@@ -540,14 +540,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-modify-write-speed.html</loc>
       
-      <lastmod>2023-03-10T16:22:49+00:00</lastmod>
+      <lastmod>2023-03-24T18:18:43+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-monitoring-costs.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
@@ -561,7 +561,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-overriding-cifs-locks.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-03-23T19:09:19+00:00</lastmod>
       
     </url>
   
@@ -589,21 +589,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-protecting-ransomware.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-01-20T16:48:18+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-registering.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-removing.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
@@ -659,7 +659,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-transit-gateway.html</loc>
       
-      <lastmod>2022-10-21T19:57:59+00:00</lastmod>
+      <lastmod>2023-03-29T14:30:31+00:00</lastmod>
       
     </url>
   
@@ -680,14 +680,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html</loc>
       
-      <lastmod>2022-10-31T15:00:41+00:00</lastmod>
+      <lastmod>2023-04-03T15:17:40+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html</loc>
       
-      <lastmod>2023-03-01T16:25:36+00:00</lastmod>
+      <lastmod>2023-03-31T15:37:23+00:00</lastmod>
       
     </url>
   
@@ -715,7 +715,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html</loc>
       
-      <lastmod>2023-03-16T15:17:13+00:00</lastmod>
+      <lastmod>2023-04-03T15:42:27+00:00</lastmod>
       
     </url>
   

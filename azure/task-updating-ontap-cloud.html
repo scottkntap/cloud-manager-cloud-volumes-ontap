@@ -32,9 +32,16 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  
-    
-    <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html" />
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -1813,7 +1820,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-03-01 16:25:36 +0000">03/01/2023</time>
+    <time datetime="2023-03-31 15:37:23 +0000">03/31/2023</time>
     
   
 
@@ -1826,19 +1833,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
-    <img  class="avatar avatar-small"
-          alt="netapp-rlithman"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54725121?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
     <img  class="avatar avatar-small"
           alt="netapp-driley"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18422994?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1869,7 +1876,7 @@
 <div class="sect2">
 <h3 id="how-to-upgrade">How to upgrade</h3>
 <div class="paragraph">
-<p>BlueXP provides two ways to upgrade Cloud Volumes ONTAP:</p>
+<p>BlueXP provides three ways to upgrade Cloud Volumes ONTAP:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1899,6 +1906,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.12.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.13.0</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9.12.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9.13.0</p></td>
@@ -2141,12 +2152,12 @@ The computer from which you are accessing BlueXP must have a network connection 
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>In the working environment, click the menu icon, and then click <strong>Advanced &gt; Advanced allocation</strong>.</p>
+<p>In the working environment, click the <strong>Aggregates</strong> tab.</p>
 </li>
 <li>
-<p>Select an aggregate, click <strong>Info</strong>, and then verify that the state is online.</p>
+<p>Under the aggregate title, click the ellipse button, and then select <strong>View Aggregate details</strong>.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aggr_state.gif" alt="Screen shot: Shows the State field when you view information for an aggregate."></span></p>
+<p><span class="image"><img src="./media/screenshots_aggregate_details_state.png" alt="Screen shot: Shows the State field when you view information for an aggregate."></span></p>
 </div>
 </li>
 <li>
@@ -2182,7 +2193,7 @@ The computer from which you are accessing BlueXP must have a network connection 
 <p>BlueXP displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_cot_upgrade.gif" alt="Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment."></span></p>
+<p><span class="image"><img src="./media/screenshot_overview_upgrade.png" alt="Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment."></span></p>
 </div>
 <div class="paragraph">
 <p>You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system.</p>
@@ -2200,29 +2211,38 @@ The computer from which you are accessing BlueXP must have a network connection 
 <li>
 <p>Select a working environment.</p>
 <div class="paragraph">
-<p>A notification appears in the right pane if a new version is available:</p>
+<p>A notification appears in the Overview tab if a new version is available:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_cot_upgrade.gif" alt="Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment."></span></p>
+<p><span class="image"><img src="./media/screenshot_overview_upgrade.png" alt="A screenshot that shows the &quot;Upgrade now!&quot; link under the Overview tab."></span></p>
 </div>
 </li>
 <li>
-<p>If a new version is available, click <strong>Upgrade</strong>.</p>
+<p>If a new version is available, click <strong>Upgrade Now!</strong></p>
 </li>
 <li>
-<p>In the Release Information page, click the link to read the Release Notes for the specified version, and then select the <strong>I have read&#8230;&#8203;</strong> check box.</p>
+<p>In the Upgrade Cloud Volumes ONTAP page, read the EULA, and then select <strong>I read and approve the EULA</strong>.</p>
 </li>
 <li>
-<p>In the End User License Agreement (EULA) page, read the EULA, and then select <strong>I read and approve the EULA</strong>.</p>
-</li>
-<li>
-<p>In the Review and Approve page, read the important notes, select <strong>I understand&#8230;&#8203;</strong>, and then click <strong>Go</strong>.</p>
+<p>Click <strong>Upgrade</strong>.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <div class="title">Result</div>
-<p>BlueXP starts the software upgrade. You can perform actions on the working environment once the software update is complete.</p>
+<p>BlueXP starts the software upgrade. You can perform actions on the working environment when the software update is complete.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Currently, you can only upgrade to the latest available ONTAP version through the BlueXP user interface. The ability to upgrade to a specific ONTAP version through the BlueXP user interface will be available in a future release.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <div class="title">After you finish</div>

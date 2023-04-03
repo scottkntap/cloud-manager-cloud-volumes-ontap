@@ -32,9 +32,16 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  
-    
-    <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/task-create-volumes.html" />
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -1813,7 +1820,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-31 15:00:41 +0000">10/31/2022</time>
+    <time datetime="2023-03-31 15:37:23 +0000">03/31/2023</time>
     
   
 
@@ -1826,19 +1833,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
-    <img  class="avatar avatar-small"
-          alt="netapp-rlithman"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54725121?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
     <img  class="avatar avatar-small"
           alt="netapp-driley"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18422994?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1925,25 +1932,17 @@
 <div class="title">Any aggregate</div>
 <div class="content">
 <div class="paragraph">
-<p>In the Volumes tab, click <strong>Add Volume</strong> &gt; <strong>New volume</strong>.</p>
+<p>On the Overview tab, navigate to the Volumes tile, and click <strong>Add Volume</strong>.<br>
+<span class="image"><img src="./media/screenshot_add_volume_button.png" alt="A screenshot of the Add Volume button under the Overview tab."></span></p>
 </div>
 </div>
 </div>
 <div class="openblock">
 <div class="title">Specific aggregate</div>
 <div class="content">
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Click the menu icon, and then click <strong>Advanced &gt; Advanced allocation</strong>.</p>
-</li>
-<li>
-<p>Click the menu for an aggregate.</p>
-</li>
-<li>
-<p>Click <strong>Create volume</strong>.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>On the Aggregates tab, navigate to the desired aggregate tile. Click the menu icon, and then click <strong>Add Volume</strong>.<br>
+<span class="image"><img src="./media/screenshot_add_volume_button_agg.png" alt="A screenshot of the Add Volume button under the Aggregates tab."></span></p>
 </div>
 </div>
 </div>
@@ -1955,7 +1954,7 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><strong>Details, Protection, and Tags</strong>: Enter basic details about the volume and select a Snapshot policy.</p>
+<p><strong>Volumes, Details, Protection, and Tags</strong>: Enter basic details about the volume and select a Snapshot policy.</p>
 <div class="paragraph">
 <p>Some of the fields on this page are self-explanatory. The following list describes fields for which you might need guidance:</p>
 </div>
@@ -1972,12 +1971,20 @@
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identifiable name you can enter for the new volume.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Volume Size</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tags</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tags that you add to a volume are associated with the <a href="https://docs.netapp.com/us-en/cloud-manager-app-template/task-using-tags.html" target="_blank" rel="noopener">Application Templates service</a>, which can help you organize and simplify the management of your resources.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage VM (SVM)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs. You can specify the Storage VM for the new volume.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot Policy</p></td>
@@ -2169,9 +2176,9 @@ You can only create NFS or CIFS volumes when using templates.
 <p>On the Canvas page, click the name of the Cloud Volumes ONTAP system on which you want to provision a volume.</p>
 </li>
 <li>
-<p>Click <span class="image"><img src="./media/screenshot_gallery_options.gif" alt="An icon of three side-by-side dots."></span> &gt; <strong>Add Volume From Template</strong>.</p>
+<p>Navigate to the Volumes tab and click <strong>Add Volume</strong> &gt; <strong>New Volume From Template</strong>.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_template_add_vol_cvo.png" alt="A screenshot showing how to add a new volume from a template."></span></p>
+<p><span class="image"><img src="./media/screenshot_add_volume_template.png" alt="A screenshot showing how to add a new volume from a template."></span></p>
 </div>
 </li>
 <li>
@@ -2180,32 +2187,26 @@ You can only create NFS or CIFS volumes when using templates.
 <p><span class="image"><img src="./media/screenshot_select_template_cvo.png" alt="A screenshot of the available application templates."></span></p>
 </div>
 <div class="paragraph">
-<p>The <em>Define Parameters</em> page is displayed.</p>
+<p>The <em>Editor</em> page is displayed.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_define_cvo_vol_from_template.png" alt="A screenshot showing a blank template that you need to fill in to create a volume."></span></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-You can click the checkbox <strong>Show read-only parameters</strong> to show all the fields that have been locked by the template if you want to see the values for those parameters. By default these predefined fields are hidden and only the fields you need to complete are shown.
-</td>
-</tr>
-</table>
-</div>
 </li>
 <li>
-<p>In the <em>Context</em> area, the Working Environment is filled in with the name of the working environment you started with. You need to select the <strong>Storage VM</strong> where the volume will be created.</p>
+<p>Above the <em>Action</em> panel, enter a name for the template.</p>
 </li>
 <li>
-<p>Add values for all of the parameters that are not hard-coded from the template. See <a href="#create a volume">Create a volume</a> for details about all the parameters you need to complete to deploy a Cloud Volumes ONTAP volume.</p>
+<p>Under <em>Context</em>, the Working Environment is filled in with the name of the working environment with which you started. Select the <strong>Storage VM</strong> where the volume will be created.</p>
 </li>
 <li>
-<p>If there are no other Actions that you need to define (for example, configuring Cloud Backup), click <strong>Run Template</strong>.</p>
+<p>Add values for all of the parameters that are not hard-coded from the template. See <a href="#create a volume">Create a volume</a> for details about all the parameters needed to complete the deployment of a Cloud Volumes ONTAP volume.</p>
+</li>
+<li>
+<p>Click <strong>Apply</strong> to save the configured parameters to the selected Action.</p>
+</li>
+<li>
+<p>If there are no other Actions that you need to define (for example, configuring Cloud Backup), click <strong>Save Template</strong>.</p>
 <div class="paragraph">
 <p>If there are other actions, click the action in the left pane to display the parameters you need to complete.</p>
 </div>
@@ -2213,11 +2214,11 @@ You can click the checkbox <strong>Show read-only parameters</strong> to show al
 <p><span class="image"><img src="./media/screenshot_template_select_next_action.png" alt="A screenshot showing how to select additional actions that need to be completed."></span></p>
 </div>
 <div class="paragraph">
-<p>For example, if the Enable Cloud Backup action requires that you select a backup policy, you can do that now.</p>
+<p>For example, if the Enable Cloud Backup on Volume action requires that you select a backup policy, you can do that now.</p>
 </div>
 </li>
 <li>
-<p>Click <strong>Run Template</strong>.</p>
+<p>Once configuration for the template actions are complete, click <strong>Save Template</strong>.</p>
 </li>
 </ol>
 </div>
@@ -2249,10 +2250,13 @@ You can click the checkbox <strong>Show read-only parameters</strong> to show al
 <p>On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.</p>
 </li>
 <li>
-<p>Click the menu icon and then click <strong>Advanced &gt; Advanced allocation</strong>.</p>
+<p>On the Aggregates tab, click <strong>Add Aggregate</strong>.</p>
 </li>
 <li>
-<p>Click <strong>Add Aggregate</strong> and then create the aggregate.</p>
+<p>From the <em>Add Aggregate</em> screen, create the aggregate.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_add_aggregate_cvo.png" alt="A screenshot showing the progress of adding an aggregate."></span></p>
+</div>
 </li>
 <li>
 <p>For Home Node, choose the second node in the HA pair.</p>

@@ -32,9 +32,16 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-cloud-volumes-ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  
-    
-    <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="canonical" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-cloud-volumes-ontap/task-tiering.html" />
   <link rel='stylesheet' href='/us-en/cloud-manager-cloud-volumes-ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -1845,7 +1852,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-31 15:00:41 +0000">10/31/2022</time>
+    <time datetime="2023-04-03 15:17:40 +0000">04/03/2023</time>
     
   
 
@@ -1858,19 +1865,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
-    <img  class="avatar avatar-small"
-          alt="netapp-rlithman"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54725121?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
     <img  class="avatar avatar-small"
           alt="netapp-driley"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18422994?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+    <img  class="avatar avatar-small"
+          alt="netapp-rlithman"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54725121?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -2030,15 +2037,21 @@
 <p>From the left navigation menu, select <strong>Storage &gt; Canvas</strong>.</p>
 </li>
 <li>
-<p>On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance.</p>
+<p>On the Canvas page, select the name of the Cloud Volumes ONTAP instance.</p>
 </li>
 <li>
 <p>Click the menu icon and select <strong>Enable capacity tiering</strong>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_enable_capacity_tiering.gif" alt="A screenshot of the Enable capacity tiering option that is available from the working environment menu if an issue was encountered when BlueXP tried to enable data tiering."></span></p>
-</div>
-<div class="paragraph">
-<p>You&#8217;ll only see this option if data tiering couldn&#8217;t be enabled when BlueXP created the system.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+You&#8217;ll only see this option if data tiering couldn&#8217;t be enabled when BlueXP created the system.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>In Google Cloud, a service account must be attached to Cloud Volumes ONTAP before this option will appear. <a href="#requirements">Ensure that you&#8217;ve met all requirements</a>.</p>
@@ -2081,12 +2094,12 @@
 <p>Open the working environment in BlueXP.</p>
 </li>
 <li>
-<p>Click the menu icon, click <strong>Advanced</strong>, and then click <strong>Advanced allocation</strong>.</p>
+<p>Click the Aggregates tab.</p>
 </li>
 <li>
-<p>Verify whether tiering is enabled or disabled on the aggregate.</p>
+<p>Navigate to the desired tile and verify whether tiering is enabled or disabled on the aggregate.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_aggr_tiering.gif" alt="A screenshot that shows information about an aggregate in BlueXP which includes the tiering status."></span></p>
+<p><span class="image"><img src="./media/screenshot_aggregate_tiering_enabled.png" alt="A screenshot that shows information about an aggregate in BlueXP which includes the tiering status."></span></p>
 </div>
 </li>
 </ol>
@@ -2121,7 +2134,7 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>In the working environment, create a new volume or change the tier of an existing volume:</p>
+<p>In Volumes tab under the working environment, create a new volume or change the tier of an existing volume:</p>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 30%;">
@@ -2140,7 +2153,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Modify an existing volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the volume and click <strong>Change Disk Type &amp; Tiering Policy</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the desired volume tile, click <strong>Manage volume</strong> to access the Manage Volumes right-side panel, and then click <strong>Advanced actions</strong> and <strong>Change tiering policy</strong> under the right panel.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2154,7 +2167,7 @@
 <p><strong>Example</strong></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_tiered_storage.gif" alt="Screenshot that shows the icon to enable tiering to object storage."></span></p>
+<p><span class="image"><img src="./media/screenshot_volumes_change_tiering_policy.png" alt="Screenshot that shows the options available to change tiering policy for a volume."></span></p>
 </div>
 <div class="paragraph">
 <p>BlueXP creates a new aggregate for the volume if a data tiering-enabled aggregate does not already exist.</p>
@@ -2250,7 +2263,7 @@ If there isn’t sufficient space, then Cloud Volumes ONTAP can&#8217;t move the
 <li>
 <p>In the upper right of the BlueXP console, click the <strong>Settings</strong> icon, and select <strong>Connector Settings</strong>.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_settings_icon.gif" alt="A screenshot that shows the Settings icon in the upper right of the BlueXP console."></span></p>
+<p><span class="image"><img src="./media/screenshot_settings_icon.png" alt="A screenshot that shows the Settings icon in the upper right of the BlueXP console."></span></p>
 </div>
 </li>
 <li>
@@ -2267,7 +2280,7 @@ If there isn’t sufficient space, then Cloud Volumes ONTAP can&#8217;t move the
 <h2 id="changing-the-cooling-period-for-the-auto-tiering-policy">Changing the cooling period for the auto tiering policy</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you enabled data tiering on a Cloud Volumes ONTAP volume using the <em>auto</em> tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using the API only.</p>
+<p>If you enabled data tiering on a Cloud Volumes ONTAP volume using the <em>auto</em> tiering policy, you can adjust the default cooling period based on your business needs. This action is supported using the API and CLI only.</p>
 </div>
 <div class="paragraph">
 <p>The cooling period is the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to object storage.</p>
