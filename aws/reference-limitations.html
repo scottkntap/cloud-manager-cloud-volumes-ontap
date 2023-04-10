@@ -1857,7 +1857,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-21 19:57:59 +0000">10/21/2022</time>
+    <time datetime="2023-04-10 14:23:20 +0000">04/10/2023</time>
     
   
 
@@ -1867,6 +1867,14 @@
           alt="netapp-bcammett"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-driley">
+    <img  class="avatar avatar-small"
+          alt="netapp-driley"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18422994?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1894,10 +1902,22 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="bluexp-doesnt-support-flexgroup-volumes">BlueXP doesn&#8217;t support FlexGroup volumes</h2>
+<h2 id="bluexp-doesnt-support-flexgroup-volumes-creation">BlueXP doesn&#8217;t support FlexGroup volumes creation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While Cloud Volumes ONTAP supports FlexGroup volumes, BlueXP does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set BlueXP&#8217;s Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.</p>
+<p>While Cloud Volumes ONTAP supports FlexGroup volumes, BlueXP does not currently support FlexGroup volume creation. If you create a FlexGroup volume from System Manager or from the CLI, then you should set BlueXP&#8217;s Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The ability to create FlexGroup volumes in BlueXP is planned for a future release.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
