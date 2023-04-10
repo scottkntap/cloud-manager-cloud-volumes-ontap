@@ -178,8 +178,8 @@ You'll need to create the following IP addresses in the load balancer:
 
 * One IP address for NAS data LIF access from node 1
 * One IP address for NAS data LIF access from node 2
-* One IP address for an iSCSI LIF on node 1 in each VM's respective NIC0
-* One IP address for an iSCSI LIF on node 2
+* One IP address for an iSCSI LIF on node 1 VM NIC0
+* One IP address for an iSCSI LIF on node 2 VM NIC0
 +
 The iSCSI LIFs are required for DNS and SMB communication. An iSCSI LIF is used for this purpose because it doesn't migrate on failover.
 * An optional IP address for a storage VM (SVM) management LIF
@@ -194,7 +194,7 @@ This management LIF provides a connection to management tools like SnapCenter.
 
 . Create the required number of frontend IP configurations for the data and SVM LIFs only:
 +
-NOTE: A frontend IP should only be created under the NIC0 for each corresponding SVM. For more information on how to add the IP address to the SVM NIC0, see "Step 7 [hyperlink]"
+NOTE: A frontend iSCSI IP address should only be created on VM NIC0 for each corresponding SVM being added. Do not create a frontend IP address on the Azure loadbalancer. For more information on how to add the IP address to the VM NIC0, see "Step 7 [hyperlink]"
 
 .. Under *Settings*, click *Frontend IP configuration*.
 
